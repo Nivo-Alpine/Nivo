@@ -1,0 +1,1481 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nivo · Mont-Blanc</title>
+<meta name="description" content="Nivo : le point neige et avalanche du jour pour le massif du Mont-Blanc, en langage simple, avec la méthode CRISTAL. Version de test.">
+<meta name="theme-color" content="#13263f">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2313263f'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white'%3E%E2%9D%84%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<script src="js/d3.min.js"></script>
+<style>
+:root{
+  --font-anthropic-sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-anthropic-serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --color-bg:#ffffff;--color-panel:#f4f6f8;--color-fg:#14202e;--color-fg-muted:#5b6876;--color-border-line:#dde3e9;--color-bad:#d62839;
+  --page-bg:#eef2f6;
+  --cds-font-size-caption:.8125rem;--cds-font-size-body:.9375rem;--cds-font-size-heading:1.0625rem;--cds-font-size-title:1.6rem;
+  --cds-font-weight-medium:500;
+  --cds-gap-sm:.5rem;--cds-gap-md:1rem;--cds-gap-lg:1.5rem;
+  --cds-pad-xs:.25rem;--cds-pad-sm:.5rem;--cds-pad-md:.875rem;--cds-pad-lg:1.25rem;
+  --cds-radius:.625rem;--cds-dur-slow:.25s;
+  --cds-border:#dde3e9;--cds-chart-grid:#e3e8ee;--cds-chart-muted:#a9b3bd;--cds-chart-reference:#7d8894;
+  --cds-surface-popover:#ffffff;--cds-shadow-popover:0 8px 28px rgba(15,33,56,.18);--cds-text-secondary:#5b6876;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --color-bg:#151c25;--color-panel:#1c2531;--color-fg:#e8edf2;--color-fg-muted:#9aa7b4;--color-border-line:#2c3846;--page-bg:#0e141b;
+  --cds-border:#2c3846;--cds-chart-grid:#26313d;--cds-chart-muted:#5d6a77;--cds-chart-reference:#8c99a6;
+  --cds-surface-popover:#1c2531;--cds-shadow-popover:0 8px 28px rgba(0,0,0,.5);--cds-text-secondary:#9aa7b4;
+}}
+:root[data-theme="dark"]{
+  --color-bg:#151c25;--color-panel:#1c2531;--color-fg:#e8edf2;--color-fg-muted:#9aa7b4;--color-border-line:#2c3846;--page-bg:#0e141b;
+  --cds-border:#2c3846;--cds-chart-grid:#26313d;--cds-chart-muted:#5d6a77;--cds-chart-reference:#8c99a6;
+  --cds-surface-popover:#1c2531;--cds-shadow-popover:0 8px 28px rgba(0,0,0,.5);--cds-text-secondary:#9aa7b4;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans);padding:12px 16px 40px;overflow-x:hidden}
+.nv .nv-card{background:var(--color-bg)}
+.dash-skeleton{position:relative;min-height:120px;border-radius:var(--cds-radius);background:linear-gradient(90deg,var(--color-panel) 0%,color-mix(in srgb,var(--color-panel) 60%,var(--color-bg)) 50%,var(--color-panel) 100%);background-size:200% 100%;animation:nvsk 1.4s ease-in-out infinite}
+@keyframes nvsk{from{background-position:100% 0}to{background-position:-100% 0}}
+@media (prefers-reduced-motion:reduce){.dash-skeleton{animation:none}}
+/* Bandeau phase de test */
+.nv-test{max-width:72rem;margin:0 auto 12px;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .9rem;padding:.6rem .9rem;border-radius:.8rem;border:1px solid color-mix(in srgb,#FF8C00 45%,transparent);background:color-mix(in srgb,#FF8C00 10%,var(--color-bg));font-size:var(--cds-font-size-caption);line-height:1.45}
+.nv-test b{font-weight:700}
+.nv-test a{color:inherit;font-weight:700}
+.nv-updated{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.nv-updated.old{color:var(--color-bad);font-weight:700}
+.nv-fb{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-weight:700;font-size:var(--cds-font-size-body);padding:.6rem 1rem;border-radius:999px;background:var(--color-fg);color:var(--color-bg);text-decoration:none}
+.nv-ab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--cds-gap-md)}
+@media (max-width:760px){.nv-ab{grid-template-columns:1fr}}
+.nv-ab p{margin:0 0 .6rem;font-size:var(--cds-font-size-body);line-height:1.55}
+@media (max-width:640px){.nv-hero{padding-bottom:5rem !important}.nv-tab{padding:.4rem .6rem !important;font-size:.875rem !important}}
+.nv-ab ul{margin:0;padding-left:1.1rem;font-size:var(--cds-font-size-body);line-height:1.6}
+</style>
+</head>
+<body>
+<div class="nv-test" role="note"><span>🧪 <b>Version de test.</b> Nivo est une estimation automatique en cours d'évaluation : elle ne remplace ni le bulletin officiel (BERA, SLF), ni ton jugement sur le terrain.</span><span class="nv-updated" id="nv-updated"></span></div>
+<style>
+.nv{--nv-ok:#00D856;--nv-warn:#FF8C00;--nv-bad:#FF1E3C;--nv-off:#9AA3AD;--nv-ok-ink:#03200d;--nv-warn-ink:#251200;--nv-bad-ink:#ffffff;--nv-off-ink:#14181c;max-width:72rem;margin-inline:auto;display:flex;flex-direction:column;gap:var(--cds-gap-md);font-family:var(--font-anthropic-sans);color:var(--color-fg)}
+.nv *{box-sizing:border-box}
+.nv{--nv-ice:#5b8fc7;--nv-night:#13263f}
+.nv-hero{position:relative;overflow:hidden;border-radius:calc(var(--cds-radius) * 2);color:#fff;background:#13263f center 40% / cover no-repeat;min-height:22rem;display:flex;align-items:flex-start;justify-content:flex-end;padding:var(--cds-pad-lg) var(--cds-pad-lg) 6rem}
+.nv-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,22,40,0) 0%,rgba(10,22,40,.15) 35%,rgba(10,22,40,.72) 100%),linear-gradient(180deg,rgba(10,22,40,.25) 0%,rgba(10,22,40,0) 40%,rgba(10,22,40,.45) 100%)}
+.nv-hero-in{position:relative;display:flex;flex-direction:column;gap:.9rem;width:min(100%,32rem)}
+.nv-kicker{font-size:var(--cds-font-size-caption);letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.nv-hero .nv-title{font-size:clamp(2rem,6vw,3rem);line-height:1.05;letter-spacing:-.01em;text-shadow:0 2px 14px rgba(8,20,36,.5)}
+.nv-hero .nv-pill{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.16);color:#fff;backdrop-filter:blur(4px)}
+.nv-hero .nv-pill::before{background:#fff}
+.nv-take{margin:0;display:flex;flex-direction:column;gap:.7rem;padding:var(--cds-pad-md) var(--cds-pad-lg);border-radius:calc(var(--cds-radius) * 1.4);background:rgba(10,22,40,.55);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);font-size:var(--cds-font-size-body);line-height:1.65;color:#fff}
+.nv-take .nv-sent{display:block;padding-left:1.1rem;position:relative}
+.nv-take .nv-sent::before{content:"";position:absolute;left:0;top:.62em;width:.45rem;height:.45rem;border-radius:50%;background:#9cc8f0}
+.nv-take .nv-sent:first-child{font-size:1.08em;font-weight:var(--cds-font-weight-medium)}
+.nv-take mark{color:#fff}
+.nv-photo{position:absolute;right:.7rem;bottom:.5rem;font-size:.68rem;color:rgba(255,255,255,.85);text-shadow:0 1px 3px rgba(0,0,0,.6);text-align:right;max-width:calc(100% - 1.4rem)}
+.nv-photo a{color:inherit}
+@media (max-width:640px){.nv-hero{justify-content:flex-start;min-height:26rem;padding:var(--cds-pad-md) var(--cds-pad-md) 6rem;background-position:30% center}.nv-hero::before{background:linear-gradient(180deg,rgba(10,22,40,.55) 0%,rgba(10,22,40,.35) 60%,rgba(10,22,40,.6) 100%)}}
+/* surlignage des points clés */
+.nv mark{font:inherit;color:inherit;padding:.02em .32em;border-radius:.35em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.nv mark.hl-bad{background:color-mix(in srgb,var(--nv-bad) 26%,transparent);font-weight:700}
+.nv mark.hl-warn{background:color-mix(in srgb,var(--nv-warn) 26%,transparent);font-weight:var(--cds-font-weight-medium)}
+.nv mark.hl-ok{background:color-mix(in srgb,var(--nv-ok) 24%,transparent)}
+.nv mark.hl-off{background:color-mix(in srgb,var(--nv-off) 28%,transparent)}
+.nv mark.hl-alt{background:color-mix(in srgb,#5b8fc7 24%,transparent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.nv mark.hl-face{background:color-mix(in srgb,#8d6fd1 22%,transparent);font-weight:var(--cds-font-weight-medium)}
+.nv-take mark.hl-alt{background:rgba(120,175,235,.38)}
+.nv-take mark.hl-face{background:rgba(175,150,240,.38)}
+.nv-take mark.hl-warn{background:rgba(255,140,0,.45)}
+.nv-take mark.hl-bad{background:rgba(255,30,60,.5)}
+.nv-take mark.hl-ok{background:rgba(0,216,86,.38)}
+.nv-take mark.hl-off{background:rgba(200,208,218,.3)}
+.nv-bub{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:var(--cds-gap-md);margin-top:-3.5rem;padding-inline:var(--cds-pad-md);position:relative;z-index:1}
+.nv-b{display:flex;gap:.75rem;align-items:flex-start;background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:calc(var(--cds-radius) * 1.6);padding:var(--cds-pad-md) var(--cds-pad-lg);box-shadow:0 6px 22px rgba(15,33,56,.12);min-width:0}
+.nv-b-ic{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;font-size:1.15rem;background:color-mix(in srgb,var(--bc,#5b8fc7) 20%,transparent)}
+.nv-b{border-top:3px solid var(--bc,#5b8fc7)}
+.nv-b-t{display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.nv-b-l{font-size:var(--cds-font-size-caption);text-transform:uppercase;letter-spacing:.08em;color:var(--color-fg-muted)}
+.nv-b-v{font-size:var(--cds-font-size-body);line-height:1.55}
+.nv-b-big{font-family:var(--font-anthropic-serif);font-size:2.1rem;line-height:1;font-weight:400;font-variant-numeric:tabular-nums}
+.nv-b-big small{font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-body);color:var(--color-fg-muted);margin-left:.3rem}
+.nv-b.wide{grid-column:1/-1}
+.nv-cnt{display:flex;flex-wrap:wrap;gap:.35rem}
+.nv-cnt span{display:inline-flex;align-items:center;gap:.35rem;padding:.15rem .6rem;border-radius:999px;font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium);background:var(--color-bg);border:1px solid var(--color-border-line)}
+.nv-cnt i{width:.6rem;height:.6rem;border-radius:50%}
+.nv-top{display:flex;flex-wrap:wrap;align-items:center;gap:var(--cds-gap-sm) var(--cds-gap-md)}
+.nv-title{margin:0;font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title)}
+.nv-sub{color:var(--color-fg-muted);font-size:var(--cds-font-size-body)}
+.nv-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.15rem .65rem;border-radius:999px;border:1px solid var(--color-border-line);background:var(--color-panel);font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium)}
+.nv-pill::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--color-fg-muted)}
+.nv-pill[data-level=ok]{background:var(--nv-ok);color:var(--nv-ok-ink);border-color:transparent}
+.nv-pill[data-level=warn]{background:var(--nv-warn);color:var(--nv-warn-ink);border-color:transparent}
+.nv-pill[data-level=bad]{background:var(--nv-bad);color:var(--nv-bad-ink);border-color:transparent}
+.nv-pill[data-level=ok]::before,.nv-pill[data-level=warn]::before,.nv-pill[data-level=bad]::before{background:currentColor}
+.nv-take{margin:0;font-size:var(--cds-font-size-heading);line-height:1.45;max-width:60rem}
+.nv-body{margin:0;font-size:var(--cds-font-size-body);line-height:1.5}
+.nv-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:var(--cds-gap-md)}
+.nv-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-sm);min-width:0}
+.nv-card h2{margin:0;font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium)}
+.nv-note{margin:0;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);line-height:1.4}
+.nv-kpi-l{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.nv-kpi-v{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);font-variant-numeric:tabular-nums;line-height:1.1}
+.nv-kpi-v small{font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-body);color:var(--color-fg-muted);margin-left:.25rem}
+.nv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:var(--cds-gap-md)}
+.nv-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:var(--cds-gap-md)}
+.nv-sec{margin:var(--cds-pad-md) 0 0;font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:baseline;gap:.6rem}
+.nv-sec .nv-lvl{font-size:var(--cds-font-size-caption);letter-spacing:.04em;border:1px solid var(--color-border-line);border-radius:999px;padding:0 .5rem}
+.nv-box{position:relative;min-width:0}
+.nv svg text{font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-caption);fill:var(--color-fg-muted)}
+.nv svg text.nv-strong{fill:var(--color-fg);font-weight:var(--cds-font-weight-medium)}
+.nv svg .domain{display:none}
+.nv svg .tick line{stroke:var(--cds-chart-grid)}
+.nv svg .tick text{fill:var(--color-fg-muted)}
+.nv-tip{position:absolute;z-index:3;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);box-shadow:var(--cds-shadow-popover);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);max-width:16rem;white-space:normal}
+.nv-tip-t{color:var(--cds-text-secondary);margin-bottom:.15rem}
+.nv-tip-r{display:flex;align-items:center;gap:.4rem;font-variant-numeric:tabular-nums}
+.nv-sw{width:.6rem;height:.6rem;border-radius:2px;flex:none}
+.nv-fail{display:flex;align-items:center;justify-content:center;gap:.4rem;min-height:inherit;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.nv-fail::before{content:"";width:.375rem;height:.375rem;border-radius:50%;background:var(--color-bad)}
+.nv-wrap{overflow-x:auto}
+.nv table{border-collapse:collapse;width:100%;font-size:var(--cds-font-size-caption);min-width:44rem}
+.nv th{position:sticky;top:0;text-align:left;font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);padding:.4rem .6rem;border-bottom:1px solid var(--color-border-line);background:var(--color-panel)}
+.nv td{padding:.5rem .6rem;border-bottom:1px solid var(--color-border-line);vertical-align:top;line-height:1.4}
+.nv td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:var(--cds-font-weight-medium)}
+.nv-leg{display:flex;flex-wrap:wrap;gap:.25rem .9rem;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.nv-leg span{display:inline-flex;align-items:center;gap:.35rem}
+#map-leg{gap:.5rem 1.2rem;font-size:var(--cds-font-size-body);color:var(--color-fg)}
+.nv-lgdot{flex:none;width:1.6rem;height:1.6rem;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:.8rem;border:3px solid #fff;box-shadow:0 1px 4px rgba(15,33,56,.4)}
+.nv-foot{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);line-height:1.5;padding-block:var(--cds-pad-sm)}
+.nv-foot a,.nv-link{color:inherit;text-decoration:underline;text-underline-offset:2px}
+/* Niveau 1 : carte + zones */
+.nv-l1{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:var(--cds-gap-md);align-items:start}
+.nv-map{min-height:340px;border-radius:calc(var(--cds-radius) * 1.4);overflow:hidden;box-shadow:inset 0 0 0 1px var(--color-border-line)}
+.nv-map svg{display:block}
+.nv-map .z{cursor:pointer;transition:fill-opacity var(--cds-dur-slow),stroke-width var(--cds-dur-slow)}
+.nv-map .z:hover,.nv-map .z.on{fill-opacity:.7 !important;stroke-width:5}
+.nv-map .pin{pointer-events:none}
+.nv-map .pin text{font-family:var(--font-anthropic-sans);font-size:15px;font-weight:700}
+.nv-credit{font-size:.7rem;color:var(--color-fg-muted)}
+.nv-zl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--cds-gap-md)}
+.nv-z{--zc:var(--nv-off);position:relative;display:flex;flex-direction:column;gap:.55rem;padding:var(--cds-pad-md) var(--cds-pad-lg);border:1px solid var(--color-border-line);border-radius:calc(var(--cds-radius) * 1.6);background:linear-gradient(115deg,color-mix(in srgb,var(--zc) 30%,var(--color-bg)) 0%,var(--color-bg) 60%);border-left:6px solid var(--zc);cursor:pointer;transition:transform var(--cds-dur-slow),box-shadow var(--cds-dur-slow)}
+.nv-z:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(15,33,56,.10)}
+.nv-z[data-level=ok]{--zc:var(--nv-ok)}
+.nv-z[data-level=warn]{--zc:var(--nv-warn)}
+.nv-z[data-level=bad]{--zc:var(--nv-bad)}
+.nv-z[data-level=off]{--zc:var(--nv-off)}
+.nv-z[data-level=bad] .nv-z-id{color:#fff}
+.nv-z.on{box-shadow:0 0 0 2px var(--zc)}
+.nv-z-top{display:flex;align-items:center;gap:.75rem}
+.nv-z-id{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;background:var(--zc);color:#fff;font-weight:700;font-size:var(--cds-font-size-body);font-variant-numeric:tabular-nums;box-shadow:0 0 0 3px color-mix(in srgb,var(--zc) 25%,transparent)}
+.nv-z[data-level=ok] .nv-z-id{color:var(--nv-ok-ink)}
+.nv-z[data-level=warn] .nv-z-id{color:var(--nv-warn-ink)}
+.nv-z[data-level=off] .nv-z-id{color:var(--nv-off-ink)}
+.nv-z-h{flex:1;min-width:0;display:flex;flex-direction:column;gap:.1rem}
+.nv-z-n{font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-heading);line-height:1.2}
+.nv-z-p{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);line-height:1.35}
+.nv-z-m{flex:none;font-size:var(--cds-font-size-caption);font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.2rem .65rem;border-radius:999px;background:var(--zc);color:var(--nv-off-ink)}
+.nv-z[data-level=ok] .nv-z-m{color:var(--nv-ok-ink)}
+.nv-z[data-level=warn] .nv-z-m{color:var(--nv-warn-ink)}
+.nv-z[data-level=bad] .nv-z-m{color:var(--nv-bad-ink)}
+.nv-z-band{align-self:flex-start;display:inline-flex;align-items:center;gap:.35rem;font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium);padding:.12rem .55rem;border-radius:999px;border:1px solid var(--color-border-line);background:var(--color-panel)}
+.nv-z-r{margin:0;font-size:var(--cds-font-size-body);line-height:1.5}
+.nv-z-av{display:flex;gap:.5rem;align-items:flex-start;font-size:var(--cds-font-size-caption);line-height:1.45;padding:.45rem .65rem;border-radius:var(--cds-radius);background:color-mix(in srgb,var(--nv-warn) 10%,var(--color-panel))}
+.nv-z-av b{flex:none;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+/* Niveau 2 : CRISTAL + roses */
+.nv-cr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10.5rem),1fr));gap:var(--cds-gap-sm)}
+.nv-c{display:flex;flex-direction:column;gap:.3rem;padding:var(--cds-pad-sm) var(--cds-pad-md);border-radius:var(--cds-radius);border:1px solid var(--color-border-line);background:var(--color-bg)}
+.nv-c-h{display:flex;align-items:center;gap:.45rem;font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-body)}
+.nv-dot{width:.9rem;height:.9rem;border-radius:50%;flex:none;background:var(--cds-chart-muted)}
+.nv-dot[data-state=ok]{background:var(--nv-ok)}
+.nv-dot[data-state=warn]{background:var(--nv-warn)}
+.nv-dot[data-state=bad]{background:var(--nv-bad)}
+.nv-c[data-state=ok]{border-color:var(--nv-ok);border-width:2px}
+.nv-c[data-state=warn]{border-color:var(--nv-warn);border-width:2px}
+.nv-c[data-state=bad]{border-color:var(--nv-bad);border-width:2px}
+.nv-c-s{font-size:var(--cds-font-size-caption);text-transform:uppercase;letter-spacing:.05em;color:var(--color-fg-muted)}
+.nv-c-w{font-size:var(--cds-font-size-caption);line-height:1.4;color:var(--color-fg-muted)}
+.nv-roses{min-height:220px}
+/* CRISTAL par zone */
+.nv-mx{display:grid;grid-template-columns:minmax(7.5rem,1.6fr) repeat(5,minmax(2.3rem,1fr));gap:.3rem;align-items:center}
+.nv-mx-h{display:flex;flex-direction:column;align-items:center;gap:.15rem;font-size:.7rem;color:var(--color-fg-muted);text-align:center;line-height:1.15;cursor:pointer;padding:.2rem 0;border-radius:var(--cds-radius)}
+.nv-mx-h b{display:grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:50%;color:#fff;font-size:.78rem;background:var(--nv-off)}
+.nv-mx-h.on{background:color-mix(in srgb,var(--nv-ice,#5b8fc7) 16%,transparent)}
+.nv-mx-c{font-size:var(--cds-font-size-body);font-weight:var(--cds-font-weight-medium);line-height:1.25;padding:.35rem 0}
+.nv-mx-c small{display:block;font-weight:400;font-size:.72rem;color:var(--color-fg-muted);line-height:1.35;margin-top:.1rem}
+.nv-mx-d{display:grid;place-items:center;height:2.3rem;border-radius:.6rem;border:0;background:color-mix(in srgb,var(--color-fg) 5%,transparent);cursor:pointer;padding:0}
+.nv-mx-d i{width:1.05rem;height:1.05rem;border-radius:50%;background:var(--cds-chart-muted)}
+.nv-mx-d[data-state=ok] i{background:var(--nv-ok)}
+.nv-mx-d[data-state=warn] i{background:var(--nv-warn);width:1.2rem;height:1.2rem}
+.nv-mx-d[data-state=bad] i{background:var(--nv-bad);width:1.35rem;height:1.35rem;box-shadow:0 0 0 4px color-mix(in srgb,var(--nv-bad) 25%,transparent)}
+.nv-mx-d.col{background:color-mix(in srgb,var(--nv-ice,#5b8fc7) 14%,transparent)}
+.nv-mx-d.sel{outline:2px solid var(--color-fg);outline-offset:1px}
+.nv-mx-d:focus-visible,.nv-mx-h:focus-visible,.nv-rz:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.nv-mx-why{display:flex;gap:.6rem;align-items:flex-start;padding:var(--cds-pad-sm) var(--cds-pad-md);border-radius:var(--cds-radius);background:var(--color-bg);border:1px solid var(--color-border-line);font-size:var(--cds-font-size-body);line-height:1.5}
+.nv-banner{font-size:var(--cds-font-size-caption);line-height:1.45;padding:.5rem .75rem;border-radius:var(--cds-radius);background:color-mix(in srgb,#5b8fc7 12%,transparent);border-left:3px solid #5b8fc7}
+.nv-mx-wrap{overflow-x:auto}
+.nv-mx-wrap .nv-mx{min-width:22rem}
+/* roses par zone */
+.nv-rzs{display:grid;grid-template-columns:repeat(auto-fit,minmax(6.5rem,1fr));gap:var(--cds-gap-sm)}
+.nv-rz{display:flex;flex-direction:column;align-items:center;gap:.2rem;padding:.4rem .2rem .5rem;border-radius:calc(var(--cds-radius) * 1.3);border:1px solid var(--color-border-line);background:var(--color-bg);cursor:pointer;font:inherit;color:var(--color-fg)}
+.nv-rz.on{border-color:var(--color-fg);box-shadow:0 0 0 1px var(--color-fg)}
+.nv-rz span{font-size:.72rem;line-height:1.2;text-align:center;color:var(--color-fg-muted)}
+.nv-rz span b{color:var(--color-fg)}
+.nv-rd-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .7rem}
+.nv-rd-h strong{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium)}
+/* Pédagogie */
+.nv-quiz{display:flex;flex-direction:column;gap:.4rem}
+.nv-opt{display:flex;gap:.5rem;align-items:flex-start;text-align:left;font:inherit;font-size:var(--cds-font-size-body);color:var(--color-fg);background:var(--color-bg);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-sm) var(--cds-pad-md);cursor:pointer}
+.nv-opt b{font-weight:var(--cds-font-weight-medium)}
+.nv-opt[aria-pressed=true]{border-color:var(--color-fg);background:var(--color-panel)}
+.nv-opt:focus-visible,.nv-z:focus-visible,.nv-sum:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.nv-opt.right{border:2px solid var(--nv-ok);background:color-mix(in srgb,var(--nv-ok) 22%,transparent)}
+.nv-opt.wrong{border:2px solid var(--nv-bad);background:color-mix(in srgb,var(--nv-bad) 18%,transparent)}
+.nv-opt:disabled{cursor:default}
+.nv-qa{display:flex;flex-wrap:wrap;gap:var(--cds-gap-sm);align-items:center}
+.nv-btn{font:inherit;font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-body);padding:var(--cds-pad-sm) var(--cds-pad-lg);border-radius:var(--cds-radius);border:1px solid var(--color-fg);background:var(--color-fg);color:var(--color-bg);cursor:pointer}
+.nv-btn:disabled{opacity:.4;cursor:not-allowed}
+.nv-btn.ghost{background:transparent;color:var(--color-fg);border-color:var(--color-border-line)}
+.nv-btn:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.nv-res{border-radius:var(--cds-radius);padding:var(--cds-pad-sm) var(--cds-pad-md);display:flex;flex-direction:column;gap:.3rem}
+.nv-res[data-ok=true]{background:color-mix(in srgb,var(--nv-ok) 22%,transparent);border:2px solid var(--nv-ok)}
+.nv-res[data-ok=false]{background:color-mix(in srgb,var(--nv-bad) 16%,transparent);border:2px solid var(--nv-bad)}
+.nv-res-t{font-weight:700;font-size:var(--cds-font-size-heading)}
+/* Niveau 3 : détails repliables */
+.nv-det{border:1px solid var(--color-border-line);border-radius:var(--cds-radius);background:var(--color-panel)}
+.nv-sum{list-style:none;cursor:pointer;padding:var(--cds-pad-md) var(--cds-pad-lg);display:flex;align-items:center;justify-content:space-between;gap:var(--cds-gap-md);font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium)}
+.nv-sum::-webkit-details-marker{display:none}
+.nv-sum::after{content:"+";font-size:var(--cds-font-size-title);line-height:1;color:var(--color-fg-muted)}
+.nv-det[open] > .nv-sum::after{content:"–"}
+.nv-sum small{display:block;font-size:var(--cds-font-size-caption);font-weight:400;color:var(--color-fg-muted)}
+.nv-det-b{padding:0 var(--cds-pad-lg) var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-md)}
+.nv-det-b .nv-card{background:var(--color-bg)}
+[data-dash-source-state=refreshing]{opacity:.5;transition:opacity var(--cds-dur-slow)}
+[data-dash-source-state=empty]{color:transparent}
+/* Onglets : barre de navigation type site web */
+.nv-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:var(--cds-gap-md);padding:.55rem .9rem;border-radius:calc(var(--cds-radius) * 1.6);background:color-mix(in srgb,var(--color-panel) 92%,transparent);backdrop-filter:blur(10px);border:1px solid var(--color-border-line);box-shadow:0 4px 18px rgba(15,33,56,.08);min-width:0}
+.nv-brand{flex:none;display:flex;align-items:center;gap:.5rem;margin:0;font-family:var(--font-anthropic-serif);font-weight:400;font-size:1.6rem;line-height:1;letter-spacing:-.01em}
+.nv-brand i{width:1.7rem;height:1.7rem;border-radius:.55rem;background:linear-gradient(135deg,#5b8fc7,#13263f);display:grid;place-items:center;font-style:normal;font-size:.95rem;color:#fff}
+.nv-brand small{font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);letter-spacing:.08em;text-transform:uppercase;align-self:flex-end;margin-bottom:.12rem}
+.nv-tabs{flex:1;min-width:0;display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nv-tabs::-webkit-scrollbar{display:none}
+.nv-tab{flex:none;font:inherit;font-size:var(--cds-font-size-body);font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);background:transparent;border:0;border-radius:999px;padding:.45rem .9rem;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem}
+.nv-tab:hover{color:var(--color-fg);background:color-mix(in srgb,var(--color-fg) 6%,transparent)}
+.nv-tab[aria-selected=true]{color:var(--color-bg);background:var(--color-fg)}
+.nv-tab:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.nv-panel{display:flex;flex-direction:column;gap:var(--cds-gap-md);min-width:0}
+.nv-panel[hidden]{display:none}
+.nv-ph{display:flex;flex-direction:column;gap:.2rem;padding-top:var(--cds-pad-sm)}
+.nv-ph h2{margin:0;font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);line-height:1.15}
+.nv-ph p{margin:0;color:var(--color-fg-muted);font-size:var(--cds-font-size-body)}
+.nv-next{display:flex;flex-wrap:wrap;gap:var(--cds-gap-sm)}
+@media (max-width:640px){.nv-bar{flex-direction:column;align-items:stretch;gap:.4rem;padding:.5rem .6rem}.nv-brand{font-size:1.35rem}.nv-tab{padding:.4rem .75rem}}
+@media (prefers-reduced-motion:no-preference){.nv-panel:not([hidden]){animation:nvIn .22s ease-out}}
+@keyframes nvIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+/* --- Version simple --- */
+.nv-pill-big{align-self:flex-start;font-size:var(--cds-font-size-body);padding:.3rem .9rem;font-weight:700}
+.nv-hero .nv-pill-big::before{display:none}
+.nv-hero .nv-pill-big[data-level=ok]{background:var(--nv-ok);color:var(--nv-ok-ink)}
+.nv-hero .nv-pill-big[data-level=warn]{background:var(--nv-warn);color:var(--nv-warn-ink)}
+.nv-hero .nv-pill-big[data-level=bad]{background:var(--nv-bad);color:#fff}
+.nv-hero{padding-bottom:var(--cds-pad-lg)}
+.nv-hero .nv-take{font-size:1.05rem}
+.nv-todo-card{}
+.nv-todo{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.nv-todo li{position:relative;padding-left:1.6rem;font-size:var(--cds-font-size-body);line-height:1.5}
+.nv-todo li::before{content:"✓";position:absolute;left:0;top:0;width:1.15rem;height:1.15rem;margin-top:.15rem;border-radius:50%;display:grid;place-items:center;font-size:.72rem;font-weight:700;background:color-mix(in srgb,var(--nv-warn) 25%,transparent)}
+.nv-zs{--zc:var(--nv-off);display:flex;gap:.8rem;align-items:flex-start;padding:var(--cds-pad-md);border:1px solid var(--color-border-line);border-left:5px solid var(--zc);border-radius:var(--cds-radius);background:var(--color-bg);cursor:pointer}
+.nv-zs[data-level=ok]{--zc:var(--nv-ok)}.nv-zs[data-level=warn]{--zc:var(--nv-warn)}.nv-zs[data-level=bad]{--zc:var(--nv-bad)}
+.nv-zs.on{box-shadow:0 0 0 2px var(--zc)}
+.nv-zs:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.nv-zs-n{flex:none;width:1.9rem;height:1.9rem;border-radius:50%;display:grid;place-items:center;background:var(--zc);color:var(--nv-off-ink);font-weight:700;font-size:.9rem}
+.nv-zs[data-level=ok] .nv-zs-n{color:var(--nv-ok-ink)}.nv-zs[data-level=warn] .nv-zs-n{color:var(--nv-warn-ink)}.nv-zs[data-level=bad] .nv-zs-n{color:#fff}
+.nv-zs-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:.25rem}
+.nv-zs-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .6rem}
+.nv-zs-t{font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-heading);line-height:1.2}
+.nv-zs-w{font-size:var(--cds-font-size-caption);font-weight:700;color:var(--zc)}
+.nv-zs[data-level=ok] .nv-zs-w{color:color-mix(in srgb,var(--nv-ok) 70%,var(--color-fg))}
+.nv-zs[data-level=warn] .nv-zs-w{color:color-mix(in srgb,var(--nv-warn) 75%,var(--color-fg))}
+.nv-zs-d{margin:0;font-size:var(--cds-font-size-body);line-height:1.45}
+.nv-days{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:var(--cds-gap-md);min-height:8rem}
+.nv-day{display:flex;flex-direction:column;gap:.7rem;padding:var(--cds-pad-md);border-radius:var(--cds-radius);background:var(--color-bg);border:1px solid var(--color-border-line)}
+.nv-day-h{font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-heading)}
+.nv-pers{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;text-align:center}
+.nv-per{display:flex;flex-direction:column;align-items:center;gap:.1rem;padding:.4rem .2rem;border-radius:var(--cds-radius);background:var(--color-panel)}
+.nv-per-i{font-size:1.9rem;line-height:1.1}
+.nv-per-l{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.nv-per-t{font-family:var(--font-anthropic-serif);font-size:1.25rem;font-variant-numeric:tabular-nums}
+.nv-facts{display:flex;flex-direction:column;gap:.35rem;margin:0;padding:0;list-style:none;font-size:var(--cds-font-size-body)}
+.nv-facts li{display:flex;gap:.5rem;align-items:baseline}
+.nv-facts b{font-weight:var(--cds-font-weight-medium)}
+.nv-facts .nv-f-i{flex:none;width:1.3rem;text-align:center}
+.nv-sub{display:flex;gap:.35rem;overflow-x:auto;scrollbar-width:none;padding-bottom:.1rem}
+.nv-sub::-webkit-scrollbar{display:none}
+.nv-sub button{flex:none;font:inherit;font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium);padding:.3rem .75rem;border-radius:999px;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg);cursor:pointer}
+.nv-sub button:hover{border-color:var(--color-fg)}
+.nv-bub-x{margin-top:0;padding-inline:0}
+.nv-bub-x .nv-b{box-shadow:none;background:var(--color-bg)}
+.nv-card h2 .nv-pill{margin-left:.5rem;vertical-align:middle}
+.nv-xsum{font-size:var(--cds-font-size-heading)}
+[id^="x-"],#card-cristal,#card-roses{scroll-margin-top:5.5rem}
+
+/* Ce qu'il faut faire : 3 repères côte à côte */
+.nv-todo{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:var(--cds-gap-lg,1.25rem);counter-reset:td}
+.nv-todo li{counter-increment:td;display:flex;flex-direction:column;gap:.6rem;padding:var(--cds-pad-lg,1.1rem);border-radius:var(--cds-radius);border:1px solid var(--color-border-line);background:var(--color-bg);font-size:var(--cds-font-size-body);line-height:1.45}
+.nv-todo li::before{content:"Conseil n\00B0\00A0" counter(td);position:static;width:auto;height:auto;margin:0;border-radius:0;display:block;font-size:var(--cds-font-size-caption);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-fg-muted);background:none}
+.nv-todo .nv-tz{align-self:flex-start;font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium);padding:.1rem .55rem;border-radius:999px;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg)}
+.nv-todo li b{font-size:var(--cds-font-size-heading);font-weight:700;line-height:1.2}
+.nv-todo li span{color:var(--color-fg-muted)}
+@media (max-width:900px){.nv-todo[style*="--n: 4"],.nv-todo[style*="--n: 5"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.nv-todo{grid-template-columns:1fr !important}}
+/* Encadré du haut centré sur ordinateur */
+@media (min-width:641px){
+.nv-hero{justify-content:center;align-items:center;text-align:center;min-height:24rem}
+.nv-hero::before{background:radial-gradient(ellipse at center,rgba(10,22,40,.62) 0%,rgba(10,22,40,.35) 55%,rgba(10,22,40,.2) 100%)}
+.nv-hero-in{align-items:center;width:min(100%,40rem)}
+.nv-hero .nv-pill-big{align-self:center}
+}
+/* Espace expert : repères */
+.nv-rep{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--cds-gap-md)}
+@media (max-width:760px){.nv-rep{grid-template-columns:1fr}}
+.nv-rep>.nv-card.full{grid-column:1/-1}
+.nv-sc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem}
+.nv-sc li{display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem .8rem;align-items:start;padding:.6rem .7rem;border:1px solid var(--color-border-line);border-radius:var(--cds-radius);background:var(--color-bg)}
+.nv-sc i{grid-row:span 2;width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:1.05rem;border:3px solid #fff;box-shadow:0 1px 4px rgba(15,33,56,.4);color:#111}
+.nv-sc b{font-size:var(--cds-font-size-heading);line-height:1.2}
+.nv-sc span{font-size:var(--cds-font-size-body);line-height:1.45;color:var(--color-fg-muted)}
+.nv-ck{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+.nv-ck li{position:relative;padding-left:1.6rem;font-size:var(--cds-font-size-body);line-height:1.45}
+.nv-ck li::before{content:"✓";position:absolute;left:0;top:.1rem;width:1.1rem;height:1.1rem;border-radius:50%;display:grid;place-items:center;font-size:.7rem;font-weight:700;background:color-mix(in srgb,var(--nv-ok) 35%,transparent)}
+.nv-ck.no li::before{content:"✕";background:color-mix(in srgb,var(--nv-bad) 30%,transparent)}
+.nv-ac{display:flex;flex-direction:column;gap:.5rem}
+.nv-ac details{border:1px solid var(--color-border-line);border-radius:var(--cds-radius);background:var(--color-bg);padding:.1rem .8rem}
+.nv-ac summary{cursor:pointer;font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-heading);padding:.6rem 0;list-style:none;display:flex;justify-content:space-between;gap:.6rem;align-items:center}
+.nv-ac summary::-webkit-details-marker{display:none}
+.nv-ac summary::after{content:"+";font-size:1.3rem;color:var(--color-fg-muted);flex:none}
+.nv-ac details[open] summary::after{content:"–"}
+.nv-ac details>div{padding:0 0 .8rem;font-size:var(--cds-font-size-body);line-height:1.55;display:flex;flex-direction:column;gap:.5rem}
+.nv-ac details>div p{margin:0}
+.nv-gl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem var(--cds-gap-md);margin:0}
+@media (max-width:760px){.nv-gl{grid-template-columns:1fr}}
+.nv-gl div{padding:.55rem .7rem;border-radius:var(--cds-radius);background:var(--color-panel);border:1px solid var(--color-border-line)}
+.nv-gl dt{font-weight:700;margin:0 0 .15rem}
+.nv-gl dd{margin:0;font-size:var(--cds-font-size-body);line-height:1.45;color:var(--color-fg-muted)}
+.nv-warnbox{padding:.7rem .9rem;border-radius:var(--cds-radius);border-left:4px solid var(--nv-bad);background:color-mix(in srgb,var(--nv-bad) 8%,var(--color-bg));font-size:var(--cds-font-size-body);line-height:1.5}
+</style>
+
+<div class="nv">
+  <nav class="nv-bar" aria-label="Nivo">
+    <h1 class="nv-brand"><i aria-hidden="true">❄</i>Nivo<small>Mont-Blanc</small></h1>
+    <div class="nv-tabs" role="tablist" aria-label="Rubriques">
+      <button type="button" class="nv-tab" role="tab" id="tab-jour" aria-controls="p-jour" aria-selected="true" data-tab="jour">🏔️ Aujourd'hui</button>
+      <button type="button" class="nv-tab" role="tab" id="tab-apprendre" aria-controls="p-apprendre" aria-selected="false" tabindex="-1" data-tab="apprendre">🎓 Apprendre</button>
+      <button type="button" class="nv-tab" role="tab" id="tab-expert" aria-controls="p-expert" aria-selected="false" tabindex="-1" data-tab="expert">🔬 Expert</button>
+      <button type="button" class="nv-tab" role="tab" id="tab-apropos" aria-controls="p-apropos" aria-selected="false" tabindex="-1" data-tab="apropos">ℹ️ À propos</button>
+    </div>
+  </nav>
+
+  <!-- ================= AUJOURD'HUI : version simple ================= -->
+  <section class="nv-panel" role="tabpanel" id="p-jour" aria-labelledby="tab-jour">
+    <header class="nv-hero" id="nv-top">
+      <div class="nv-hero-in">
+        <div class="nv-kicker">Finhaut – Chamonix · <span data-source="status" data-row="0" data-field="date_label">—</span></div>
+        <span class="nv-pill nv-pill-big" id="nv-pill">—</span>
+        <h2 class="nv-title" id="nv-stitle" data-source="status" data-row="0" data-field="simple_title">—</h2>
+        <p class="nv-take" id="nv-take" data-source="status" data-row="0" data-field="simple_summary">—</p>
+      </div>
+      <div class="nv-photo">Aiguille du Dru et Aiguille Verte depuis le Montenvers · photo Alexandre Buisse, <a href="https://commons.wikimedia.org/wiki/File:Aiguille_du_Dru_and_Aiguille_Verte_from_the_Montenvers,_Chamonix.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a> (recadrée)</div>
+    </header>
+
+    <section class="nv-card nv-todo-card" id="card-todo" hidden>
+      <h2>👉 Ce qu'il faut faire</h2>
+      <ul class="nv-todo" id="nv-todo" data-source="status" data-row="0" data-field="simple_todo"></ul>
+    </section>
+
+    <section class="nv-l1">
+      <div class="nv-card" id="card-carte">
+        <h2>Où aller, où se méfier</h2>
+        <p class="nv-note">Touche une zone de la carte ou de la liste.</p>
+        <div class="nv-box nv-map dash-skeleton" id="ch-map" data-source="zones"></div>
+        <div class="nv-leg" id="map-leg"></div>
+        <span class="nv-credit">Fond de carte : © swisstopo (Carte nationale)</span>
+      </div>
+      <div class="nv-card" id="card-zones">
+        <h2>Les zones</h2>
+        <ul class="nv-zl dash-skeleton" id="zone-list" data-source="zones"></ul>
+      </div>
+    </section>
+
+    <section class="nv-card" id="card-meteo-simple">
+      <h2>🌤️ La météo en montagne</h2>
+      <div class="nv-days dash-skeleton" id="meteo-simple" data-source="forecast meteo_simple"></div>
+    </section>
+
+    <div class="nv-next">
+      <button type="button" class="nv-btn ghost" data-go="apprendre">🎓 Apprendre une notion en 2 minutes →</button>
+      <button type="button" class="nv-btn ghost" data-go="expert">🔬 Comprendre le pourquoi (expert) →</button>
+    </div>
+  </section>
+
+  <!-- ================= APPRENDRE ================= -->
+  <section class="nv-panel" role="tabpanel" id="p-apprendre" aria-labelledby="tab-apprendre" hidden>
+    <div class="nv-ph"><h2>Apprendre</h2><p>Une notion liée aux conditions du jour, puis une question pour vérifier.</p></div>
+    <section class="nv-card" id="card-apprendre">
+      <h2>🎓 Le point du jour</h2>
+      <p class="nv-body"><b data-source="learn" data-row="0" data-field="notion">—</b></p>
+      <p class="nv-body" data-source="learn" data-row="0" data-field="texte">—</p>
+      <h2>❓ Quiz</h2>
+      <p class="nv-body" data-source="learn" data-row="0" data-field="quiz">—</p>
+      <div class="nv-quiz" id="quiz-opts">
+        <button type="button" class="nv-opt" aria-pressed="false" data-opt="a"><b>A</b><span data-source="learn" data-row="0" data-field="choix_a">—</span></button>
+        <button type="button" class="nv-opt" aria-pressed="false" data-opt="b"><b>B</b><span data-source="learn" data-row="0" data-field="choix_b">—</span></button>
+        <button type="button" class="nv-opt" aria-pressed="false" data-opt="c"><b>C</b><span data-source="learn" data-row="0" data-field="choix_c">—</span></button>
+      </div>
+      <div class="nv-qa">
+        <button type="button" class="nv-btn" id="quiz-ok" disabled>Valider</button>
+        <button type="button" class="nv-btn ghost" id="quiz-again" hidden>Recommencer</button>
+        <span class="nv-note" id="quiz-hint">Choisis une réponse, puis valide.</span>
+      </div>
+      <div class="nv-res" id="quiz-res" hidden aria-live="polite">
+        <span class="nv-res-t" id="quiz-res-t"></span>
+        <p class="nv-body" data-source="learn" data-row="0" data-field="explication">—</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= EXPERT ================= -->
+  <section class="nv-panel" role="tabpanel" id="p-expert" aria-labelledby="tab-expert" hidden>
+    <div class="nv-ph"><h2>Espace expert</h2><p>Le raisonnement complet derrière les couleurs : méthode CRISTAL d'Alain Duclos, orientations, météo détaillée, historique et bulletins officiels.</p></div>
+    <nav class="nv-sub" aria-label="Sections expert">
+      <button type="button" data-jump="x-synthese">Synthèse</button>
+      <button type="button" data-jump="x-zones">Zones</button>
+      <button type="button" data-jump="card-cristal">CRISTAL</button>
+      <button type="button" data-jump="card-roses">Pentes</button>
+      <button type="button" data-jump="x-meteo">Météo</button>
+      <button type="button" data-jump="x-saison">Saison</button>
+      <button type="button" data-jump="x-bulletins">Bulletins</button>
+      <button type="button" data-jump="x-reperes">Repères</button>
+    </nav>
+
+    <section class="nv-card" id="x-synthese">
+      <h2>Synthèse technique <span class="nv-pill" id="nv-pill-x" data-source="status" data-row="0" data-field="label">—</span></h2>
+      <p class="nv-body nv-xsum" id="nv-take-x" data-source="status" data-row="0" data-field="summary">—</p>
+      <div class="nv-bub nv-bub-x" aria-label="Indicateurs">
+        <div class="nv-b" style="--bc:#8d6fd1"><span class="nv-b-ic" aria-hidden="true">🧭</span><div class="nv-b-t"><span class="nv-b-l">Faces à éviter</span><span class="nv-b-v" data-source="status" data-row="0" data-field="avoid">—</span></div></div>
+        <div class="nv-b" style="--bc:#5b8fc7"><span class="nv-b-ic" aria-hidden="true">⏱️</span><div class="nv-b-t"><span class="nv-b-l">Dernière surcharge</span><span class="nv-b-big"><span data-source="status" data-row="0" data-field="overload_age_d">—</span><small>jours</small></span></div></div>
+        <div class="nv-b" style="--bc:#2f9e6e"><span class="nv-b-ic" aria-hidden="true">🗺️</span><div class="nv-b-t"><span class="nv-b-l">Modes CRISTAL</span><div class="nv-cnt" id="zone-count" data-source="zone_counts"></div></div></div>
+        <div class="nv-b wide" style="--bc:#e08a1e"><span class="nv-b-ic" aria-hidden="true">👀</span><div class="nv-b-t"><span class="nv-b-l">À surveiller (24-48 h)</span><span class="nv-b-v" data-source="status" data-row="0" data-field="watch">—</span></div></div>
+      </div>
+      <p class="nv-body"><b>Terrain : </b><span data-source="status" data-row="0" data-field="terrain">—</span></p>
+    </section>
+
+    <section class="nv-card" id="x-zones">
+      <h2>Zones : mode de vigilance CRISTAL</h2>
+      <p class="nv-note">Mode minimal pour les pentes de plus de 30°, déduit des 6 critères ci-dessous. Détendu 🟢 · Méfiant ou Alerté 🟠 · Hasardeux 🔴.</p>
+      <ul class="nv-zl nv-zl-x dash-skeleton" id="zone-list-x" data-source="zones"></ul>
+    </section>
+
+    <section class="nv-card" id="card-cristal">
+      <h2>Les 6 critères CRISTAL, zone par zone</h2>
+      <p class="nv-note">Démarche d'Alain Duclos (data-avalanche.org). Chaque point dit si le critère est présent dans la zone. Plus une zone a de points orange ou rouges, plus son mode de vigilance monte. Touche un point pour l'explication.</p>
+      <div class="nv-banner" id="cristal-banner" hidden>Le bilan du jour donne encore une seule évaluation pour tout le massif : elle est répétée dans chaque zone.</div>
+      <div class="nv-mx-wrap"><div class="nv-mx dash-skeleton" id="cristal" data-source="cristal zones"></div></div>
+      <div class="nv-mx-why" id="cristal-why" aria-live="polite"></div>
+      <div class="nv-leg"><span><i class="nv-sw" style="background:var(--nv-ok)"></i>Rien à signaler</span><span><i class="nv-sw" style="background:var(--nv-warn)"></i>Préoccupant</span><span><i class="nv-sw" style="background:var(--nv-bad)"></i>Critique</span><span><i class="nv-sw" style="background:var(--cds-chart-muted)"></i>Inconnu</span></div>
+    </section>
+
+    <section class="nv-card" id="card-roses">
+      <h2>Rose des pentes, zone par zone</h2>
+      <p class="nv-note">Orientations suspectes dans chaque zone, selon l'altitude. Déduites de la neige et du vent récents : hypothèse à vérifier sur place. Touche une zone pour le détail par tranche d'altitude.</p>
+      <div class="nv-banner" id="rose-banner" hidden>Le bilan du jour évalue les pentes par altitude pour tout le massif : chaque zone reprend ici les tranches d'altitude qu'elle couvre.</div>
+      <div class="nv-rzs dash-skeleton" id="rose-zones" data-source="rose zones"></div>
+      <div class="nv-rd-h"><strong id="rose-title">—</strong><span class="nv-note" id="rose-sub"></span></div>
+      <div class="nv-box nv-roses dash-skeleton" id="ch-roses" data-source="rose faces"></div>
+      <div class="nv-leg" id="rose-leg"></div>
+    </section>
+
+    <h3 class="nv-sec" id="x-meteo">Météo détaillée <span class="nv-lvl">Météo-France</span></h3>
+    <section class="nv-kpis" id="nv-kpis" aria-label="Chiffres clés">
+      <div class="nv-card"><span class="nv-kpi-l">Limite pluie-neige la plus basse</span><span class="nv-kpi-v"><span data-source="kpi" data-row="0" data-field="snow_min">—</span><small>m</small></span><p class="nv-note">Sur les deux jours prévus</p></div>
+      <div class="nv-card"><span class="nv-kpi-l">Vent max à 4000 m</span><span class="nv-kpi-v"><span data-source="kpi" data-row="0" data-field="wind_max">—</span><small>km/h</small></span><p class="nv-note">Sur les deux jours prévus</p></div>
+      <div class="nv-card"><span class="nv-kpi-l">Neige fraîche à 4000 m</span><span class="nv-kpi-v">≈ <span data-source="kpi" data-row="0" data-field="fresh_4000">—</span><small>cm</small></span><p class="nv-note">Cumul indicatif sur les deux jours</p></div>
+      <div class="nv-card"><span class="nv-kpi-l">Neige fraîche à 2000 m</span><span class="nv-kpi-v">≈ <span data-source="kpi" data-row="0" data-field="fresh_2000">—</span><small>cm</small></span><p class="nv-note">Cumul indicatif sur les deux jours</p></div>
+    </section>
+    <div class="nv-grid">
+      <div class="nv-card" id="card-vent"><h2>Vent à 2000 et 4000 m</h2><p class="nv-note">Km/h. Flèche : sens où va le vent à 4000 m. Pointillés : la neige commence à être transportée vers 20-30 km/h, loin des crêtes vers 60 km/h.</p><div class="nv-box dash-skeleton" id="ch-vent" data-source="forecast" style="min-height:240px"></div></div>
+      <div class="nv-card" id="card-temp"><h2>Température par altitude</h2><p class="nv-note">Degrés Celsius, par période de la journée. Pointillés : 0 °C.</p><div class="nv-box dash-skeleton" id="ch-temp" data-source="forecast" style="min-height:240px"></div></div>
+      <div class="nv-card" id="card-limite"><h2>Limite pluie-neige</h2><p class="nv-note">Altitude en mètres. Au-dessus, il neige.</p><div class="nv-box dash-skeleton" id="ch-limite" data-source="forecast" style="min-height:200px"></div></div>
+      <div class="nv-card" id="card-neige"><h2>Neige fraîche prévue</h2><p class="nv-note">Centimètres par période. Valeurs indicatives du bulletin.</p><div class="nv-box dash-skeleton" id="ch-neige" data-source="forecast" style="min-height:200px"></div><div class="nv-leg"><span><i class="nv-sw" id="sw-n2000"></i>2000 m</span><span><i class="nv-sw" id="sw-n4000"></i>4000 m</span></div></div>
+      <div class="nv-card" id="card-tendance"><h2>Tendance à 6 jours</h2><p class="nv-note">Températures mini et maxi prévues en vallée. Confiance quand la source la donne.</p><div class="nv-box dash-skeleton" id="ch-tendance" data-source="trend" style="min-height:280px"></div></div>
+    </div>
+
+    <h3 class="nv-sec" id="x-saison">Saison et journal <span class="nv-lvl">historique</span></h3>
+    <div class="nv-grid">
+      <div class="nv-card"><h2>Vent max à 4000 m</h2><p class="nv-note">Km/h, par jour</p><div class="nv-box dash-skeleton" id="se-vent" data-source="history" style="min-height:150px"></div></div>
+      <div class="nv-card"><h2>Limite pluie-neige la plus basse</h2><p class="nv-note">Mètres, par jour</p><div class="nv-box dash-skeleton" id="se-limite" data-source="history" style="min-height:150px"></div></div>
+      <div class="nv-card"><h2>Neige fraîche à 4000 m</h2><p class="nv-note">Centimètres prévus, par jour</p><div class="nv-box dash-skeleton" id="se-neige" data-source="history" style="min-height:150px"></div></div>
+    </div>
+    <section class="nv-card" id="card-journal">
+      <h2>Journal de saison</h2>
+      <div class="nv-wrap">
+        <table id="tb-journal" data-source="history" data-row-key="jour">
+          <thead><tr><th data-field="jour">Jour</th><th data-field="neige_fraiche">Neige fraîche</th><th data-field="vent">Vent</th><th data-field="faces">Faces chargées</th><th data-field="problemes">Problèmes</th><th data-field="observations">Observations</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <h3 class="nv-sec" id="x-bulletins">Bulletins officiels et limites</h3>
+    <div class="nv-two">
+      <div class="nv-card"><h2>Bulletin BERA Mont-Blanc</h2><p class="nv-body" data-source="status" data-row="0" data-field="bera">—</p></div>
+      <div class="nv-card"><h2>Bulletin SLF 4111 Emosson</h2><p class="nv-body" data-source="status" data-row="0" data-field="slf">—</p></div>
+    </div>
+
+    <h3 class="nv-sec" id="x-reperes">Repères et méthode <span class="nv-lvl">pour aller plus loin</span></h3>
+    <div class="nv-rep">
+      <section class="nv-card full" id="x-echelle">
+        <h2>L'échelle européenne de danger d'avalanche</h2>
+        <p class="nv-note">C'est l'échelle des bulletins officiels (BERA en France, SLF en Suisse). Elle décrit le danger pour une région entière, pas pour une pente précise. Elle est distincte des couleurs de cette page, qui sont une estimation par zone.</p>
+        <ul class="nv-sc">
+          <li><i style="background:#CCFF66">1</i><b>Faible</b><span>Neige bien stabilisée presque partout. Un déclenchement n'est possible qu'avec une forte surcharge, dans quelques pentes extrêmes. Les départs spontanés sont très improbables.</span></li>
+          <li><i style="background:#FFFF00">2</i><b>Limité</b><span>Neige stabilisée dans la plupart des pentes, mais quelques pentes raides, précisées dans le bulletin, restent fragiles. Déclenchement possible surtout avec une forte surcharge. Pas de grosses avalanches spontanées attendues.</span></li>
+          <li><i style="background:#FF9900">3</i><b>Marqué</b><span>Neige modérément à faiblement stabilisée dans de nombreuses pentes raides. Un déclenchement est possible avec une faible surcharge, et des départs spontanés de taille moyenne, voire grosse, sont envisageables. C'est le niveau où se produisent le plus d'accidents.</span></li>
+          <li><i style="background:#FF0000;color:#fff">4</i><b>Fort</b><span>Neige faiblement stabilisée dans la plupart des pentes raides. Déclenchement probable même avec une faible surcharge, et départs spontanés fréquents. Les sorties hors des pentes faciles et protégées sont à éviter.</span></li>
+          <li><i style="background:#111;color:#fff">5</i><b>Très fort</b><span>Instabilité généralisée, avec de nombreuses grosses avalanches spontanées, y compris en terrain peu raide. On reste dans les zones sûres, souvent bien en dessous des départs.</span></li>
+        </ul>
+      </section>
+
+      <section class="nv-card" id="x-avant">
+        <h2>Préparer sa sortie</h2>
+        <p class="nv-note">La veille et le matin, avant de partir.</p>
+        <ul class="nv-ck">
+          <li>Lire le bulletin officiel en entier (le niveau, mais aussi les situations typiques, les pentes et les altitudes concernées).</li>
+          <li>Regarder la météo des dernières 48 heures : neige tombée, vent, pluie, hausse de température.</li>
+          <li>Choisir un itinéraire et un plan de repli moins exposé si les conditions sont pires que prévu.</li>
+          <li>Partir avec des compagnons qui savent se servir du matériel, et décider à l'avance qui décide d'arrêter.</li>
+          <li>Vérifier le DVA (émission et réception), la pelle, la sonde et la batterie du téléphone.</li>
+        </ul>
+      </section>
+
+      <section class="nv-card" id="x-pendant">
+        <h2>Observer sur le terrain</h2>
+        <p class="nv-note">Les signaux qui font changer de plan.</p>
+        <ul class="nv-ck no">
+          <li>Avalanches récentes autour de soi, même petites.</li>
+          <li>Bruits de « whoumf » ou fissures qui partent du ski ou des pas.</li>
+          <li>Accumulations de neige soufflée sur les crêtes et dans les combes, surtout si elles sont lisses ou rondes.</li>
+          <li>Neige qui devient lourde et mouillée, ou pluie en cours, avec la montée du redoux.</li>
+          <li>Un doute qu'on n'arrive pas à lever : il vaut mieux faire demi-tour.</li>
+        </ul>
+      </section>
+
+      <section class="nv-card" id="x-gestes">
+        <h2>Les bons gestes dans les pentes</h2>
+        <ul class="nv-ck">
+          <li>Dans une pente raide, un seul à la fois, les autres regardent depuis un endroit sûr.</li>
+          <li>Garder des distances entre les personnes à la montée comme à la descente.</li>
+          <li>Éviter les pièges de terrain : couloirs, combes, ruptures de pente, dessous de corniches.</li>
+          <li>Choisir les orientations et les altitudes les moins chargées, et rester sur les pentes moins raides si le doute est grand.</li>
+          <li>S'arrêter dans des endroits abrités, pas au pied d'une pente raide.</li>
+        </ul>
+      </section>
+
+      <section class="nv-card" id="x-secours">
+        <h2>En cas d'avalanche</h2>
+        <ul class="nv-ck">
+          <li>Observer le point de disparition et ne pas perdre de vue la zone.</li>
+          <li>Passer tous les DVA en mode recherche, et chercher d'abord à vue et à l'oreille.</li>
+          <li>Alerter : 112 depuis la France ou la Suisse, et la Rega au 1414 en Suisse.</li>
+          <li>Localiser avec le DVA, sonder au point précis, puis dégager à la pelle en commençant par la tête.</li>
+          <li>Les 15 premières minutes sont décisives : la rapidité du compagnon est le premier secours.</li>
+        </ul>
+        <div class="nv-warnbox">Ce tableau de bord n'est pas une formation. Un stage avalanche encadré et l'entraînement régulier au DVA restent indispensables.</div>
+      </section>
+
+      <section class="nv-card full" id="x-problemes">
+        <h2>Les grandes situations avalancheuses</h2>
+        <p class="nv-note">Les bulletins parlent de « problèmes typiques ». Voici comment les reconnaître et quoi faire.</p>
+        <div class="nv-ac">
+          <details open><summary>Neige fraîche</summary><div><p>Une couche de neige récente repose sur un fond qui ne l'a pas encore accrochée. Le danger monte avec la quantité tombée et la vitesse de la chute.</p><p>Conduite : attendre que la neige se tasse, éviter les pentes raides pendant et juste après la chute, préférer les pentes plus douces.</p></div></details>
+          <details><summary>Neige ventée et plaques à vent</summary><div><p>Le vent déplace la neige et la dépose sous les crêtes et dans les combes, côté sous le vent. Elle forme des plaques dures et mal accrochées, qui partent d'un seul bloc.</p><p>Conduite : repérer le sens du vent, éviter les pentes sous le vent, surveiller les formes lisses, arrondies ou matelassées sous les crêtes.</p></div></details>
+          <details><summary>Couche fragile persistante</summary><div><p>Une couche de neige peu cohésive reste cachée sous la neige plus récente pendant des jours ou des semaines. Les signes extérieurs sont rares et le piège dure longtemps.</p><p>Conduite : rester prudent plus longtemps après une chute, et se méfier des départs à distance et des « whoumf ».</p></div></details>
+          <details><summary>Neige humide et avalanches de fonte</summary><div><p>La chaleur, la pluie ou le rayonnement mouillent le manteau neigeux, qui perd en cohésion au fil de la journée. Les coulées se déclenchent surtout dans l'après-midi et sur les pentes ensoleillées.</p><p>Conduite : partir tôt, rentrer avant le grand redoux, éviter de passer sous les pentes en cours de réchauffement.</p></div></details>
+          <details><summary>Avalanches de glissement</summary><div><p>Tout le manteau glisse sur le sol, surtout sur des dalles herbeuses ou rocheuses lisses. Elles sont difficiles à prévoir, et des gerces ou fissures en amont sont un signe.</p><p>Conduite : ne pas s'arrêter ni passer en dessous des fissures et des zones qui glissent.</p></div></details>
+        </div>
+      </section>
+
+      <section class="nv-card full" id="x-cristal-methode">
+        <h2>Comment lire les modes CRISTAL</h2>
+        <p class="nv-body">La démarche d'Alain Duclos regarde six critères sur le terrain : plus il y en a d'orange ou de rouge pour une zone, plus le mode de vigilance monte.</p>
+        <div class="nv-ac">
+          <details><summary>Détendu (vert)</summary><div><p>Peu de signaux inquiétants. On peut skier de façon normale en gardant les gestes de base : un par un, matériel complet, observation continue.</p></div></details>
+          <details><summary>Méfiant ou Alerté (orange)</summary><div><p>Des signaux sont présents. On choisit ses pentes avec soin, on évite les orientations et altitudes suspectes et on garde une marge de sécurité.</p></div></details>
+          <details><summary>Hasardeux (rouge)</summary><div><p>Plusieurs critères sont critiques. On renonce aux pentes raides au profit d'un terrain plus facile ou d'un autre objectif.</p></div></details>
+        </div>
+        <p class="nv-note">Cette page applique la méthode à partir de sources publiques : c'est une hypothèse à vérifier sur place, qui ne remplace pas votre propre observation.</p>
+      </section>
+
+      <section class="nv-card full" id="x-glossaire">
+        <h2>Glossaire</h2>
+        <dl class="nv-gl">
+          <div><dt>Plaque à vent</dt><dd>Neige soufflée et tassée par le vent, qui forme une plaque cohérente pouvant se détacher d'un bloc.</dd></div>
+          <div><dt>Couche fragile</dt><dd>Couche du manteau neigeux peu cohésive, sur laquelle une plaque peut glisser.</dd></div>
+          <div><dt>Surcharge</dt><dd>Poids ajouté sur le manteau : un skieur seul est une faible surcharge, un groupe ou une chute en est une forte.</dd></div>
+          <div><dt>Déclenchement à distance</dt><dd>Avalanche qui part sans passer dans la pente, parfois à plusieurs dizaines de mètres.</dd></div>
+          <div><dt>Départ spontané</dt><dd>Avalanche qui se produit sans intervention humaine, sous l'effet de la neige, du vent ou de la chaleur.</dd></div>
+          <div><dt>Limite pluie-neige</dt><dd>Altitude au-dessus de laquelle les précipitations tombent en neige. En dessous, il pleut.</dd></div>
+          <div><dt>Isotherme 0 °C</dt><dd>Altitude où la température passe sous zéro. Quand elle monte, la neige se réchauffe et perd en cohésion.</dd></div>
+          <div><dt>Orientation</dt><dd>Direction vers laquelle une pente regarde (nord, sud, etc.). Elle joue sur le soleil et sur le vent reçus.</dd></div>
+          <div><dt>Purge</dt><dd>Avalanche de petite taille qui évacue la neige instable d'une pente.</dd></div>
+          <div><dt>Piège de terrain</dt><dd>Forme du relief qui aggrave les conséquences : couloir, combe, barre rocheuse, ruisseau.</dd></div>
+        </dl>
+      </section>
+    </div>
+    <div class="nv-card"><h2>Limites de ce bilan</h2><p class="nv-body" data-source="status" data-row="0" data-field="limits">—</p></div>
+    <p class="nv-note">Sources : Météo-France via chamonix.com, Meteoblue, BERA Mont-Blanc, SLF, data-avalanche.org, observations de terrain. Mise à jour chaque jour vers 17 h 36 (heure de Paris).</p>
+  </section>
+
+  <!-- ================= À PROPOS ================= -->
+  <section class="nv-panel" role="tabpanel" id="p-apropos" aria-labelledby="tab-apropos" hidden>
+    <div class="nv-ph"><h2>À propos de Nivo</h2><p>Le point neige et avalanche du jour, lisible en 30 secondes, et qui t'apprend à lire la montagne.</p></div>
+    <div class="nv-ab">
+      <section class="nv-card">
+        <h2>Ce que fait Nivo</h2>
+        <p>Chaque jour vers 17 h 30, Nivo rassemble les bulletins officiels (BERA Mont-Blanc de Météo-France, SLF pour la Suisse), deux modèles météo recoupés (Météo-France et Meteoblue), les avalanches observées sur data-avalanche.org et des observations de terrain.</p>
+        <p>Il en tire une couleur par zone, selon la démarche CRISTAL d'Alain Duclos, des conseils en langage simple, et une notion à apprendre avec un quiz.</p>
+      </section>
+      <section class="nv-card">
+        <h2>Ce que Nivo n'est pas</h2>
+        <p>Nivo n'est pas un bulletin officiel ni un avis de professionnel. Les couleurs sont une estimation automatique, produite par une IA (Claude) à partir de sources publiques, et elles peuvent être fausses.</p>
+        <p>Lis toujours le bulletin officiel, observe sur place, renonce en cas de doute. DVA, pelle, sonde, et jamais seul.</p>
+      </section>
+      <section class="nv-card">
+        <h2>Phase de test</h2>
+        <p>Nivo est testé pendant l'hiver 2026-2027 sur le massif du Mont-Blanc, par un petit groupe de pratiquants. Le but : vérifier si les bilans sont justes et utiles, avant d'en parler à des professionnels de la montagne.</p>
+        <p>Ton avis compte : est-ce que le bilan correspondait à ce que tu as vu sur le terrain ? Qu'est-ce qui est clair, qu'est-ce qui ne l'est pas ?</p>
+        <p class="nv-note">Le formulaire d'avis arrive bientôt. En attendant, envoie tes retours directement à la personne qui t'a partagé ce lien.</p>
+      </section>
+      <section class="nv-card">
+        <h2>Sources et crédits</h2>
+        <ul>
+          <li><a class="nv-link" href="https://meteofrance.com/meteo-montagne" target="_blank" rel="noopener">Météo-France</a> : prévisions montagne et bulletin d'estimation du risque d'avalanche (BERA)</li>
+          <li><a class="nv-link" href="https://www.slf.ch/fr/" target="_blank" rel="noopener">SLF</a> : bulletin d'avalanches suisse</li>
+          <li><a class="nv-link" href="https://www.meteoblue.com" target="_blank" rel="noopener">Meteoblue</a> : modèle météo</li>
+          <li><a class="nv-link" href="https://www.data-avalanche.org" target="_blank" rel="noopener">data-avalanche.org</a> : observations d'avalanches et démarche CRISTAL</li>
+          <li>Fond de carte : © swisstopo (Carte nationale)</li>
+          <li>Photo : Aiguille du Dru et Aiguille Verte, Alexandre Buisse, <a class="nv-link" href="https://commons.wikimedia.org/wiki/File:Aiguille_du_Dru_and_Aiguille_Verte_from_the_Montenvers,_Chamonix.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 3.0</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <p class="nv-foot">Les couleurs sont une estimation automatique (IA), pas un bulletin officiel. La décision se prend sur le terrain : DVA, pelle, sonde, et jamais seul.</p>
+</div>
+
+<script>window.NV_MAP_BG = 'img/carte.webp'; window.NV_HERO = 'img/hero.webp';</script>
+<script src="js/runtime.js"></script>
+<script>
+(function(){
+  var C = function(i){ return dash.colors[i]; };
+  var nf = new Intl.NumberFormat('fr-FR');
+  var DIRS = {S:'S', SO:'SO', NO:'NO'};
+
+  dash.calc('kpi', {
+    title: 'Chiffres clés de la prévision',
+    description: 'Extrêmes et cumuls de la prévision Météo-France sur les deux jours.',
+    inputs: ['forecast'],
+    fn: function(forecast){
+      var v = function(k){ return forecast.map(function(r){ return r[k]; }).filter(function(x){ return x != null; }); };
+      var mn = function(a){ return a.reduce(function(m, x){ return Math.min(m, x); }, Infinity); };
+      var mx = function(a){ return a.reduce(function(m, x){ return Math.max(m, x); }, -Infinity); };
+      var sm = function(a){ return a.reduce(function(s, x){ return s + x; }, 0); };
+      return [{snow_min: mn(v('snow_limit_m')), wind_max: mx(v('w4000')), fresh_4000: sm(v('fresh_4000')), fresh_2000: sm(v('fresh_2000'))}];
+    }
+  });
+
+  dash.calc('zone_counts', {
+    title: 'Zones par couleur',
+    description: 'Nombre de zones de référence dans chaque couleur du jour.',
+    inputs: ['zones'],
+    fn: function(zones){
+      var order = ['bad', 'warn', 'ok', 'off'], n = {};
+      zones.forEach(function(z){ n[z.level] = (n[z.level] || 0) + 1; });
+      return order.filter(function(l){ return n[l]; }).map(function(l){ return {level: l, n: n[l]}; });
+    }
+  });
+
+  dash.calc('meteo_simple', {
+    title: 'Météo simplifiée par jour',
+    description: 'Pour chaque jour de la prévision : vent le plus fort à 2000 et 4000 m, limite pluie-neige la plus basse et neige fraîche cumulée.',
+    inputs: ['forecast'],
+    fn: function(forecast){
+      var days = [];
+      forecast.forEach(function(r){ if (days.indexOf(r.day) < 0) days.push(r.day); });
+      return days.map(function(d){
+        var R = forecast.filter(function(r){ return r.day === d; });
+        var v = function(k){ return R.map(function(r){ return r[k]; }).filter(function(x){ return x != null; }); };
+        var mx = function(a){ return a.length ? Math.max.apply(null, a) : null; };
+        var mn = function(a){ return a.length ? Math.min.apply(null, a) : null; };
+        var sm = function(a){ return a.length ? a.reduce(function(s, x){ return s + x; }, 0) : null; };
+        var w4 = v('w4000'), top = R.filter(function(r){ return r.w4000 != null && r.w4000 === mx(w4); })[0];
+        return {day: d, wind2000_max: mx(v('w2000')), wind4000_max: mx(w4), dir4000: top ? top.d4000 : null,
+          snow_limit_min: mn(v('snow_limit_m')), fresh_2000: sm(v('fresh_2000')), fresh_4000: sm(v('fresh_4000')),
+          known: v('w4000').length > 0 || v('t2000').length > 0};
+      });
+    }
+  });
+
+  function ready(box, id){
+    var s = dash.data(id);
+    box.classList.toggle('dash-skeleton', s.status === 'loading');
+    if (s.status === 'ok' && s.data.length) return s.data;
+    box.replaceChildren();
+    if (s.status !== 'loading'){
+      var d = document.createElement('div'); d.className = 'nv-fail';
+      d.textContent = s.status === 'ok' ? 'Pas de données' : 'Failed to load';
+      box.appendChild(d);
+    }
+    return null;
+  }
+
+  function mkSvg(box, H){
+    var W = Math.max(box.clientWidth, 240);
+    box.replaceChildren();
+    var svg = d3.select(box).append('svg').attr('width', '100%').attr('height', H).attr('viewBox', '0 0 ' + W + ' ' + H).style('display', 'block');
+    return {svg: svg, W: W};
+  }
+
+  function addTip(box, svg, zones){
+    var tip = document.createElement('div'); tip.className = 'nv-tip'; tip.hidden = true; box.appendChild(tip);
+    var g = svg.append('g');
+    function show(ev, z){
+      tip.replaceChildren();
+      var t = document.createElement('div'); t.className = 'nv-tip-t'; t.textContent = z.title; tip.appendChild(t);
+      z.lines.forEach(function(l){
+        var r = document.createElement('div'); r.className = 'nv-tip-r';
+        if (l[0]){ var s = document.createElement('i'); s.className = 'nv-sw'; s.style.background = l[0]; r.appendChild(s); }
+        var tx = document.createElement('span'); tx.textContent = l[1]; r.appendChild(tx);
+        tip.appendChild(r);
+      });
+      tip.hidden = false;
+      var b = box.getBoundingClientRect();
+      var x = ev.clientX - b.left + 12, y = ev.clientY - b.top - tip.offsetHeight - 8;
+      tip.style.left = Math.max(0, Math.min(x, box.clientWidth - tip.offsetWidth)) + 'px';
+      tip.style.top = Math.max(0, y) + 'px';
+    }
+    zones.forEach(function(z){
+      g.append('rect').attr('x', z.x).attr('y', z.y).attr('width', z.w).attr('height', z.h).attr('fill', 'transparent')
+        .on('pointermove', function(ev){ show(ev, z); })
+        .on('pointerenter', function(ev){ show(ev, z); })
+        .on('pointerleave', function(){ tip.hidden = true; });
+    });
+  }
+
+  function spread(items, gap, lo, hi){
+    items.sort(function(a, b){ return a.y - b.y; });
+    for (var i = 1; i < items.length; i++) if (items[i].y - items[i-1].y < gap) items[i].y = items[i-1].y + gap;
+    var over = items.length ? items[items.length-1].y - hi : 0;
+    if (over > 0) items.forEach(function(it){ it.y -= over; });
+    items.forEach(function(it){ if (it.y < lo) it.y = lo; });
+  }
+
+  function lineChart(box, o){
+    var H = o.h, R = o.rows;
+    var f = mkSvg(box, H), svg = f.svg, W = f.W;
+    var m = {t: o.arrows ? 34 : 14, r: o.end === false ? 14 : 52, b: o.xl2 ? 40 : 26, l: o.l || 40};
+    var x = d3.scalePoint(R.map(function(r, i){ return i; }), [m.l + 14, W - m.r]);
+    var y = d3.scaleLinear(o.y, [H - m.b, m.t]);
+    svg.append('g').attr('transform', 'translate(' + m.l + ',0)').call(d3.axisLeft(y).ticks(o.ticks || 4).tickSize(-(W - m.l - m.r)).tickFormat(o.fmt || function(d){ return nf.format(d); }));
+    (o.refs || []).forEach(function(rf){
+      svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(rf.v)).attr('y2', y(rf.v)).attr('stroke', 'var(--cds-chart-reference)').attr('stroke-dasharray', '4 4');
+      if (rf.label) svg.append('text').attr('x', m.l + 4).attr('y', y(rf.v) - 4).text(rf.label);
+    });
+    R.forEach(function(r, i){
+      var lines = o.xl(r), t = svg.append('text').attr('text-anchor', 'middle').attr('x', x(i));
+      lines.forEach(function(s, j){ t.append('tspan').attr('x', x(i)).attr('y', H - m.b + 15 + j * 13).text(s); });
+    });
+    var ends = [];
+    o.series.forEach(function(s){
+      var line = d3.line().defined(function(d){ return d != null; }).x(function(d, i){ return x(i); }).y(function(d){ return y(d); }).curve(d3.curveLinear);
+      var vals = R.map(function(r){ return r[s.k]; });
+      svg.append('path').attr('d', line(vals)).attr('fill', 'none').attr('stroke', s.c).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
+      vals.forEach(function(v, i){ if (v != null) svg.append('circle').attr('cx', x(i)).attr('cy', y(v)).attr('r', 3).attr('fill', s.c); });
+      var li = -1; vals.forEach(function(v, i){ if (v != null) li = i; });
+      if (li >= 0) ends.push({y: y(vals[li]) + 4, x: x(li) + 8, name: s.name});
+    });
+    if (o.end !== false){
+      spread(ends, 13, m.t, H - m.b);
+      ends.forEach(function(e){ svg.append('text').attr('class', 'nv-strong').attr('x', e.x).attr('y', e.y).text(e.name); });
+    }
+    if (o.arrows){
+      R.forEach(function(r, i){
+        var v = r[o.arrows.k]; if (v == null) return;
+        var ang = (r[o.arrows.deg] + 180) % 360;
+        svg.append('g').attr('transform', 'translate(' + x(i) + ',' + (y(v) - 15) + ') rotate(' + ang + ')')
+          .append('path').attr('d', 'M0,-7 L5,5 L0,2.5 L-5,5 Z').attr('fill', 'var(--color-fg)').attr('opacity', .75);
+      });
+    }
+    var step = R.length > 1 ? x(1) - x(0) : W;
+    addTip(box, svg, R.map(function(r, i){
+      return {x: x(i) - step / 2, y: m.t, w: step, h: H - m.t - m.b, title: o.title(r), lines: o.series.filter(function(s){ return r[s.k] != null; }).map(function(s){ return [s.c, s.name + ' : ' + (o.tipFmt ? o.tipFmt(r[s.k]) : nf.format(r[s.k]))]; }).concat(o.extra ? o.extra(r) : [])};
+    }));
+  }
+
+  var xlF = function(r){ return [r.day, r.per]; };
+  var titleF = function(r){ return r.day + ' ' + r.per + ' · ' + r.sky; };
+
+  function barsFresh(box, R){
+    var H = 200, f = mkSvg(box, H), svg = f.svg, W = f.W, m = {t: 18, r: 12, b: 40, l: 34};
+    var x0 = d3.scaleBand(R.map(function(r, i){ return i; }), [m.l, W - m.r]).padding(.3);
+    var ks = [{k: 'fresh_2000', c: C(1), n: '2000 m'}, {k: 'fresh_4000', c: C(0), n: '4000 m'}];
+    var x1 = d3.scaleBand(ks.map(function(s){ return s.k; }), [0, x0.bandwidth()]).padding(.12);
+    var mx = d3.max(R, function(r){ return Math.max(r.fresh_2000 || 0, r.fresh_4000 || 0); }) || 10;
+    var y = d3.scaleLinear([0, mx * 1.15], [H - m.b, m.t]);
+    svg.append('g').attr('transform', 'translate(' + m.l + ',0)').call(d3.axisLeft(y).ticks(4).tickSize(-(W - m.l - m.r)).tickFormat(function(d){ return nf.format(d); }));
+    R.forEach(function(r, i){
+      var t = svg.append('text').attr('text-anchor', 'middle');
+      [r.day, r.per].forEach(function(s, j){ t.append('tspan').attr('x', x0(i) + x0.bandwidth() / 2).attr('y', H - m.b + 15 + j * 13).text(s); });
+      ks.forEach(function(s){
+        var v = r[s.k]; if (v == null) return;
+        var bx = x0(i) + x1(s.k), bh = Math.max(y(0) - y(v), v > 0 ? 2 : 0);
+        svg.append('rect').attr('x', bx).attr('y', y(0) - bh).attr('width', x1.bandwidth()).attr('height', bh).attr('rx', 4).attr('fill', s.c);
+        svg.append('text').attr('class', 'nv-strong').attr('text-anchor', 'middle').attr('x', bx + x1.bandwidth() / 2).attr('y', y(v) - 4).text(nf.format(v));
+      });
+    });
+    addTip(box, svg, R.map(function(r, i){
+      return {x: x0(i) - 4, y: m.t, w: x0.bandwidth() + 8, h: H - m.t - m.b, title: r.day + ' ' + r.per, lines: ks.filter(function(s){ return r[s.k] != null; }).map(function(s){ return [s.c, s.n + ' : ' + nf.format(r[s.k]) + ' cm']; })};
+    }));
+  }
+
+  function compass(box, R){
+    var H = 280, f = mkSvg(box, H), svg = f.svg, W = f.W, cx = W / 2, cy = H / 2, ro = Math.min(W / 2 - 30, H / 2 - 26), ri = ro * .38;
+    var g = svg.append('g').attr('transform', 'translate(' + cx + ',' + cy + ')');
+    var alpha = [.16, .5, 1];
+    var zones = [];
+    R.forEach(function(r){
+      var a0 = (r.deg - 21) * Math.PI / 180, a1 = (r.deg + 21) * Math.PI / 180;
+      var arc = d3.arc().innerRadius(ri).outerRadius(ro).startAngle(a0).endAngle(a1).cornerRadius(4);
+      g.append('path').attr('d', arc()).attr('fill', r.level > 0 ? C(0) : 'var(--cds-chart-muted)').attr('opacity', alpha[Math.min(r.level, 2)]);
+      var lr = ro + 14, ar = r.deg * Math.PI / 180;
+      g.append('text').attr('class', 'nv-strong').attr('text-anchor', 'middle').attr('dominant-baseline', 'middle').attr('x', Math.sin(ar) * lr).attr('y', -Math.cos(ar) * lr).text(r.face);
+      var mid = (ri + ro) / 2;
+      zones.push({x: cx + Math.sin(ar) * mid - 28, y: cy - Math.cos(ar) * mid - 28, w: 56, h: 56, title: 'Face ' + r.face, lines: [[null, r.level > 1 ? 'Plusieurs épisodes de vent compatibles' : r.level > 0 ? 'Un épisode faible' : 'Pas de charge identifiée'], [null, r.why]]});
+    });
+    g.append('text').attr('text-anchor', 'middle').attr('y', -2).text('Faces');
+    g.append('text').attr('text-anchor', 'middle').attr('y', 12).text('chargées ?');
+    addTip(box, svg, zones);
+  }
+
+  function trendChart(box, R){
+    var H = 280, f = mkSvg(box, H), svg = f.svg, W = f.W, m = {t: 22, r: 12, b: 44, l: 34};
+    var x = d3.scaleBand(R.map(function(r, i){ return i; }), [m.l, W - m.r]).padding(.35);
+    var y = d3.scaleLinear([Math.min(-2, d3.min(R, function(r){ return r.tmin; }) - 2), d3.max(R, function(r){ return r.tmax; }) + 3], [H - m.b, m.t]);
+    svg.append('g').attr('transform', 'translate(' + m.l + ',0)').call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat(function(d){ return d + '°'; }));
+    svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0)).attr('stroke', 'var(--cds-chart-reference)').attr('stroke-dasharray', '4 4');
+    var bw = Math.min(x.bandwidth(), 26);
+    R.forEach(function(r, i){
+      var cxp = x(i) + x.bandwidth() / 2;
+      svg.append('rect').attr('x', cxp - bw / 2).attr('y', y(r.tmax)).attr('width', bw).attr('height', Math.max(y(r.tmin) - y(r.tmax), 3)).attr('rx', 5).attr('fill', C(0));
+      svg.append('text').attr('class', 'nv-strong').attr('text-anchor', 'middle').attr('x', cxp).attr('y', y(r.tmax) - 5).text(r.tmax + '°');
+      svg.append('text').attr('text-anchor', 'middle').attr('x', cxp).attr('y', y(r.tmin) + 14).text(r.tmin + '°');
+      var t = svg.append('text').attr('text-anchor', 'middle');
+      t.append('tspan').attr('x', cxp).attr('y', H - m.b + 16).text(r.day.replace(' ', ' '));
+      t.append('tspan').attr('x', cxp).attr('y', H - m.b + 30).text(r.conf != null ? 'conf. ' + r.conf + '/5' : '');
+    });
+    addTip(box, svg, R.map(function(r, i){
+      return {x: x(i) - 4, y: m.t, w: x.bandwidth() + 8, h: H - m.t - m.b, title: r.day, lines: [[C(0), r.tmin + '° à ' + r.tmax + '°'], [null, r.conf != null ? 'Confiance ' + r.conf + '/5' : 'Confiance non indiquée']]};
+    }));
+  }
+
+  /* ---------- Niveau 1 : carte schématique et liste des zones ---------- */
+  var LV = {ok: '#00D856', warn: '#FF8C00', bad: '#FF1E3C', off: '#9AA3AD'};
+  var LV_INK = {ok: '#03200d', warn: '#251200', bad: '#ffffff', off: '#14181c'};
+  function normLevel(v){ v = String(v == null ? '' : v).toLowerCase(); if (/^(ok|vert|green|detendu|détendu|calme|bon)/.test(v)) return 'ok'; if (/^(warn|orange|jaune|yellow|vigil|mefi|méfi|alert|prud)/.test(v)) return 'warn'; if (/^(bad|rouge|red|hasard|danger|crit)/.test(v)) return 'bad'; return 'off'; }
+  var LV_TXT = {ok: 'Détendu', warn: 'Vigilance', bad: 'Hasardeux', off: 'Hors saison / pas de neige'};
+  var SIMPLE = {ok: 'Peu de signes de danger', warn: 'Prudence', bad: 'Déconseillé', off: 'Pas de neige'};
+  var DOT = {ok: '🟢', warn: '🟠', bad: '🔴', off: '⚪'};
+  var zNum = function(id){ return String(id).replace(/^Z/, ''); };
+  // Contours des zones (km depuis le coin nord-ouest du fond de carte : 46,119 N / 6,780 E à 45,830 N / 7,069 E)
+  var ZGEO = {
+    Z1: {x: 12.8, y: 5.0, rx: 3.5, ry: 2.8, rot: 0},
+    Z2: {x: 7.1, y: 17.2, rx: 5.2, ry: 2.6, rot: -45},
+    Z3: {x: 10.0, y: 26.9, rx: 3.6, ry: 3.2, rot: 0},
+    Z4: {x: 17.4, y: 19.6, rx: 3.0, ry: 2.4, rot: -20},
+    Z5: {x: 16.7, y: 13.6, rx: 2.6, ry: 2.3, rot: 0}
+  };
+  var GW = 22.4, GH = 32.2;
+  var selected = null;
+  // Altitudes couvertes par chaque zone (m) : sert à savoir quelles tranches d'altitude la concernent
+  var ZALT = {Z1: [1200, 2800], Z2: [1900, 2965], Z3: [1900, 3842], Z4: [1250, 3900], Z5: [1450, 3540]};
+  var ZSHORT = {Z1: 'Émosson', Z2: 'Aig. Rouges', Z3: 'Midi', Z4: 'Argentière', Z5: 'Le Tour'};
+  var LV_RANK = {bad: 0, warn: 1, ok: 2, off: 3};
+
+  // Lit d'abord ce que la page « Mes zones » a transmis (colonnes de la donnée), sinon les valeurs d'origine
+  function zRow(id){ return zoneList().filter(function(z){ return z.id === id; })[0] || {}; }
+  function zAlt(id){ var z = zRow(id); return (z.alt_min != null && z.alt_max != null) ? [+z.alt_min, +z.alt_max] : ZALT[id]; }
+  function zShort(z){ return z.short || ZSHORT[z.id] || z.zone; }
+  var BOXLL = {w: 6.7796, e: 7.0694, n: 46.1193, s: 45.8297};
+  function merc(lat){ return Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360)); }
+  function zGeo(z){
+    if (z.lat != null && z.lon != null){
+      var x = (+z.lon - BOXLL.w) / (BOXLL.e - BOXLL.w) * GW, y = (merc(+z.lat) - merc(BOXLL.n)) / (merc(BOXLL.s) - merc(BOXLL.n)) * GH;
+      if (x < 0 || x > GW || y < 0 || y > GH) return null;
+      return {x: x, y: y, rx: +z.rx_km || 2.5, ry: +z.ry_km || 2, rot: +z.rot || 0};
+    }
+    return ZGEO[z.id] || null;
+  }
+
+  function bandCat(b){ b = String(b || ''); return /</.test(b) ? 'low' : />/.test(b) ? 'high' : 'mid'; }
+  function zoneCats(id){
+    var r = zAlt(id); if (!r) return ['low', 'mid', 'high'];
+    var out = [];
+    if (r[0] < 2000) out.push('low');
+    if (r[0] < 3000 && r[1] > 2000) out.push('mid');
+    if (r[1] > 3000) out.push('high');
+    return out;
+  }
+  function zoneList(){ var d = dash.data('zones'); if (d.status !== 'ok') return []; d.data.forEach(function(z){ z.level = normLevel(z.level); }); return d.data; }
+  function focusZone(){
+    if (selected) return selected;
+    var Z = zoneList().slice().sort(function(a, b){ return (LV_RANK[a.level] == null ? 9 : LV_RANK[a.level]) - (LV_RANK[b.level] == null ? 9 : LV_RANK[b.level]); });
+    return Z.length ? Z[0].id : 'Z1';
+  }
+
+  function selectZone(id, keep){
+    selected = keep ? id : (selected === id ? null : id);
+    document.querySelectorAll('[data-zone]').forEach(function(el){ el.classList.toggle('on', el.dataset.zone === selected); });
+    drawZoneViews();
+  }
+
+  /* Surlignage des points clés : ne change pas le texte, ajoute seulement des <mark> */
+  var HLW = new RegExp([
+    '(?<bad>\\b(?:hasardeu(?:x|se)|critiques?|alerté(?:e|s)?|très suspectes?|danger (?:fort|marqué))\\b)',
+    '(?<warn>\\b(?:méfiant(?:e|s)?|vigilance|surcharges?|plaques?(?: à vent)?|accumulations?|congères?|corniches?|couches? fragiles?|préoccupant(?:e|s)?|instables?|suspectes?|vent fort|neige (?:fraîche|ventée|soufflée))\\b)',
+    '(?<off>\\b(?:hors saison|pas de neige(?: skiable)?|aucun bulletin(?: publié)?)\\b)',
+    '(?<ok>\\b(?:détendu(?:e|s)?|rien à signaler|faible)\\b)'
+  ].join('|'), 'gi');
+  var HLS = new RegExp([
+    '(?<alt>(?:[<>≥≤]\\s?)?\\d{1,2}[\\s\\u00a0\\u202f]?\\d{3}(?:\\s?[–-]\\s?\\d{1,2}[\\s\\u00a0\\u202f]?\\d{3})?\\s?m\\b)',
+    '(?<face>(?:[Ff]aces?\\s+)?\\b(?:NE|NO|SE|SO|N|E|S|O|nord(?:-est|-ouest)?|sud(?:-est|-ouest)?)\\b(?![\\u2019\\x27])(?:\\s?(?:,|à|et|-|–|/)\\s?\\b(?:NE|NO|SE|SO|N|E|S|O|nord(?:-est|-ouest)?|sud(?:-est|-ouest)?|est|ouest)\\b)*)'
+  ].join('|'), 'g');
+  function hlMatches(text){
+    var out = [];
+    [HLW, HLS].forEach(function(re){
+      re.lastIndex = 0; var m;
+      while ((m = re.exec(text))){
+        if (!m[0]){ re.lastIndex++; continue; }
+        var k = Object.keys(m.groups).filter(function(g){ return m.groups[g] != null; })[0];
+        out.push({i: m.index, j: m.index + m[0].length, k: k});
+      }
+    });
+    out.sort(function(a, b){ return a.i - b.i || (b.j - b.i) - (a.j - a.i); });
+    var kept = [], end = -1;
+    out.forEach(function(o){ if (o.i >= end){ kept.push(o); end = o.j; } });
+    return kept;
+  }
+  function rich(el, text){
+    el.replaceChildren();
+    if (text == null || text === ''){ el.textContent = '—'; return; }
+    text = String(text); var last = 0;
+    hlMatches(text).forEach(function(o){
+      if (o.i > last) el.appendChild(document.createTextNode(text.slice(last, o.i)));
+      var mk = document.createElement('mark'); mk.className = 'hl-' + o.k; mk.textContent = text.slice(o.i, o.j); el.appendChild(mk);
+      last = o.j;
+    });
+    if (last < text.length) el.appendChild(document.createTextNode(text.slice(last)));
+  }
+  function richSentences(el, text){
+    el.replaceChildren();
+    if (text == null || text === ''){ el.textContent = '—'; return; }
+    var parts = String(text).match(/[^.!?]+(?:[.!?]+(?:\s+|$)|$)/g) || [String(text)];
+    parts.forEach(function(p){ var sp = document.createElement('span'); sp.className = 'nv-sent'; rich(sp, p); el.appendChild(sp); });
+  }
+
+  function drawMap(box, Z){
+    var W = Math.max(box.clientWidth, 260);
+    var s = W / GW, H = Math.round(GH * s);
+    box.style.minHeight = H + 'px';
+    box.replaceChildren();
+    var svg = d3.select(box).append('svg').attr('width', '100%').attr('height', H).attr('viewBox', '0 0 ' + W + ' ' + H);
+    var P = function(p){ return [p[0] * s, p[1] * s]; };
+    if (window.NV_MAP_BG) svg.append('image').attr('href', window.NV_MAP_BG).attr('x', 0).attr('y', 0).attr('width', W).attr('height', H).attr('preserveAspectRatio', 'none');
+    var byId = {}; Z.forEach(function(z){ byId[z.id] = z; });
+    var tip = document.createElement('div'); tip.className = 'nv-tip'; tip.hidden = true; box.appendChild(tip);
+    function show(ev, z){
+      tip.replaceChildren();
+      var t = document.createElement('div'); t.className = 'nv-tip-t'; t.textContent = zNum(z.id) + ' · ' + z.zone; tip.appendChild(t);
+      [[LV[z.level], SIMPLE[z.level] || ''], [null, z.simple || z.avoid || '']].forEach(function(l){
+        if (!l[1]) return;
+        var r = document.createElement('div'); r.className = 'nv-tip-r';
+        if (l[0]){ var sw = document.createElement('i'); sw.className = 'nv-sw'; sw.style.background = l[0]; r.appendChild(sw); }
+        var tx = document.createElement('span'); tx.textContent = l[1]; r.appendChild(tx); tip.appendChild(r);
+      });
+      tip.hidden = false;
+      var b = box.getBoundingClientRect();
+      var x = ev.clientX - b.left + 12, y = ev.clientY - b.top - tip.offsetHeight - 10;
+      tip.style.left = Math.max(0, Math.min(x, box.clientWidth - tip.offsetWidth)) + 'px';
+      tip.style.top = Math.max(0, y) + 'px';
+    }
+    var pins = svg.append('g');
+    Z.forEach(function(z){
+      var id = z.id, g = zGeo(z); if (!g) return;
+      var c = P([g.x, g.y]);
+      var col = LV[z.level] || LV.off;
+      var tr = 'rotate(' + g.rot + ' ' + c[0] + ' ' + c[1] + ')';
+      svg.append('ellipse').attr('cx', c[0]).attr('cy', c[1]).attr('rx', g.rx * s).attr('ry', g.ry * s).attr('transform', tr)
+        .attr('fill', 'none').attr('stroke', '#fff').attr('stroke-opacity', .85).attr('stroke-width', 6).attr('pointer-events', 'none');
+      svg.append('ellipse').attr('class', 'z' + (selected === id ? ' on' : '')).attr('data-zone', id)
+        .attr('cx', c[0]).attr('cy', c[1]).attr('rx', g.rx * s).attr('ry', g.ry * s).attr('transform', tr)
+        .style('fill', col).attr('fill-opacity', .5).style('stroke', col).attr('stroke-width', 3.5)
+        .on('pointerenter', function(ev){ show(ev, z); }).on('pointermove', function(ev){ show(ev, z); })
+        .on('pointerleave', function(){ tip.hidden = true; })
+        .on('click', function(ev){ selectZone(id); show(ev, z); });
+      var pg = pins.append('g').attr('class', 'pin').attr('transform', 'translate(' + c[0] + ',' + c[1] + ')');
+      pg.append('circle').attr('r', 17).style('fill', col).attr('stroke', '#fff').attr('stroke-width', 3);
+      pg.append('text').attr('text-anchor', 'middle').attr('dy', '.36em').style('fill', LV_INK[z.level] || LV_INK.off).text(zNum(id));
+    });
+    pins.raise();
+  }
+
+  function drawZoneList(ul, Z){
+    ul.replaceChildren();
+    Z.forEach(function(z){
+      var li = document.createElement('li'); li.className = 'nv-z' + (selected === z.id ? ' on' : ''); li.dataset.level = z.level; li.dataset.zone = z.id; li.tabIndex = 0;
+      var w = 'id=' + encodeURIComponent(z.id);
+      var mk = function(tag, cls, field, txt){ var e = document.createElement(tag); if (cls) e.className = cls; if (field){ e.setAttribute('data-source', 'zones'); e.setAttribute('data-where', w); e.setAttribute('data-field', field); } e.textContent = txt == null || txt === '' ? '—' : txt; return e; };
+      var top = document.createElement('div'); top.className = 'nv-z-top';
+      top.appendChild(mk('span', 'nv-z-id', 'id', z.id));
+      var h = document.createElement('div'); h.className = 'nv-z-h';
+      h.appendChild(mk('span', 'nv-z-n', 'zone', z.zone));
+      if (z.places) h.appendChild(mk('span', 'nv-z-p', 'places', z.places));
+      top.appendChild(h);
+      top.appendChild(mk('span', 'nv-z-m', 'mode', z.mode));
+      li.appendChild(top);
+      if (z.band){ var bd = document.createElement('span'); bd.className = 'nv-z-band'; bd.appendChild(document.createTextNode('⛰️ ')); bd.appendChild(mk('span', '', 'band', z.band)); li.appendChild(bd); }
+      var zr = mk('p', 'nv-z-r', 'reason', z.reason); rich(zr, z.reason); li.appendChild(zr);
+      var a = document.createElement('div'); a.className = 'nv-z-av';
+      var ab = document.createElement('b'); ab.textContent = '⚠️ À éviter'; a.appendChild(ab);
+      var za = mk('span', '', 'avoid', z.avoid); rich(za, z.avoid); a.appendChild(za);
+      li.appendChild(a);
+      li.addEventListener('click', function(){ selectZone(z.id); });
+      li.addEventListener('keydown', function(ev){ if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); selectZone(z.id); } });
+      ul.appendChild(li);
+    });
+  }
+
+  function drawZoneSimple(ul, Z){
+    ul.replaceChildren();
+    Z.forEach(function(z){
+      var w = 'id=' + encodeURIComponent(z.id);
+      var li = document.createElement('li'); li.className = 'nv-zs' + (selected === z.id ? ' on' : ''); li.dataset.level = z.level; li.dataset.zone = z.id; li.tabIndex = 0;
+      var n = document.createElement('span'); n.className = 'nv-zs-n'; n.textContent = zNum(z.id); li.appendChild(n);
+      var b = document.createElement('div'); b.className = 'nv-zs-b';
+      var h = document.createElement('div'); h.className = 'nv-zs-h';
+      var t = document.createElement('span'); t.className = 'nv-zs-t'; t.setAttribute('data-source', 'zones'); t.setAttribute('data-where', w); t.setAttribute('data-field', 'zone'); t.textContent = z.zone || '—'; h.appendChild(t);
+      var ww = document.createElement('span'); ww.className = 'nv-zs-w'; ww.textContent = SIMPLE[z.level] || ''; h.appendChild(ww);
+      b.appendChild(h);
+      var f = z.simple ? 'simple' : 'avoid';
+      var d = document.createElement('p'); d.className = 'nv-zs-d'; d.setAttribute('data-source', 'zones'); d.setAttribute('data-where', w); d.setAttribute('data-field', f);
+      d.textContent = z[f] || '—'; b.appendChild(d);
+      li.appendChild(b);
+      li.addEventListener('click', function(){ selectZone(z.id); });
+      li.addEventListener('keydown', function(ev){ if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); selectZone(z.id); } });
+      ul.appendChild(li);
+    });
+  }
+
+  function skyIcon(sky, per){
+    var s = String(sky || '').toLowerCase(), night = /nuit/.test(per || '');
+    if (!s || /non détaillé|inconnu/.test(s)) return '❔';
+    if (/orage/.test(s)) return '⛈️';
+    if (/neige/.test(s)) return '🌨️';
+    if (/pluie|averse|bruine/.test(s)) return '🌧️';
+    if (/brouillard|brume/.test(s)) return '🌫️';
+    if (/couvert/.test(s)) return '☁️';
+    if (/nuage|voilé|voile/.test(s)) return night ? '☁️' : '⛅';
+    if (/beau|soleil|ensoleill|clair|dégagé/.test(s)) return night ? '🌙' : '☀️';
+    return '🌤️';
+  }
+  function windWord(v){
+    if (v == null) return null;
+    return v < 10 ? 'calme' : v < 30 ? 'faible' : v < 50 ? 'modéré' : v < 70 ? 'fort' : 'très fort';
+  }
+  var DIRW = {N: 'du nord', NE: 'du nord-est', E: "d'est", SE: 'du sud-est', S: 'du sud', SO: 'du sud-ouest', O: "d'ouest", NO: 'du nord-ouest'};
+  function drawMeteoSimple(box){
+    var F = dash.data('forecast'), M = dash.data('meteo_simple');
+    box.classList.toggle('dash-skeleton', F.status === 'loading' || M.status === 'loading');
+    box.replaceChildren();
+    if (F.status !== 'ok' || M.status !== 'ok' || !M.data.length){
+      if (F.status !== 'loading'){ var e = document.createElement('div'); e.className = 'nv-fail'; e.textContent = 'Météo indisponible'; box.appendChild(e); }
+      return;
+    }
+    var NAMES = ["Aujourd'hui", 'Demain'];
+    M.data.forEach(function(d, i){
+      var card = document.createElement('div'); card.className = 'nv-day';
+      var h = document.createElement('div'); h.className = 'nv-day-h'; h.textContent = (NAMES[i] || '') + (NAMES[i] ? ' · ' : '') + d.day; card.appendChild(h);
+      var pers = document.createElement('div'); pers.className = 'nv-pers';
+      F.data.filter(function(r){ return r.day === d.day; }).forEach(function(r){
+        var p = document.createElement('div'); p.className = 'nv-per'; p.title = r.sky || '';
+        var ic = document.createElement('span'); ic.className = 'nv-per-i'; ic.setAttribute('aria-label', r.sky || ''); ic.textContent = skyIcon(r.sky, r.per); p.appendChild(ic);
+        var l = document.createElement('span'); l.className = 'nv-per-l'; l.textContent = r.per; p.appendChild(l);
+        var tk = r.t2000 != null ? 't2000' : 't1000';
+        var t = document.createElement('span'); t.className = 'nv-per-t';
+        var tv = document.createElement('span'); tv.setAttribute('data-source', 'forecast'); tv.setAttribute('data-where', 'n=' + r.n); tv.setAttribute('data-field', tk); tv.textContent = r[tk] == null ? '—' : r[tk];
+        t.appendChild(tv); t.appendChild(document.createTextNode('°')); p.appendChild(t);
+        var al = document.createElement('span'); al.className = 'nv-per-l'; al.textContent = r[tk] == null ? '' : (tk === 't2000' ? 'à 2000 m' : 'en vallée'); p.appendChild(al);
+        pers.appendChild(p);
+      });
+      card.appendChild(pers);
+      var ul = document.createElement('ul'); ul.className = 'nv-facts';
+      var where = 'day=' + encodeURIComponent(d.day);
+      var fact = function(icon, label, parts){
+        var li = document.createElement('li'); var i0 = document.createElement('span'); i0.className = 'nv-f-i'; i0.textContent = icon; li.appendChild(i0);
+        var tx = document.createElement('span'); var b = document.createElement('b'); b.textContent = label + ' : '; tx.appendChild(b);
+        parts.forEach(function(pt){
+          if (typeof pt === 'string'){ tx.appendChild(document.createTextNode(pt)); return; }
+          var sp = document.createElement('span'); sp.setAttribute('data-source', 'meteo_simple'); sp.setAttribute('data-where', where); sp.setAttribute('data-field', pt.f); sp.textContent = nf.format(pt.v); tx.appendChild(sp);
+        });
+        li.appendChild(tx); ul.appendChild(li);
+      };
+      if (!d.known){
+        fact('❔', 'Détail', ["pas encore précisé par Météo-France"]);
+      } else {
+        if (d.wind4000_max != null) fact('💨', 'Vent en haute montagne', [windWord(d.wind4000_max) + (d.dir4000 && DIRW[d.dir4000] ? ' ' + DIRW[d.dir4000] : '') + ', jusqu’à ', {f: 'wind4000_max', v: d.wind4000_max}, ' km/h']);
+        if (d.snow_limit_min != null) fact('🌨️', 'Il neige au-dessus de', [{f: 'snow_limit_min', v: d.snow_limit_min}, ' m']);
+        else fact('☂️', 'Précipitations', ['aucune prévue']);
+        var f2 = d.fresh_2000 || 0, f4 = d.fresh_4000 || 0;
+        if (f2 > 0 || f4 > 0) fact('❄️', 'Neige fraîche', ['≈ ', {f: 'fresh_2000', v: f2}, ' cm à 2000 m, ', {f: 'fresh_4000', v: f4}, ' cm à 4000 m']);
+        else if (d.fresh_2000 != null || d.fresh_4000 != null) fact('❄️', 'Neige fraîche', ['aucune']);
+      }
+      card.appendChild(ul);
+      box.appendChild(card);
+    });
+  }
+
+  function drawCounts(el){
+    var d = dash.data('zone_counts');
+    el.replaceChildren();
+    if (d.status !== 'ok'){ el.textContent = '—'; return; }
+    var TXT = {bad: 'hasardeux', warn: 'vigilance', ok: 'détendu', off: 'hors saison'};
+    d.data.forEach(function(r){
+      var s = document.createElement('span'); var i = document.createElement('i'); i.style.background = LV[r.level] || LV.off; s.appendChild(i);
+      s.appendChild(document.createTextNode(r.n + ' ' + (TXT[r.level] || r.level))); el.appendChild(s);
+    });
+  }
+
+  function mapLegend(el){
+    el.replaceChildren();
+    [['ok', SIMPLE.ok], ['warn', SIMPLE.warn], ['bad', SIMPLE.bad], ['off', SIMPLE.off]].forEach(function(l){
+      var s = document.createElement('span'); var i = document.createElement('i'); i.className = 'nv-lgdot'; i.style.background = LV[l[0]]; i.style.color = LV_INK[l[0]]; s.appendChild(i);
+      s.appendChild(document.createTextNode(l[1])); el.appendChild(s);
+    });
+  }
+
+  /* ---------- Niveau 2 : CRISTAL et roses ---------- */
+  var ST_TXT = {ok: 'Rien à signaler', warn: 'Préoccupant', bad: 'Critique', unknown: 'Inconnu'};
+  // Ce que vérifie chaque critère (texte pédagogique fixe)
+  var CR_HELP = {
+    1: 'Y a-t-il des pentes de plus de 30° dans le terrain de la zone ?',
+    2: 'Des avalanches récentes ont-elles été vues dans des pentes semblables ?',
+    3: 'Une couche faible connue est-elle enfouie dans le manteau ?',
+    4: 'Redoux, pluie ou fort soleil affaiblissent-ils la neige ?',
+    5: 'Neige fraîche ou transportée par le vent ces derniers jours ?',
+    6: 'Que dit le bulletin officiel (BERA / SLF) pour ce secteur ?'
+  };
+  var crSel = null;
+  function cristalCells(R, Z){
+    var perZone = R.some(function(r){ return r.zone != null && r.zone !== ''; });
+    var crit = {}; R.forEach(function(r){ if (!crit[r.n]) crit[r.n] = r.critere; });
+    var ns = Object.keys(crit).map(Number).sort(function(a, b){ return a - b; });
+    var cell = function(n, zid){
+      var r = R.filter(function(x){ return x.n == n && (!perZone || x.zone === zid); })[0];
+      return r || null;
+    };
+    return {perZone: perZone, crit: crit, ns: ns, cell: cell};
+  }
+  function drawCristal(box, R){
+    var Z = zoneList(), cc = cristalCells(R, Z), fz = focusZone();
+    document.getElementById('cristal-banner').hidden = cc.perZone;
+    box.replaceChildren();
+    box.style.gridTemplateColumns = 'minmax(7.5rem,1.6fr) repeat(' + Math.max(Z.length, 1) + ',minmax(2.3rem,1fr))';
+    box.appendChild(document.createElement('span'));
+    Z.forEach(function(z){
+      var h = document.createElement('div'); h.className = 'nv-mx-h' + (z.id === fz ? ' on' : ''); h.tabIndex = 0; h.dataset.zoneh = z.id;
+      var b = document.createElement('b'); b.textContent = z.id; b.style.background = LV[z.level] || LV.off; b.style.color = LV_INK[z.level] || LV_INK.off;
+      h.appendChild(b); h.appendChild(document.createTextNode(zShort(z)));
+      h.addEventListener('click', function(){ selectZone(z.id, true); });
+      h.addEventListener('keydown', function(ev){ if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); selectZone(z.id, true); } });
+      box.appendChild(h);
+    });
+    if (!crSel || !cc.cell(crSel[0], crSel[1])){
+      var worst = null;
+      cc.ns.forEach(function(n){ Z.forEach(function(z){ var r = cc.cell(n, z.id); if (!r) return; var w = {bad: 3, warn: 2, unknown: 1, ok: 0}[r.state] || 0; if (!worst || w > worst.w || (w === worst.w && z.id === fz && worst.z !== fz)) worst = {w: w, n: n, z: z.id}; }); });
+      crSel = worst ? [worst.n, worst.z] : null;
+    }
+    cc.ns.forEach(function(n){
+      var lab = document.createElement('div'); lab.className = 'nv-mx-c';
+      lab.appendChild(document.createTextNode(cc.crit[n]));
+      var sm = document.createElement('small'); sm.textContent = CR_HELP[n] || ''; lab.appendChild(sm);
+      box.appendChild(lab);
+      Z.forEach(function(z){
+        var r = cc.cell(n, z.id), st = r ? r.state : 'unknown';
+        var d = document.createElement('button'); d.type = 'button'; d.className = 'nv-mx-d' + (z.id === fz ? ' col' : '') + (crSel && crSel[0] == n && crSel[1] === z.id ? ' sel' : '');
+        d.dataset.state = st; d.setAttribute('aria-label', cc.crit[n] + ', ' + z.id + ' : ' + (ST_TXT[st] || st));
+        d.appendChild(document.createElement('i'));
+        d.addEventListener('click', function(){ crSel = [n, z.id]; selectZone(z.id, true); });
+        box.appendChild(d);
+      });
+    });
+    var why = document.getElementById('cristal-why'); why.replaceChildren();
+    if (crSel){
+      var r = cc.cell(crSel[0], crSel[1]), z = Z.filter(function(x){ return x.id === crSel[1]; })[0];
+      var dot = document.createElement('i'); dot.className = 'nv-dot'; dot.dataset.state = r ? r.state : 'unknown'; dot.style.marginTop = '.3rem'; why.appendChild(dot);
+      var t = document.createElement('div');
+      var hd = document.createElement('b'); hd.textContent = crSel[1] + (z ? ' · ' + z.zone : '') + ' — ' + cc.crit[crSel[0]] + ' : ' + (ST_TXT[r ? r.state : 'unknown'] || ''); t.appendChild(hd);
+      t.appendChild(document.createElement('br'));
+      var w = document.createElement('span'); w.setAttribute('data-source', 'cristal'); w.setAttribute('data-where', 'n=' + crSel[0] + (cc.perZone ? '&zone=' + encodeURIComponent(crSel[1]) : '')); w.setAttribute('data-field', 'why');
+      rich(w, r ? r.why : null); t.appendChild(w);
+      why.appendChild(t);
+    }
+  }
+
+  var RL = [{c: 'var(--nv-off)', o: .3, t: 'Rien de signalé'}, {c: 'var(--nv-warn)', o: .5, t: 'À surveiller'}, {c: 'var(--nv-warn)', o: 1, t: 'Suspecte'}, {c: 'var(--nv-bad)', o: 1, t: 'Très suspecte'}];
+  var FACES = [['N', 0], ['NE', 45], ['E', 90], ['SE', 135], ['S', 180], ['SO', 225], ['O', 270], ['NO', 315]];
+  function roseRowsFor(R, zid){
+    var perZone = R.some(function(r){ return r.zone != null && r.zone !== ''; });
+    if (perZone) return {perZone: true, rows: R.filter(function(r){ return r.zone === zid; })};
+    var cats = zoneCats(zid);
+    return {perZone: false, rows: R.filter(function(r){ return cats.indexOf(bandCat(r.band)) >= 0; })};
+  }
+  function petal(g, r, ri, ro, L, lab){
+    var arc = d3.arc().innerRadius(ri).outerRadius(ro).startAngle((r.deg - 21) * Math.PI / 180).endAngle((r.deg + 21) * Math.PI / 180).cornerRadius(3);
+    g.append('path').attr('d', arc()).style('fill', L.c).attr('fill-opacity', L.o);
+    if (lab){ var ar = r.deg * Math.PI / 180; g.append('text').attr('text-anchor', 'middle').attr('dominant-baseline', 'middle').attr('x', Math.sin(ar) * (ro + 10)).attr('y', -Math.cos(ar) * (ro + 10)).text(r.face); }
+  }
+  function drawRoseZones(box, R){
+    var Z = zoneList(), fz = focusZone(), any = false;
+    box.replaceChildren();
+    Z.forEach(function(z){
+      var rr = roseRowsFor(R, z.id); if (!rr.perZone) any = true;
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'nv-rz' + (z.id === fz ? ' on' : '');
+      var size = 84, ro = 34, ri = 10;
+      var svg = d3.select(btn).append('svg').attr('width', size).attr('height', size).attr('viewBox', '0 0 ' + size + ' ' + size);
+      var g = svg.append('g').attr('transform', 'translate(' + size / 2 + ',' + size / 2 + ')');
+      FACES.forEach(function(f){
+        var lv = 0; rr.rows.forEach(function(r){ if (r.face === f[0]) lv = Math.max(lv, +r.level || 0); });
+        petal(g, {deg: f[1], face: f[0]}, ri, ro, RL[Math.max(0, Math.min(3, lv))], false);
+      });
+      g.append('text').attr('class', 'nv-strong').attr('text-anchor', 'middle').attr('dy', '.35em').text(z.id);
+      var sp = document.createElement('span'); var b = document.createElement('b'); b.textContent = zShort(z); sp.appendChild(b);
+      var a = zAlt(z.id); if (a){ sp.appendChild(document.createElement('br')); sp.appendChild(document.createTextNode(nf.format(a[0]) + '–' + nf.format(a[1]) + ' m')); }
+      btn.appendChild(sp);
+      btn.setAttribute('aria-label', 'Rose de la zone ' + z.id);
+      btn.addEventListener('click', function(){ selectZone(z.id, true); });
+      box.appendChild(btn);
+    });
+    document.getElementById('rose-banner').hidden = !any;
+  }
+  function drawRoses(box, R, FA){
+    var fz = focusZone(), z = zoneList().filter(function(x){ return x.id === fz; })[0];
+    var rr = roseRowsFor(R, fz), rows = rr.rows;
+    document.getElementById('rose-title').textContent = fz + (z ? ' · ' + z.zone : '');
+    var a = zAlt(fz); document.getElementById('rose-sub').textContent = (a ? 'Terrain de ' + nf.format(a[0]) + ' à ' + nf.format(a[1]) + ' m' : '') + (z && z.places ? ' · ' + z.places : '');
+    var bands = []; rows.forEach(function(r){ if (bands.indexOf(r.band) < 0) bands.push(r.band); });
+    var W = Math.max(box.clientWidth, 260), n = bands.length || 1;
+    var cell = W / n, ro = Math.max(34, Math.min(cell / 2 - 18, 92)), ri = ro * .3, H = Math.round(ro * 2 + 62);
+    box.style.minHeight = H + 'px';
+    var f = mkSvg(box, H), svg = f.svg;
+    var why = {}; (FA || []).forEach(function(r){ why[r.face] = r.why; });
+    var zones = [];
+    bands.forEach(function(b, i){
+      var cx = cell * i + cell / 2, cy = ro + 22;
+      var g = svg.append('g').attr('transform', 'translate(' + cx + ',' + cy + ')');
+      rows.filter(function(r){ return r.band === b; }).forEach(function(r){
+        var L = RL[Math.max(0, Math.min(3, r.level))];
+        petal(g, r, ri, ro, L, true);
+        var ar = r.deg * Math.PI / 180, mid = (ri + ro) / 2;
+        zones.push({x: cx + Math.sin(ar) * mid - 20, y: cy - Math.cos(ar) * mid - 20, w: 40, h: 40, title: fz + ' · ' + b + ' · face ' + r.face, lines: [[L.c, L.t]].concat(r.level > 0 && (r.why || why[r.face]) ? [[null, r.why || why[r.face]]] : [])});
+      });
+      svg.append('text').attr('class', 'nv-strong').attr('text-anchor', 'middle').attr('x', cx).attr('y', H - 8).text(b);
+    });
+    if (!bands.length){ box.replaceChildren(); var e = document.createElement('div'); e.className = 'nv-fail'; e.textContent = 'Pas d’évaluation pour cette zone'; box.appendChild(e); return; }
+    addTip(box, svg, zones);
+  }
+
+  function roseLegend(el){
+    el.replaceChildren();
+    RL.forEach(function(l){ var s = document.createElement('span'); var i = document.createElement('i'); i.className = 'nv-sw'; i.style.background = l.c; i.style.opacity = l.o; s.appendChild(i); s.appendChild(document.createTextNode(l.t)); el.appendChild(s); });
+  }
+
+  var quiz = {pick: null, done: false, key: null};
+  var qOpts = function(){ return document.querySelectorAll('#quiz-opts .nv-opt'); };
+  function quizReset(){
+    quiz.pick = null; quiz.done = false;
+    qOpts().forEach(function(o){ o.disabled = false; o.classList.remove('right', 'wrong'); o.setAttribute('aria-pressed', 'false'); });
+    document.getElementById('quiz-ok').disabled = true; document.getElementById('quiz-ok').hidden = false;
+    document.getElementById('quiz-again').hidden = true;
+    document.getElementById('quiz-res').hidden = true;
+    document.getElementById('quiz-hint').textContent = 'Choisis une réponse, puis valide.';
+  }
+  qOpts().forEach(function(b){
+    b.addEventListener('click', function(){
+      if (quiz.done) return;
+      quiz.pick = b.dataset.opt;
+      qOpts().forEach(function(o){ o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      document.getElementById('quiz-ok').disabled = false;
+    });
+  });
+  document.getElementById('quiz-ok').addEventListener('click', function(){
+    var d = dash.data('learn'), r = d.status === 'ok' && d.data[0];
+    if (!r || !quiz.pick) return;
+    var good = String(r.answer || '').trim().toLowerCase();
+    quiz.done = true;
+    qOpts().forEach(function(o){ o.disabled = true; if (o.dataset.opt === good) o.classList.add('right'); else if (o.dataset.opt === quiz.pick) o.classList.add('wrong'); });
+    var ok = quiz.pick === good;
+    var res = document.getElementById('quiz-res'); res.dataset.ok = ok ? 'true' : 'false'; res.hidden = false;
+    document.getElementById('quiz-res-t').textContent = ok ? '✅ Bonne réponse !' : '❌ Pas tout à fait : la bonne réponse est ' + good.toUpperCase() + '.';
+    document.getElementById('quiz-ok').hidden = true; document.getElementById('quiz-again').hidden = false;
+    document.getElementById('quiz-hint').textContent = '';
+  });
+  document.getElementById('quiz-again').addEventListener('click', quizReset);
+
+  function fillRow(id){
+    var d = dash.data(id), r0 = d.status === 'ok' && d.data[0];
+    document.querySelectorAll('[data-source="' + id + '"][data-row="0"][data-field]').forEach(function(el){
+      var v = r0 ? r0[el.dataset.field] : null;
+      el.textContent = v == null || v === '' ? '—' : v;
+    });
+    return r0;
+  }
+
+  function drawZoneViews(){
+    var cb = document.getElementById('cristal'), CR = ready(cb, 'cristal'); if (CR) drawCristal(cb, CR);
+    var rz = document.getElementById('rose-zones'), RZ = ready(rz, 'rose'); if (RZ) drawRoseZones(rz, RZ);
+    var rb = document.getElementById('ch-roses'), RO = ready(rb, 'rose');
+    if (RO){ var fa = dash.data('faces'); drawRoses(rb, RO, fa.status === 'ok' ? fa.data : []); roseLegend(document.getElementById('rose-leg')); }
+  }
+
+  function drawAll(){
+    var st = dash.data('status'), s0 = st.status === 'ok' && st.data[0];
+    var hasS = function(k){ return s0 && s0[k] != null && s0[k] !== ''; };
+    document.getElementById('nv-take').dataset.field = hasS('simple_summary') || !s0 ? 'simple_summary' : 'summary';
+    document.getElementById('nv-stitle').dataset.field = hasS('simple_title') || !s0 ? 'simple_title' : 'label';
+    var r0 = fillRow('status');
+    var sp = document.getElementById('nv-pill'); sp.dataset.level = r0 ? r0.level : 'off'; sp.textContent = r0 ? (DOT[r0.level] || '') + ' ' + (SIMPLE[r0.level] || '') : '—';
+    var td = document.getElementById('nv-todo'), tc = document.getElementById('card-todo'); td.replaceChildren();
+    var todo = [];
+    if (r0 && r0.simple_todo){
+      var raw = r0.simple_todo;
+      if (!Array.isArray(raw)){ var rs = String(raw).trim(); if (rs.charAt(0) === '['){ try { raw = JSON.parse(rs); } catch (e) { raw = rs.replace(/^\[|\]$/g, '').split(/["\u201c\u201d]\s*,\s*["\u201c\u201d]/); } } else { raw = rs.split(/\s*\|\s*|\n+/); } }
+      todo = raw.map(function(x){ return String(x).replace(/^[\s"\u201c\u201d\[]+|[\s"\u201c\u201d\]]+$/g, ''); });
+    }
+    todo = todo.filter(function(x){ return x && String(x).trim(); });
+    tc.hidden = !todo.length;
+    td.style.setProperty('--n', Math.min(Math.max(todo.length, 1), 5));
+    todo.slice(0, 5).forEach(function(x){
+      var t = String(x).trim(), zm = t.match(/^\[?(Z\d{1,2})\]?\s*[\u00b7:\-\u2013\u2014]\s*/), zt = null;
+      if (zm){ t = t.slice(zm[0].length); var zr = zRow(zm[1]); zt = 'Zone ' + zm[1] + (zr && (zr.short || zr.zone) ? ' · ' + (zr.short || zr.zone) : ''); }
+      var m = t.match(/^([^:.\u2014\u2013]{3,48}?)\s*[:\u2014\u2013]\s*(.+)$/), li = document.createElement('li');
+      if (zt){ var zc = document.createElement('span'); zc.className = 'nv-tz'; zc.textContent = zt; li.appendChild(zc); }
+      if (m){ var b = document.createElement('b'); b.textContent = m[1]; var sp2 = document.createElement('span'); sp2.textContent = m[2]; var w = document.createElement('div'); w.style.cssText = 'display:flex;flex-direction:column;gap:.2rem'; w.appendChild(b); w.appendChild(sp2); li.appendChild(w); }
+      else { var sp3 = document.createElement('span'); sp3.style.color = 'var(--color-fg)'; sp3.textContent = t; li.appendChild(sp3); }
+      td.appendChild(li);
+    });
+    var hero = document.getElementById('nv-top'); if (window.NV_HERO && !hero.dataset.bg){ hero.style.backgroundImage = 'url(' + window.NV_HERO + ')'; hero.dataset.bg = '1'; }
+    if (r0){
+      richSentences(document.getElementById('nv-take'), r0[document.getElementById('nv-take').dataset.field]);
+      rich(document.getElementById('nv-take-x'), r0.summary);
+      document.querySelectorAll('[data-source="status"][data-row="0"]').forEach(function(el){ if (['avoid', 'watch', 'terrain', 'bera', 'slf', 'limits'].indexOf(el.dataset.field) >= 0) rich(el, r0[el.dataset.field]); });
+    }
+    var pill = document.getElementById('nv-pill-x'); if (pill) pill.dataset.level = r0 ? r0.level : 'off';
+    var lr = fillRow('learn');
+    var qk = lr ? (lr.date_label + '|' + lr.quiz) : null; if (qk !== quiz.key){ quiz.key = qk; quizReset(); }
+    var k = dash.data('kpi'), k0 = k.status === 'ok' && k.data[0];
+    document.querySelectorAll('[data-source="kpi"][data-field]').forEach(function(el){ var v = k0 && k0[el.dataset.field]; el.textContent = (v == null || !isFinite(v)) ? '—' : nf.format(v); });
+
+    drawCounts(document.getElementById('zone-count'));
+    var mb = document.getElementById('ch-map'), Zr = ready(mb, 'zones');
+    if (Zr){ drawMap(mb, Zr); mapLegend(document.getElementById('map-leg')); }
+    var ul = document.getElementById('zone-list'), Zl = ready(ul, 'zones'); if (Zl) drawZoneSimple(ul, Zl);
+    var ux = document.getElementById('zone-list-x'), Zx = ready(ux, 'zones'); if (Zx) drawZoneList(ux, Zx);
+    drawMeteoSimple(document.getElementById('meteo-simple'));
+    var expert = !document.getElementById('p-expert').hidden;
+    drawZoneViews();
+
+    document.getElementById('sw-n2000').style.background = C(1);
+    document.getElementById('sw-n4000').style.background = C(0);
+    if (expert){
+      var F = ready(document.getElementById('ch-vent'), 'forecast');
+      ready(document.getElementById('ch-temp'), 'forecast'); ready(document.getElementById('ch-limite'), 'forecast'); ready(document.getElementById('ch-neige'), 'forecast');
+      if (F){
+        lineChart(document.getElementById('ch-vent'), {rows: F, h: 240, y: [0, 110], ticks: 5, xl: xlF, xl2: true, title: titleF,
+          series: [{k: 'w4000', c: C(0), name: '4000 m'}, {k: 'w2000', c: C(1), name: '2000 m'}],
+          refs: [{v: 25, label: '25'}, {v: 60, label: '60'}], arrows: {k: 'w4000', deg: 'deg4000'},
+          tipFmt: function(v){ return v + ' km/h'; }, extra: function(r){ return [[null, 'Direction à 4000 m : ' + r.d4000]]; }});
+        lineChart(document.getElementById('ch-temp'), {rows: F, h: 240, y: [-20, 15], ticks: 5, xl: xlF, xl2: true, title: titleF,
+          series: [{k: 't4000', c: C(0), name: '4000 m'}, {k: 't2000', c: C(1), name: '2000 m'}, {k: 't1000', c: C(2), name: '1000 m'}],
+          refs: [{v: 0}], fmt: function(d){ return d + '°'; }, tipFmt: function(v){ return v + ' °C'; }});
+        var L = F.filter(function(r){ return r.snow_limit_m != null; });
+        var lb = document.getElementById('ch-limite');
+        if (L.length) lineChart(lb, {rows: L, h: 200, y: [1000, 2800], ticks: 3, xl: xlF, xl2: true, title: titleF, end: false, l: 46,
+          series: [{k: 'snow_limit_m', c: C(0), name: 'Limite'}], tipFmt: function(v){ return nf.format(v) + ' m'; }});
+        else { lb.replaceChildren(); var e = document.createElement('div'); e.className = 'nv-fail'; e.textContent = 'Pas de précipitation prévue'; lb.appendChild(e); }
+        var Nn = F.filter(function(r){ return r.fresh_4000 != null || r.fresh_2000 != null; });
+        barsFresh(document.getElementById('ch-neige'), Nn);
+      }
+      var T = ready(document.getElementById('ch-tendance'), 'trend'); if (T) trendChart(document.getElementById('ch-tendance'), T);
+    }
+    if (expert){
+      var Hh = ready(document.getElementById('se-vent'), 'history');
+      ready(document.getElementById('se-limite'), 'history'); ready(document.getElementById('se-neige'), 'history');
+      if (Hh){
+        var xlH = function(r){ return [r.jour]; }, tH = function(r){ return r.jour; };
+        lineChart(document.getElementById('se-vent'), {rows: Hh, h: 150, y: [0, 110], ticks: 3, xl: xlH, title: tH, end: false,
+          series: [{k: 'wind4000_max_kmh', c: C(0), name: 'Vent'}], refs: [{v: 60}], tipFmt: function(v){ return v + ' km/h'; }});
+        lineChart(document.getElementById('se-limite'), {rows: Hh, h: 150, y: [1000, 2800], ticks: 3, xl: xlH, title: tH, end: false, l: 46,
+          series: [{k: 'snow_limit_min_m', c: C(1), name: 'Limite'}], tipFmt: function(v){ return nf.format(v) + ' m'; }});
+        lineChart(document.getElementById('se-neige'), {rows: Hh, h: 150, y: [0, 60], ticks: 4, xl: xlH, title: tH, end: false,
+          series: [{k: 'fresh_4000_cm', c: C(2), name: 'Neige'}], tipFmt: function(v){ return v + ' cm'; }});
+      }
+    }
+    var tb = document.querySelector('#tb-journal tbody');
+    var J = dash.data('history');
+    tb.replaceChildren();
+    if (J.status === 'ok'){
+      var cols = ['jour', 'neige_fraiche', 'vent', 'faces', 'problemes', 'observations'];
+      J.data.slice().reverse().forEach(function(r){
+        var tr = document.createElement('tr'); tr.dataset.key = r.jour;
+        cols.forEach(function(c){ var td = document.createElement('td'); td.textContent = r[c] == null ? '—' : r[c]; tr.appendChild(td); });
+        tb.appendChild(tr);
+      });
+    }
+  }
+
+  dash.onData(drawAll);
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.nv-tab'));
+  function showTab(name, focus){
+    tabs.forEach(function(t){
+      var on = t.dataset.tab === name;
+      t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+      document.getElementById('p-' + t.dataset.tab).hidden = !on;
+      if (on){ if (focus) t.focus(); if (t.scrollIntoView) t.scrollIntoView({block: 'nearest', inline: 'nearest'}); }
+    });
+    var bar = document.querySelector('.nv-bar'); if (bar && bar.getBoundingClientRect().top < 0) bar.scrollIntoView({block: 'start'});
+    drawAll();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ showTab(t.dataset.tab); });
+    t.addEventListener('keydown', function(e){
+      var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null;
+      if (j == null) return; e.preventDefault(); showTab(tabs[(j + tabs.length) % tabs.length].dataset.tab, true);
+    });
+  });
+  document.querySelectorAll('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ showTab(b.dataset.go); }); });
+  document.querySelectorAll('[data-jump]').forEach(function(b){ b.addEventListener('click', function(){ var t = document.getElementById(b.dataset.jump); if (t) t.scrollIntoView({behavior: 'smooth', block: 'start'}); }); });
+})();
+</script>
+
+</body>
+</html>
