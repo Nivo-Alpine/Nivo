@@ -7,7 +7,7 @@
 <meta name="description" content="Nivo : le point neige et avalanche du jour pour le massif du Mont-Blanc, en langage simple, avec la méthode CRISTAL. Version de test.">
 <meta name="theme-color" content="#13263f">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2313263f'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white'%3E%E2%9D%84%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313263F'/%3E%3Cg transform='translate%288 10%29 scale%280.4%29'%3E%3Cpath d='M12 92 L38 20 L82 84 L108 12' fill='none' stroke='%235B8FC7' stroke-width='22' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M30.2 41.6 L38 20 L51.2 39.2' fill='none' stroke='%23F4F8FB' stroke-width='22' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 92 L38 20 L82 84 L108 12' fill='none' stroke='%23FF8C00' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -256,8 +256,15 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
 [data-dash-source-state=empty]{color:transparent}
 /* Onglets : barre de navigation type site web */
 .nv-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:var(--cds-gap-md);padding:.55rem .9rem;border-radius:calc(var(--cds-radius) * 1.6);background:color-mix(in srgb,var(--color-panel) 92%,transparent);backdrop-filter:blur(10px);border:1px solid var(--color-border-line);box-shadow:0 4px 18px rgba(15,33,56,.08);min-width:0}
-.nv-brand{flex:none;display:flex;align-items:center;gap:.5rem;margin:0;font-family:var(--font-anthropic-serif);font-weight:400;font-size:1.6rem;line-height:1;letter-spacing:-.01em}
-.nv-brand i{width:1.7rem;height:1.7rem;border-radius:.55rem;background:linear-gradient(135deg,#5b8fc7,#13263f);display:grid;place-items:center;font-style:normal;font-size:.95rem;color:#fff}
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
+.nv{--logo-band:#2F5D93;--logo-cap:#13263F;--logo-fil:#E06F00;--logo-word:#13263F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nv{--logo-band:#5B8FC7;--logo-cap:#F4F8FB;--logo-fil:#FF8C00;--logo-word:#F4F8FB}}
+:root[data-theme="dark"] .nv{--logo-band:#5B8FC7;--logo-cap:#F4F8FB;--logo-fil:#FF8C00;--logo-word:#F4F8FB}
+.nv-brand{flex:none;display:flex;align-items:center;gap:.55rem;margin:0;line-height:1}
+.nv-logo{width:2.35rem;height:auto;flex:none;display:block}
+.nv-word{display:inline-flex;align-items:flex-end;font-family:'Sora',var(--font-anthropic-sans);font-weight:600;font-size:1.75rem;letter-spacing:-.035em;color:var(--logo-word)}
+.nv-i{position:relative;display:inline-block}
+.nv-i svg{position:absolute;left:50%;top:-.06em;transform:translateX(-50%);width:.42em;height:auto}
 .nv-brand small{font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);letter-spacing:.08em;text-transform:uppercase;align-self:flex-end;margin-bottom:.12rem}
 .nv-tabs{flex:1;min-width:0;display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .nv-tabs::-webkit-scrollbar{display:none}
@@ -271,7 +278,7 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
 .nv-ph h2{margin:0;font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);line-height:1.15}
 .nv-ph p{margin:0;color:var(--color-fg-muted);font-size:var(--cds-font-size-body)}
 .nv-next{display:flex;flex-wrap:wrap;gap:var(--cds-gap-sm)}
-@media (max-width:640px){.nv-bar{flex-direction:column;align-items:stretch;gap:.4rem;padding:.5rem .6rem}.nv-brand{font-size:1.35rem}.nv-tab{padding:.4rem .75rem}}
+@media (max-width:640px){.nv-bar{flex-direction:column;align-items:stretch;gap:.4rem;padding:.5rem .6rem}.nv-word{font-size:1.5rem}.nv-logo{width:2rem}.nv-tab{padding:.4rem .75rem}}
 @media (prefers-reduced-motion:no-preference){.nv-panel:not([hidden]){animation:nvIn .22s ease-out}}
 @keyframes nvIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 /* --- Version simple --- */
@@ -368,7 +375,7 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
 
 <div class="nv">
   <nav class="nv-bar" aria-label="Nivo">
-    <h1 class="nv-brand"><i aria-hidden="true">❄</i>Nivo<small>Mont-Blanc</small></h1>
+    <h1 class="nv-brand" aria-label="Nivo Mont-Blanc"><svg class="nv-logo" viewBox="0 0 120 104" aria-hidden="true"><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-band)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.2 41.6 L38 20 L51.2 39.2" fill="none" style="stroke:var(--logo-cap)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-fil)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nv-word" aria-hidden="true">n<span class="nv-i">ı<svg viewBox="0 0 22 20" aria-hidden="true"><polygon points="11,0 6.6,8 15.4,8" style="fill:var(--logo-cap)"/><polygon points="5.78,9.5 16.23,9.5 17.33,11.5 4.68,11.5" style="fill:var(--logo-fil)"/><polygon points="3.85,13 18.15,13 22,20 0,20" style="fill:var(--logo-band)"/></svg></span>vo</span><small aria-hidden="true">Mont-Blanc</small></h1>
     <div class="nv-tabs" role="tablist" aria-label="Rubriques">
       <button type="button" class="nv-tab" role="tab" id="tab-jour" aria-controls="p-jour" aria-selected="true" data-tab="jour">🏔️ Aujourd'hui</button>
       <button type="button" class="nv-tab" role="tab" id="tab-apprendre" aria-controls="p-apprendre" aria-selected="false" tabindex="-1" data-tab="apprendre">🎓 Apprendre</button>
