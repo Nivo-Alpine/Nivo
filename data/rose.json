@@ -69,7 +69,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Faces N-NE au-dessus de 2400 m : reste de neige humide, base fragile possible."
+    "why": "Neige mince à l'ombre : future couche fragile possible."
   },
   {
     "zone": "Z1",
@@ -77,7 +77,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Faces N-NE au-dessus de 2400 m : reste de neige humide, base fragile possible."
+    "why": "Restes de dépôts du 23/10, neige mince."
   },
   {
     "zone": "Z1",
@@ -92,28 +92,28 @@
     "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "SO",
-    "deg": 225,
     "level": 0,
     "why": null
   },
   {
     "zone": "Z1",
     "band": "2000–3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
     "face": "O",
     "deg": 270,
     "level": 0,
@@ -197,7 +197,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige mince à l'ombre : future couche fragile possible."
   },
   {
     "zone": "Z2",
@@ -205,7 +205,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": null
+    "why": "Restes de dépôts du 23/10, neige mince."
   },
   {
     "zone": "Z2",
@@ -220,28 +220,28 @@
     "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 2,
-    "why": "Versant Chamonix au soleil : neige mince mouillée dès la matinée, coulées possibles."
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "SO",
-    "deg": 225,
     "level": 0,
     "why": null
   },
   {
     "zone": "Z2",
     "band": "2000–3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
     "face": "O",
     "deg": 270,
     "level": 0,
@@ -325,22 +325,22 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige mince à l'ombre : future couche fragile possible."
   },
   {
     "zone": "Z3",
     "band": "2000–3000 m",
     "face": "NE",
     "deg": 45,
-    "level": 2,
-    "why": null
+    "level": 1,
+    "why": "Restes de dépôts du 23/10, neige mince."
   },
   {
     "zone": "Z3",
     "band": "2000–3000 m",
     "face": "E",
     "deg": 90,
-    "level": 2,
+    "level": 1,
     "why": null
   },
   {
@@ -348,7 +348,7 @@
     "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 2,
+    "level": 1,
     "why": null
   },
   {
@@ -356,7 +356,7 @@
     "band": "2000–3000 m",
     "face": "S",
     "deg": 180,
-    "level": 1,
+    "level": 0,
     "why": null
   },
   {
@@ -389,15 +389,15 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige froide à l'ombre, manteau mince qui se transforme."
   },
   {
     "zone": "Z3",
     "band": "> 3000 m",
     "face": "NE",
     "deg": 45,
-    "level": 3,
-    "why": "Sous l'arête et en Vallée Noire : dépôts SO/O du 22-23 sur pentes raides."
+    "level": 2,
+    "why": "Dépôts des vents de SO/O du 22-23/10, sous les crêtes."
   },
   {
     "zone": "Z3",
@@ -405,23 +405,23 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": null
+    "why": "Dépôts des vents de SO/O du 22-23/10 et charge croisée."
   },
   {
     "zone": "Z3",
     "band": "> 3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 3,
-    "why": "Dépôts NO du 24-26/10 sous les crêtes, s'humidifient l'après-midi : la plus suspecte."
+    "level": 2,
+    "why": "Dépôts du vent de NO fort du 24-25/10 (≈ 25 cm)."
   },
   {
     "zone": "Z3",
     "band": "> 3000 m",
     "face": "S",
     "deg": 180,
-    "level": 2,
-    "why": null
+    "level": 1,
+    "why": "Vent de N ce jour : petits dépôts possibles ; humidification l'après-midi."
   },
   {
     "zone": "Z3",
@@ -517,22 +517,22 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige mince à l'ombre : future couche fragile possible."
   },
   {
     "zone": "Z4",
     "band": "2000–3000 m",
     "face": "NE",
     "deg": 45,
-    "level": 2,
-    "why": null
+    "level": 1,
+    "why": "Restes de dépôts du 23/10, neige mince."
   },
   {
     "zone": "Z4",
     "band": "2000–3000 m",
     "face": "E",
     "deg": 90,
-    "level": 2,
+    "level": 1,
     "why": null
   },
   {
@@ -540,7 +540,7 @@
     "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 2,
+    "level": 1,
     "why": null
   },
   {
@@ -548,7 +548,7 @@
     "band": "2000–3000 m",
     "face": "S",
     "deg": 180,
-    "level": 1,
+    "level": 0,
     "why": null
   },
   {
@@ -581,7 +581,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige froide à l'ombre, manteau mince qui se transforme."
   },
   {
     "zone": "Z4",
@@ -589,7 +589,7 @@
     "face": "NE",
     "deg": 45,
     "level": 2,
-    "why": null
+    "why": "Dépôts des vents de SO/O du 22-23/10, sous les crêtes."
   },
   {
     "zone": "Z4",
@@ -597,23 +597,23 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": null
+    "why": "Dépôts des vents de SO/O du 22-23/10 et charge croisée."
   },
   {
     "zone": "Z4",
     "band": "> 3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 3,
-    "why": "Dépôts NO du 24-26/10 sous les crêtes, s'humidifient l'après-midi : la plus suspecte."
+    "level": 2,
+    "why": "Dépôts du vent de NO fort du 24-25/10 (≈ 25 cm)."
   },
   {
     "zone": "Z4",
     "band": "> 3000 m",
     "face": "S",
     "deg": 180,
-    "level": 2,
-    "why": null
+    "level": 1,
+    "why": "Vent de N ce jour : petits dépôts possibles ; humidification l'après-midi."
   },
   {
     "zone": "Z4",
@@ -709,22 +709,22 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige mince à l'ombre : future couche fragile possible."
   },
   {
     "zone": "Z5",
     "band": "2000–3000 m",
     "face": "NE",
     "deg": 45,
-    "level": 2,
-    "why": null
+    "level": 1,
+    "why": "Restes de dépôts du 23/10, neige mince."
   },
   {
     "zone": "Z5",
     "band": "2000–3000 m",
     "face": "E",
     "deg": 90,
-    "level": 2,
+    "level": 1,
     "why": null
   },
   {
@@ -732,7 +732,7 @@
     "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 2,
+    "level": 1,
     "why": null
   },
   {
@@ -740,7 +740,7 @@
     "band": "2000–3000 m",
     "face": "S",
     "deg": 180,
-    "level": 1,
+    "level": 0,
     "why": null
   },
   {
@@ -773,15 +773,15 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige froide à l'ombre, manteau mince qui se transforme."
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "NE",
     "deg": 45,
-    "level": 3,
-    "why": "Col frontalier : bise et flux d'O chargent fortement le versant NE."
+    "level": 2,
+    "why": "Dépôts des vents de SO/O du 22-23/10, sous les crêtes."
   },
   {
     "zone": "Z5",
@@ -789,23 +789,23 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": null
+    "why": "Dépôts des vents de SO/O du 22-23/10 et charge croisée."
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 3,
-    "why": "Dépôts NO du 24-26/10 sous les crêtes, s'humidifient l'après-midi : la plus suspecte."
+    "level": 2,
+    "why": "Dépôts du vent de NO fort du 24-25/10 (≈ 25 cm)."
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "S",
     "deg": 180,
-    "level": 2,
-    "why": null
+    "level": 1,
+    "why": "Vent de N ce jour : petits dépôts possibles ; humidification l'après-midi."
   },
   {
     "zone": "Z5",

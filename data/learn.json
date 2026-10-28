@@ -1,13 +1,13 @@
 [
   {
-    "date_label": "27/10/2026",
-    "notion": "Les couches fragiles de base : ce que prépare la neige d'automne",
-    "texte": "La neige tombée en octobre ne disparaît pas partout : sur les faces N au-dessus de 2500-3000 m, une partie survit au redoux actuel. Si un long beau temps froid suit, cette couche mince se transforme en grains à faces planes puis en gobelets, peu cohésifs. Recouverte par les chutes de l'hiver, elle devient une couche fragile persistante, capable de produire des plaques épaisses pendant des semaines (Duclos : jusqu'à 84 cm sur gobelets). C'est pourquoi on note dès maintenant, dans le journal, où il reste de la neige et quel temps suit.",
-    "quiz": "Fin octobre, il reste 20-30 cm de neige sur les faces N vers 3000 m, puis viennent deux semaines de beau temps froid et sec. Que devient probablement cette neige ?",
-    "choix_a": "Elle se transforme en grains à faces planes ou gobelets, peu liés : une future couche fragile.",
-    "choix_b": "Elle se tasse en une couche dense et solide, qui ancrera bien les chutes de l'hiver.",
-    "choix_c": "Elle fond entièrement, même à l'ombre, faute de nouvelles chutes pour l'entretenir.",
-    "answer": "a",
-    "explication": "A : un manteau mince sous un ciel clair et froid subit un fort gradient de température, qui fabrique faces planes et gobelets sans cohésion. B décrit ce qui arrive à un manteau épais et doux (tassement), pas à une couche mince au froid. C est faux à l'ombre en altitude : sans soleil ni air doux, la neige persiste et se transforme au lieu de fondre."
+    "date_label": "28/10/2026",
+    "notion": "L'inversion de température",
+    "texte": "Par nuit claire et calme, l'air froid, plus lourd, coule et s'accumule au fond des vallées : il peut faire 0 °C à Chamonix et +4 °C à 2000 m, comme cette nuit. C'est une inversion de température. Conséquence pour toi : un bon gel en vallée ne prouve pas que la neige a regelé en altitude ; à mi-hauteur, la croûte peut rester mince. Juge le regel là où tu skies (stations d'altitude, bâton dans la neige au départ), pas sur le pare-brise de ta voiture.",
+    "quiz": "Nuit claire et calme d'automne : à l'aube, il fait 0 °C à Chamonix (1000 m). Vers 2000 m, à quoi t'attendre ?",
+    "choix_a": "Plus froid, vers −6 °C, car la température baisse toujours avec l'altitude.",
+    "choix_b": "La même température qu'en bas, car l'air se mélange bien pendant la nuit.",
+    "choix_c": "Souvent plus doux qu'en bas : l'air froid stagne au fond, le regel y est faible.",
+    "answer": "c",
+    "explication": "Par nuit claire et sans vent, l'air froid et lourd s'écoule et s'accumule en fond de vallée : c'est l'inversion, et 2000 m peut être plus doux que 1000 m (ce matin +4 °C à 2000 m pour 0 °C en bas). A applique la décroissance moyenne (≈ 0,6 °C par 100 m) qui ne vaut pas par nuit calme ; B est faux, car c'est justement l'absence de vent qui empêche le mélange."
   }
 ]

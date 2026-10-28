@@ -1,44 +1,44 @@
 [
   {
     "n": 0,
-    "day": "Mer. 28",
-    "tmin": 3,
+    "day": "Ven. 30",
+    "tmin": 2,
     "tmax": 14,
-    "conf": null
+    "conf": 4
   },
   {
     "n": 1,
-    "day": "Jeu. 29",
+    "day": "Sam. 31",
     "tmin": 2,
-    "tmax": 14,
-    "conf": null
+    "tmax": 13,
+    "conf": 4
   },
   {
     "n": 2,
-    "day": "Ven. 30",
-    "tmin": 0,
-    "tmax": 17,
-    "conf": null
+    "day": "Dim. 1",
+    "tmin": 1,
+    "tmax": 12,
+    "conf": 3
   },
   {
     "n": 3,
-    "day": "Sam. 31",
-    "tmin": -1,
-    "tmax": 15,
+    "day": "Lun. 2",
+    "tmin": 0,
+    "tmax": 10,
     "conf": 3
   },
   {
     "n": 4,
-    "day": "Dim. 1",
+    "day": "Mar. 3",
     "tmin": -1,
-    "tmax": 14,
+    "tmax": 11,
     "conf": 3
   },
   {
     "n": 5,
-    "day": "Lun. 2",
+    "day": "Mer. 4",
     "tmin": -2,
-    "tmax": 14,
-    "conf": 3
+    "tmax": 10,
+    "conf": 2
   }
 ]

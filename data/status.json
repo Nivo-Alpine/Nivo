@@ -1,22 +1,23 @@
 [
   {
-    "date_label": "bilan du 27/10/2026",
+    "date_label": "bilan du 28/10/2026",
     "level": "warn",
-    "label": "Hors saison · Alerté en haute montagne",
-    "summary": "Midi, Argentière et Le Tour : Alerté au-dessus de 3000 m. Les plaques du 25/10 vieillissent mais s'humidifient jusqu'à 4000 m. Sous 3000 m, neige mince et mouillée : méfiant, coulées l'après-midi.",
-    "avoid": "SE, E, NE et S au-dessus de 3000 m l'après-midi ; NE-E-SE sous les crêtes au-dessus de 2400 m",
-    "overload_age_d": 2,
-    "terrain": "Carnet de Louis vide ; data-avalanche.org illisible ce jour (accès refusé au robot).",
-    "bera": "Aucun bulletin publié (page chamonix.com « indisponible », PDF BRA2610271600 introuvable).",
-    "slf": "Aucun bulletin pour 4111 Emosson (hors saison ; reprise prévue en novembre-décembre).",
-    "watch": "Redoux persistant jusqu'au week-end (17 °C en vallée vendredi) : coulées de neige mouillée et ponts de neige qui cèdent sur les glaciers, surtout l'après-midi.",
-    "limits": "Bulletin Météo-France non actualisé (grève) : prévision rédigée lundi pour lundi et mardi ; mercredi seulement en températures. Ni BERA, ni SLF, ni data-avalanche.org, ni observation de terrain : confiance faible.",
+    "label": "Hors saison · méfiance en haute montagne",
+    "summary": "Z3, Z4, Z5 en mode Méfiant au-dessus de 3000 m : dépôts de vent du 23-25/10 qui vieillissent. Z1 et Z2 Méfiant sur neige mince N-NE au-dessus de 2400 m. Beau temps durable : regel en altitude, manteau mince qui se transforme.",
     "simple_title": "Hors saison : prudence en haute montagne",
-    "simple_summary": "Il y a encore peu de neige, et la chaleur la rend mouillée. Au-dessus de 3000 m, de la neige soufflée par le vent il y a deux jours peut encore partir. Le risque de coulées augmente au fil de la journée.",
+    "simple_summary": "Il fait beau et doux, sans neige fraîche depuis trois jours. Au-dessus de 3000 m, il reste de la neige soufflée par le vent sous les crêtes. Plus bas, la neige est rare et dure le matin.",
     "simple_todo": [
-      "Pars tôt et redescends avant midi : la chaleur rend la neige instable l'après-midi.",
-      "Au-dessus de 3000 m, évite les pentes raides tournées vers l'est et le sud, surtout juste sous les crêtes.",
-      "Sur glacier, encorde-toi : les crevasses sont mal recouvertes."
-    ]
+      "Évite les pentes raides sous les crêtes : surtout côté est et sud-est, au-dessus de 3000 m.",
+      "Encorde-toi sur le glacier : les crevasses sont cachées par une neige trop fine.",
+      "Pars tôt et redescends tôt : la neige ramollit l'après-midi sur les pentes au soleil.",
+      "Méfie-toi de la neige dure : le matin, une glissade sur pente raide peut être grave."
+    ],
+    "avoid": "NE-E-SE > 3000 m sous les crêtes ; N-NE > 2400 m en Z1/Z2 ; S-SE l'après-midi",
+    "overload_age_d": 3,
+    "terrain": "Aucune observation dans les carnets de Louis et des testeurs ; data-avalanche.org/now illisible (accès refusé au robot).",
+    "bera": "Aucun bulletin publié (hors saison ; page « indisponible », PDF BRA2610281600 introuvable, grève Météo-France).",
+    "slf": "Aucun bulletin pour 4111 Emosson : en automne, le SLF n'en publie qu'après de fortes chutes ; reprise régulière en novembre-décembre.",
+    "watch": "Beau temps durable jusqu'au 4/11 : regel la nuit > 3000 m, inversion en vallée ; vent de N 40-50 km/h à 4000 m possible sur S-SE sous les crêtes ; transformation de la neige mince en faces planes sur N.",
+    "limits": "BERA, SLF et data-avalanche.org non lus ; Météo-France non actualisé (grève), Meteoblue sans vent par altitude. Météo-France et Meteoblue concordent sur le beau temps sec et les températures ; divergence sur le vent à 4000 m (40-50 km/h contre 15 km/h, rafales 39) : retenu 30-35 km/h, cohérent avec la rafale de 38 km/h mesurée à l'Aiguille du Midi. Confiance moyenne."
   }
 ]
