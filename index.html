@@ -10,7 +10,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313263F'/%3E%3Cg transform='translate%288 10%29 scale%280.4%29'%3E%3Cpath d='M12 92 L38 20 L82 84 L108 12' fill='none' stroke='%235B8FC7' stroke-width='22' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M30.2 41.6 L38 20 L51.2 39.2' fill='none' stroke='%23F4F8FB' stroke-width='22' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 92 L38 20 L82 84 L108 12' fill='none' stroke='%23FF8C00' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&family=Sora:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <script src="js/d3.min.js"></script>
 <style>
 :root{
@@ -256,7 +256,6 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
 [data-dash-source-state=empty]{color:transparent}
 /* Onglets : barre de navigation type site web */
 .nv-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:var(--cds-gap-md);padding:.55rem .9rem;border-radius:calc(var(--cds-radius) * 1.6);background:color-mix(in srgb,var(--color-panel) 92%,transparent);backdrop-filter:blur(10px);border:1px solid var(--color-border-line);box-shadow:0 4px 18px rgba(15,33,56,.08);min-width:0}
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
 .nv{--logo-band:#2F5D93;--logo-cap:#13263F;--logo-fil:#E06F00;--logo-word:#13263F}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nv{--logo-band:#5B8FC7;--logo-cap:#F4F8FB;--logo-fil:#FF8C00;--logo-word:#F4F8FB}}
 :root[data-theme="dark"] .nv{--logo-band:#5B8FC7;--logo-cap:#F4F8FB;--logo-fil:#FF8C00;--logo-word:#F4F8FB}
@@ -403,16 +402,195 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
 .nv-gl dd{margin:0;font-size:var(--cds-font-size-body);line-height:1.45;color:var(--color-fg-muted)}
 .nv-warnbox{padding:.7rem .9rem;border-radius:var(--cds-radius);border-left:4px solid var(--nv-bad);background:color-mix(in srgb,var(--nv-bad) 8%,var(--color-bg));font-size:var(--cds-font-size-body);line-height:1.5}
 </style>
+<style>
+/* ===== Habillage éditorial : pleine largeur, sections titrées, en-tête et pied de page ===== */
+:root{
+  --font-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;
+  --font-display:'Sora','Inter',system-ui,sans-serif;
+  --color-bg:#ffffff;--color-panel:#f2f5f8;--color-fg:#13263F;--color-fg-muted:#56677a;--color-border-line:#e0e6ed;--page-bg:#ffffff;
+  --nv-accent:#2F5D93;--nv-deep:#13263F;--nv-fil:#E06F00;--cds-radius:.375rem;
+  --wrap:72rem;--gut:max(1rem,(100% - var(--wrap)) / 2);--hdr:4.25rem
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--color-bg:#141b24;--color-panel:#1a232e;--color-fg:#e9eef3;--color-fg-muted:#9aa7b4;--color-border-line:#28333f;--page-bg:#0f151c;--nv-accent:#5B8FC7;--nv-deep:#0b1726;--nv-fil:#FF8C00}}
+:root[data-theme="dark"]{--color-bg:#141b24;--color-panel:#1a232e;--color-fg:#e9eef3;--color-fg-muted:#9aa7b4;--color-border-line:#28333f;--page-bg:#0f151c;--nv-accent:#5B8FC7;--nv-deep:#0b1726;--nv-fil:#FF8C00}
+html{scroll-behavior:smooth}
+body{padding:0;-webkit-font-smoothing:antialiased}
+.nv{max-width:none;gap:0}
+.nv-eye{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--nv-accent)}
+.nv-eye::before{content:"";width:1.4rem;height:2px;border-radius:2px;background:var(--nv-fil)}
+
+/* Bandeau test : fine bande sombre tout en haut */
+.nv-test{max-width:none;margin:0;border:0;border-radius:0;background:var(--nv-deep);color:#dfe7ef;justify-content:space-between;padding:.5rem var(--gut);font-size:.78rem}
+.nv-test .nv-updated{color:#a9b7c6;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em}
+.nv-test .nv-updated.old{color:#ff9a9a}
+
+/* En-tête collant : marque à gauche, rubriques au centre, bulletin officiel à droite */
+.nv-bar{border:0;border-radius:0;box-shadow:none;border-bottom:1px solid var(--color-border-line);background:color-mix(in srgb,var(--color-bg) 97%,transparent);backdrop-filter:none;-webkit-backdrop-filter:none;padding:.7rem var(--gut);gap:1.5rem}
+.nv-brand small{font-family:var(--font-mono);font-weight:500;font-size:.62rem;letter-spacing:.16em;margin:0 0 .2rem .1rem}
+.nv-tabs{justify-content:center;gap:.4rem}
+.nv-tab{border-radius:0;padding:.55rem .75rem;color:var(--color-fg-muted);box-shadow:inset 0 -2px 0 transparent;transition:color .15s,box-shadow .15s}
+.nv-tab:hover{background:transparent;color:var(--color-fg)}
+.nv-tab[aria-selected=true]{background:transparent;color:var(--color-fg);box-shadow:inset 0 -2px 0 var(--nv-accent)}
+.nv-cta{flex:none;display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .95rem;border-radius:var(--cds-radius);background:var(--nv-deep);color:#fff;text-decoration:none;font-size:.85rem;font-weight:600;white-space:nowrap}
+.nv-cta:hover{background:var(--nv-accent)}
+:root[data-theme="dark"] .nv-cta{background:var(--nv-accent);color:#0a1018}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nv-cta{background:var(--nv-accent);color:#0a1018}}
+@media (max-width:640px){
+  .nv-bar{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.2rem .8rem;padding:.55rem 1rem 0}
+  .nv-word{font-size:1.45rem}.nv-logo{width:1.9rem}
+  .nv-cta{margin-left:auto;padding:.4rem .7rem;font-size:.78rem}
+  .nv-tabs{order:3;flex:1 0 100%;justify-content:flex-start;margin:0 -.4rem}
+  .nv-tab{padding:.55rem .6rem !important}
+}
+
+/* Pages : contenu centré, grands espaces entre les sections */
+.nv-panel{gap:clamp(2.5rem,6vw,4.5rem);padding-bottom:clamp(3rem,7vw,5rem)}
+.nv-panel>:not(.nv-hero):not(.nv-ph){width:min(var(--wrap),100% - 2rem);margin-inline:auto}
+.nv .nv-card{background:var(--color-panel);border:0;border-radius:var(--cds-radius);padding:clamp(1.2rem,3vw,1.75rem)}
+.nv .nv-card .nv-card,.nv-det-b .nv-card{background:var(--color-bg)}
+#p-jour>.nv-card{background:transparent;padding:0;gap:1rem}
+.nv-card h2{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+#p-jour>.nv-card>h2,.nv-shead h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin:0}
+.nv-shead{display:flex;flex-direction:column;gap:.7rem}
+.nv-shead p{margin:0;color:var(--color-fg-muted);font-size:1rem;line-height:1.55;max-width:42rem}
+.nv-note{font-size:.84rem}
+[id^="x-"],#card-cristal,#card-roses,#card-carte,#card-todo,#card-meteo-simple{scroll-margin-top:calc(var(--hdr) + 1rem)}
+
+/* Grande photo pleine largeur, texte en bas à gauche */
+.nv-hero,.nv-hero{border-radius:0;min-height:min(86vh,46rem);justify-content:flex-start !important;align-items:flex-end !important;text-align:left !important;padding:clamp(2rem,5vw,4rem) var(--gut) clamp(3.5rem,7vw,5rem) !important;background-position:center 38%}
+.nv-hero::before{background:linear-gradient(180deg,rgba(9,18,30,.35) 0%,rgba(9,18,30,0) 30%,rgba(9,18,30,.25) 55%,rgba(9,18,30,.82) 100%),linear-gradient(90deg,rgba(9,18,30,.55) 0%,rgba(9,18,30,0) 65%) !important}
+.nv-hero-in{width:min(100%,44rem) !important;align-items:flex-start !important;gap:1.1rem}
+.nv-hero .nv-kicker{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;line-height:1.6;opacity:1}
+.nv-hero .nv-kicker::before{content:"";display:inline-block;vertical-align:middle;width:.5rem;height:.5rem;margin:-.15em .7rem 0 .25rem;border-radius:50%;background:#9cc8f0;box-shadow:0 0 0 4px rgba(156,200,240,.25)}
+.nv-hero .nv-title{font-family:var(--font-anthropic-sans);font-weight:800;font-size:clamp(2.3rem,5.6vw,4.4rem);letter-spacing:-.035em;line-height:1.02}
+.nv-hero .nv-pill-big{align-self:flex-start !important;border-radius:var(--cds-radius);font-size:.85rem;letter-spacing:.02em}
+.nv-hero .nv-take{background:rgba(9,18,30,.45);border-color:rgba(255,255,255,.14);border-radius:var(--cds-radius);font-size:1.02rem;max-width:40rem}
+.nv-hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem}
+.nv-hbtn{font:inherit;font-size:.9rem;font-weight:600;padding:.7rem 1.15rem;border-radius:var(--cds-radius);border:1px solid #fff;background:#fff;color:#0f1c2b;cursor:pointer}
+.nv-hbtn.ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.5);backdrop-filter:blur(6px)}
+.nv-hbtn:hover{background:#dce9f6;border-color:#dce9f6;color:#0f1c2b}
+.nv-hbtn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.nv-scroll{position:absolute;left:50%;bottom:1.1rem;transform:translateX(-50%);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.nv-photo{font-size:.62rem;max-width:min(26rem,calc(100% - 1.4rem))}
+@media (max-width:640px){.nv-hero{min-height:34rem}.nv-scroll{display:none}.nv-photo{left:1rem;right:auto;text-align:left}}
+
+/* Conseils : tuiles numérotées */
+.nv-todo{gap:1rem}
+.nv-todo li{border:0;background:var(--color-panel);border-radius:var(--cds-radius);padding:1.4rem 1.4rem 1.6rem;gap:.7rem;transition:transform .2s}
+.nv-todo li::before{content:counter(td,decimal-leading-zero);font-family:var(--font-mono);font-weight:500;font-size:.78rem;letter-spacing:.1em;color:var(--nv-accent)}
+.nv-todo li b{font-size:1.2rem;letter-spacing:-.01em}
+.nv-todo .nv-tz{background:var(--color-bg);border:0}
+
+/* Carte et zones */
+.nv-l1{gap:1.25rem}
+.nv-l1>.nv-card{background:var(--color-panel)}
+.nv-map{border-radius:var(--cds-radius)}
+.nv-zs{border-radius:var(--cds-radius);border-color:transparent;border-left-width:4px;transition:transform .15s,box-shadow .15s}
+.nv-zs:hover{transform:translateX(2px);box-shadow:0 4px 14px rgba(15,33,56,.08)}
+.nv-z{border-radius:var(--cds-radius)}
+
+/* Météo */
+.nv-day{border:0;background:var(--color-panel);border-radius:var(--cds-radius);padding:1.2rem}
+.nv-per{background:var(--color-bg)}
+
+/* Liens vers les autres rubriques : deux grandes tuiles */
+.nv-next{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:1rem}
+.nv-go{display:flex;flex-direction:column;align-items:flex-start;gap:.8rem;text-align:left;font:inherit;color:#fff;background:var(--nv-deep);border:0;border-radius:var(--cds-radius);padding:1.8rem;cursor:pointer;min-height:12rem;transition:background .2s}
+.nv-go:nth-child(2){background:var(--nv-accent)}
+.nv-go .nv-eye{color:rgba(255,255,255,.75)}
+.nv-go b{font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;max-width:26rem}
+.nv-go-a{margin-top:auto;font-weight:600;font-size:.92rem;display:inline-flex;gap:.4rem;transition:gap .2s}
+.nv-go:hover .nv-go-a{gap:.8rem}
+.nv-go:focus-visible{outline:2px solid var(--color-fg);outline-offset:3px}
+:root[data-theme="dark"] .nv-go:nth-child(2){color:#0a1018}:root[data-theme="dark"] .nv-go:nth-child(2) .nv-eye{color:rgba(10,16,24,.7)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nv-go:nth-child(2){color:#0a1018}:root:not([data-theme="light"]) .nv-go:nth-child(2) .nv-eye{color:rgba(10,16,24,.7)}}
+
+/* En-têtes des rubriques Apprendre / Expert / À propos */
+.nv-ph{gap:.9rem;padding:clamp(2.5rem,6vw,4.5rem) var(--gut);background:var(--color-panel);border-bottom:1px solid var(--color-border-line)}
+.nv-ph h2{font-family:var(--font-anthropic-sans);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.035em;line-height:1.05}
+.nv-ph p{font-size:1.05rem;line-height:1.55;max-width:44rem}
+.nv-sub{position:sticky;top:var(--hdr);z-index:4;padding:.6rem 0;margin-top:calc(-1 * clamp(1.5rem,4vw,3rem));background:color-mix(in srgb,var(--color-bg) 97%,transparent)}
+.nv-sub button{border-radius:var(--cds-radius);background:var(--color-bg)}
+.nv-sub button:hover{border-color:var(--nv-accent);color:var(--nv-accent)}
+.nv-sec{margin:0;font-family:var(--font-mono);font-size:.74rem;font-weight:500;letter-spacing:.14em;color:var(--nv-accent);margin-bottom:calc(-1 * clamp(1.5rem,4vw,3rem))}
+.nv-sec .nv-lvl{font-family:var(--font-anthropic-sans);letter-spacing:.04em;color:var(--color-fg-muted)}
+.nv-det,.nv-ac details,.nv-gl div,.nv-sc li,.nv-c,.nv-rz,.nv-opt,.nv-mx-why,.nv-b{border-radius:var(--cds-radius)}
+.nv-btn{border-radius:var(--cds-radius);font-weight:600}
+.nv-ab{gap:1.25rem}
+.nv-c,.nv-rz,.nv-opt,.nv-mx-why,.nv-ac details,.nv-sc li{background:var(--color-bg)}
+.nv-gl div{background:var(--color-bg);border-color:transparent}
+#card-apprendre{gap:.8rem}
+#card-apprendre .nv-body b{font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.nv-kpi-v{font-size:2rem}
+
+/* Pied de page sombre */
+.nv-footer{background:var(--nv-deep);color:#c9d4df;padding:clamp(2.5rem,6vw,4rem) var(--gut) 1.5rem;font-size:.9rem;line-height:1.55}
+.nv-footer-in{display:grid;grid-template-columns:1.4fr repeat(3,minmax(0,1fr));gap:2rem}
+@media (max-width:860px){.nv-footer-in{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.nv-footer-in{grid-template-columns:1fr}}
+.nv-footer .nv-brand{color:#fff;margin:0 0 .8rem}
+.nv-footer .nv-brand small{color:#8fa1b3}
+.nv-footer .nv-brand i{background:var(--nv-accent)}
+.nv-footer p{margin:0 0 .5rem}
+.nv-footer h3{margin:0 0 .8rem;font-family:var(--font-mono);font-weight:500;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#7f93a8}
+.nv-footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:.45rem}
+.nv-footer-col a,.nv-footer-col button{font:inherit;color:#e9eef3;background:none;border:0;padding:0;cursor:pointer;text-decoration:none;text-align:left}
+.nv-footer-col a:hover,.nv-footer-col button:hover{color:#9cc8f0}
+.nv-footer-col b{color:#fff;font-size:1.15rem;margin-right:.35rem;font-variant-numeric:tabular-nums}
+.nv-footer-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 2rem;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;color:#8fa1b3}
+.nv-footer-bot span:last-child{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.nv-footer .nv{--x:0}
+.nv-footer{--logo-band:#5B8FC7;--logo-cap:#F4F8FB;--logo-fil:#FF8C00;--logo-word:#F4F8FB}
+
+/* Titres dans la police du logo */
+.nv-hero .nv-title,#p-jour>.nv-card>h2,.nv-shead h2,.nv-ph h2,.nv-go b{font-family:var(--font-display);font-weight:700}
+
+/* Termes importants : couleur + gras, pour guider l'œil */
+.nv mark{font-weight:700;padding:.04em .36em}
+.nv mark.hl-face,.nv mark.hl-alt{white-space:nowrap}
+.nv mark.hl-bad{background:color-mix(in srgb,var(--nv-bad) 22%,transparent);color:color-mix(in srgb,var(--nv-bad) 70%,var(--color-fg));font-weight:800}
+.nv mark.hl-warn{background:color-mix(in srgb,var(--nv-warn) 24%,transparent);color:color-mix(in srgb,#b85a00 75%,var(--color-fg));font-weight:700}
+.nv mark.hl-alt{background:color-mix(in srgb,#5B8FC7 22%,transparent);color:var(--nv-accent)}
+.nv mark.hl-face{background:color-mix(in srgb,#8d6fd1 20%,transparent);color:color-mix(in srgb,#6a4bb8 80%,var(--color-fg))}
+.nv mark.hl-ok{background:color-mix(in srgb,var(--nv-ok) 22%,transparent);color:color-mix(in srgb,#0a7a3a 80%,var(--color-fg))}
+.nv mark.hl-off{color:var(--color-fg)}
+:root[data-theme="dark"] .nv mark{color:var(--color-fg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nv mark{color:var(--color-fg)}}
+.nv-hero mark,.nv-take mark,.nv-syn-head mark{color:#fff !important}
+.nv-hero .nv-take .nv-sent:first-child{font-size:1.15em;font-weight:600}
+.nv-todo li b{color:var(--color-fg)}
+.nv-todo li span{color:var(--color-fg);opacity:.85}
+.nv-zs-d{color:var(--color-fg)}
+
+/* En un coup d'œil : bandeau sous la photo */
+.nv-glance{--gc:var(--nv-off);position:relative;z-index:2;margin-top:clamp(-4.5rem,-6vw,-2.5rem) !important;display:grid;grid-template-columns:1.1fr 1.6fr .8fr 1.6fr;background:var(--color-bg);border-radius:var(--cds-radius);box-shadow:0 18px 50px rgba(19,38,63,.16);overflow:hidden;border-top:5px solid var(--gc)}
+.nv-glance[data-level=ok]{--gc:var(--nv-ok)}.nv-glance[data-level=warn]{--gc:var(--nv-warn)}.nv-glance[data-level=bad]{--gc:var(--nv-bad)}
+.nv-gl-i{display:flex;flex-direction:column;gap:.5rem;padding:1.2rem 1.35rem;min-width:0;border-left:1px solid var(--color-border-line)}
+.nv-gl-i:first-child{border-left:0;background:color-mix(in srgb,var(--gc) 12%,var(--color-bg))}
+.nv-gl-l{font-family:var(--font-mono);font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--color-fg-muted)}
+.nv-gl-big{font-family:var(--font-display);font-weight:700;font-size:1.6rem;line-height:1.1;letter-spacing:-.02em;color:color-mix(in srgb,var(--gc) 65%,var(--color-fg))}
+.nv-gl-big small{display:block;margin-top:.35rem;font-family:var(--font-anthropic-sans);font-size:.82rem;font-weight:500;letter-spacing:0;color:var(--color-fg-muted)}
+.nv-gl-num{font-family:var(--font-display);font-weight:700;font-size:2.4rem;line-height:1;letter-spacing:-.03em}
+.nv-gl-num small{font-family:var(--font-anthropic-sans);font-size:.9rem;font-weight:500;color:var(--color-fg-muted);margin-left:.3rem;letter-spacing:0}
+.nv-gl-v{font-size:.95rem;line-height:1.5}
+@media (max-width:900px){.nv-glance{grid-template-columns:1fr 1fr}.nv-gl-i:nth-child(3){border-left:0}.nv-gl-i:nth-child(n+3){border-top:1px solid var(--color-border-line)}}
+.nv-hero{padding-bottom:clamp(5.5rem,10vw,8rem) !important}
+.nv-hero .nv-photo{top:.6rem;bottom:auto}
+@media (max-width:640px){.nv-hero .nv-photo{top:auto;bottom:3.1rem}}
+.nv-hero .nv-scroll{display:none}
+@media (max-width:560px){.nv-glance{grid-template-columns:1fr}.nv-gl-i{border-left:0;border-top:1px solid var(--color-border-line)}.nv-gl-i:first-child{border-top:0}}
+</style>
 
 <div class="nv">
   <nav class="nv-bar" aria-label="Nivo">
     <h1 class="nv-brand" aria-label="Nivo Mont-Blanc"><svg class="nv-logo" viewBox="0 0 120 104" aria-hidden="true"><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-band)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.2 41.6 L38 20 L51.2 39.2" fill="none" style="stroke:var(--logo-cap)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-fil)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nv-word" aria-hidden="true">n<span class="nv-i">ı<svg viewBox="0 0 22 20" aria-hidden="true"><polygon points="11,0 6.6,8 15.4,8" style="fill:var(--logo-cap)"/><polygon points="5.78,9.5 16.23,9.5 17.33,11.5 4.68,11.5" style="fill:var(--logo-fil)"/><polygon points="3.85,13 18.15,13 22,20 0,20" style="fill:var(--logo-band)"/></svg></span>vo</span><small aria-hidden="true">Mont-Blanc</small></h1>
     <div class="nv-tabs" role="tablist" aria-label="Rubriques">
-      <button type="button" class="nv-tab" role="tab" id="tab-jour" aria-controls="p-jour" aria-selected="true" data-tab="jour">🏔️ Aujourd'hui</button>
-      <button type="button" class="nv-tab" role="tab" id="tab-apprendre" aria-controls="p-apprendre" aria-selected="false" tabindex="-1" data-tab="apprendre">🎓 Apprendre</button>
-      <button type="button" class="nv-tab" role="tab" id="tab-expert" aria-controls="p-expert" aria-selected="false" tabindex="-1" data-tab="expert">🔬 Expert</button>
-      <button type="button" class="nv-tab" role="tab" id="tab-apropos" aria-controls="p-apropos" aria-selected="false" tabindex="-1" data-tab="apropos">ℹ️ À propos</button>
+      <button type="button" class="nv-tab" role="tab" id="tab-jour" aria-controls="p-jour" aria-selected="true" data-tab="jour">Aujourd'hui</button>
+      <button type="button" class="nv-tab" role="tab" id="tab-apprendre" aria-controls="p-apprendre" aria-selected="false" tabindex="-1" data-tab="apprendre">Apprendre</button>
+      <button type="button" class="nv-tab" role="tab" id="tab-expert" aria-controls="p-expert" aria-selected="false" tabindex="-1" data-tab="expert">Expert</button>
+      <button type="button" class="nv-tab" role="tab" id="tab-apropos" aria-controls="p-apropos" aria-selected="false" tabindex="-1" data-tab="apropos">À propos</button>
     </div>
+    <a class="nv-cta" href="https://meteofrance.com/meteo-montagne" target="_blank" rel="noopener">Bulletin officiel <span aria-hidden="true">↗</span></a>
   </nav>
 
   <!-- ================= AUJOURD'HUI : version simple ================= -->
@@ -423,19 +601,35 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
         <span class="nv-pill nv-pill-big" id="nv-pill">—</span>
         <h2 class="nv-title" id="nv-stitle" data-source="status" data-row="0" data-field="simple_title">—</h2>
         <p class="nv-take" id="nv-take" data-source="status" data-row="0" data-field="simple_summary">—</p>
+        <div class="nv-hero-cta">
+          <button type="button" class="nv-hbtn" data-jump="card-todo">Que faire aujourd'hui ?</button>
+          <button type="button" class="nv-hbtn ghost" data-jump="card-carte">Voir les zones</button>
+        </div>
       </div>
       <div class="nv-photo">Aiguille du Dru et Aiguille Verte depuis le Montenvers · photo Alexandre Buisse, <a href="https://commons.wikimedia.org/wiki/File:Aiguille_du_Dru_and_Aiguille_Verte_from_the_Montenvers,_Chamonix.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a> (recadrée)</div>
     </header>
 
+    <section class="nv-glance" id="nv-glance" aria-label="Les conditions en un coup d'œil">
+      <div class="nv-gl-i"><span class="nv-gl-l">Vigilance du jour</span><span class="nv-gl-big"><span id="nv-gl-lvl">—</span><small data-source="status" data-row="0" data-field="label">—</small></span></div>
+      <div class="nv-gl-i"><span class="nv-gl-l">⚠ Pentes à éviter</span><span class="nv-gl-v" data-source="status" data-row="0" data-field="avoid">—</span></div>
+      <div class="nv-gl-i"><span class="nv-gl-l">Dernière neige ou vent fort</span><span class="nv-gl-num"><span data-source="status" data-row="0" data-field="overload_age_d">—</span><small>jours</small></span></div>
+      <div class="nv-gl-i"><span class="nv-gl-l">À surveiller · 24-48 h</span><span class="nv-gl-v" data-source="status" data-row="0" data-field="watch">—</span></div>
+    </section>
+
     <section class="nv-card nv-todo-card" id="card-todo" hidden>
-      <h2>👉 Ce qu'il faut faire</h2>
+      <span class="nv-eye">01 · Les conseils du jour</span>
+      <h2>Ce qu'il faut faire</h2>
       <ul class="nv-todo" id="nv-todo" data-source="status" data-row="0" data-field="simple_todo"></ul>
     </section>
 
+    <div class="nv-shead">
+      <span class="nv-eye">02 · Carte des zones</span>
+      <h2>Où aller, où se méfier</h2>
+      <p>Chaque zone du massif reçoit une couleur selon la neige, le vent et la chaleur. Touche une zone sur la carte ou dans la liste pour la mettre en avant.</p>
+    </div>
     <section class="nv-l1">
       <div class="nv-card" id="card-carte">
-        <h2>Où aller, où se méfier</h2>
-        <p class="nv-note">Touche une zone de la carte ou de la liste.</p>
+        <h2>Carte du massif</h2>
         <div class="nv-box nv-map dash-skeleton" id="ch-map" data-source="zones"></div>
         <div class="nv-leg" id="map-leg"></div>
         <span class="nv-credit">Fond de carte : © swisstopo (Carte nationale)</span>
@@ -447,24 +641,25 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
     </section>
 
     <section class="nv-card" id="card-meteo-simple">
-      <h2>🌤️ La météo en montagne</h2>
+      <span class="nv-eye">03 · Prévisions</span>
+      <h2>La météo en montagne</h2>
       <div class="nv-days dash-skeleton" id="meteo-simple" data-source="forecast meteo_simple"></div>
     </section>
 
     <div class="nv-next">
-      <button type="button" class="nv-btn ghost" data-go="apprendre">🎓 Apprendre une notion en 2 minutes →</button>
-      <button type="button" class="nv-btn ghost" data-go="expert">🔬 Comprendre le pourquoi (expert) →</button>
+      <button type="button" class="nv-go" data-go="apprendre"><span class="nv-eye">Apprendre · 2 min</span><b>Une notion liée aux conditions du jour, et un quiz pour vérifier</b><span class="nv-go-a">Commencer <span aria-hidden="true">→</span></span></button>
+      <button type="button" class="nv-go" data-go="expert"><span class="nv-eye">Espace expert</span><b>Le pourquoi des couleurs : CRISTAL, pentes, météo détaillée</b><span class="nv-go-a">Explorer <span aria-hidden="true">→</span></span></button>
     </div>
   </section>
 
   <!-- ================= APPRENDRE ================= -->
   <section class="nv-panel" role="tabpanel" id="p-apprendre" aria-labelledby="tab-apprendre" hidden>
-    <div class="nv-ph"><h2>Apprendre</h2><p>Une notion liée aux conditions du jour, puis une question pour vérifier.</p></div>
+    <div class="nv-ph"><span class="nv-eye">Rubrique · 2 minutes</span><h2>Apprendre</h2><p>Une notion liée aux conditions du jour, puis une question pour vérifier.</p></div>
     <section class="nv-card" id="card-apprendre">
-      <h2>🎓 Le point du jour</h2>
+      <span class="nv-eye">La notion du jour</span>
       <p class="nv-body"><b data-source="learn" data-row="0" data-field="notion">—</b></p>
       <p class="nv-body" data-source="learn" data-row="0" data-field="texte">—</p>
-      <h2>❓ Quiz</h2>
+      <span class="nv-eye" style="margin-top:1.5rem">Quiz</span>
       <p class="nv-body" data-source="learn" data-row="0" data-field="quiz">—</p>
       <div class="nv-quiz" id="quiz-opts">
         <button type="button" class="nv-opt" aria-pressed="false" data-opt="a"><b>A</b><span data-source="learn" data-row="0" data-field="choix_a">—</span></button>
@@ -485,7 +680,7 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
 
   <!-- ================= EXPERT ================= -->
   <section class="nv-panel" role="tabpanel" id="p-expert" aria-labelledby="tab-expert" hidden>
-    <div class="nv-ph"><h2>Espace expert</h2><p>Le raisonnement complet derrière les couleurs : méthode CRISTAL d'Alain Duclos, orientations, météo détaillée, historique et bulletins officiels.</p></div>
+    <div class="nv-ph"><span class="nv-eye">Rubrique · pour aller plus loin</span><h2>Espace expert</h2><p>Le raisonnement complet derrière les couleurs : méthode CRISTAL d'Alain Duclos, orientations, météo détaillée, historique et bulletins officiels.</p></div>
     <nav class="nv-sub" aria-label="Sections expert">
       <button type="button" data-jump="x-synthese">Synthèse</button>
       <button type="button" data-jump="x-zones">Zones</button>
@@ -682,7 +877,7 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
 
   <!-- ================= À PROPOS ================= -->
   <section class="nv-panel" role="tabpanel" id="p-apropos" aria-labelledby="tab-apropos" hidden>
-    <div class="nv-ph"><h2>À propos de Nivo</h2><p>Le point neige et avalanche du jour, lisible en 30 secondes, et qui t'apprend à lire la montagne.</p></div>
+    <div class="nv-ph"><span class="nv-eye">Version de test · hiver 2026-2027</span><h2>À propos de Nivo</h2><p>Le point neige et avalanche du jour, lisible en 30 secondes, et qui t'apprend à lire la montagne.</p></div>
     <div class="nv-ab">
       <section class="nv-card">
         <h2>Ce que fait Nivo</h2>
@@ -714,7 +909,36 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
     </div>
   </section>
 
-  <p class="nv-foot">Les couleurs sont une estimation automatique (IA), pas un bulletin officiel. La décision se prend sur le terrain : DVA, pelle, sonde, et jamais seul.</p>
+  <footer class="nv-footer">
+    <div class="nv-footer-in">
+      <div>
+        <p class="nv-brand" aria-label="Nivo Mont-Blanc"><svg class="nv-logo" viewBox="0 0 120 104" aria-hidden="true"><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-band)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.2 41.6 L38 20 L51.2 39.2" fill="none" style="stroke:var(--logo-cap)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-fil)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nv-word" aria-hidden="true">n<span class="nv-i">ı<svg viewBox="0 0 22 20" aria-hidden="true"><polygon points="11,0 6.6,8 15.4,8" style="fill:var(--logo-cap)"/><polygon points="5.78,9.5 16.23,9.5 17.33,11.5 4.68,11.5" style="fill:var(--logo-fil)"/><polygon points="3.85,13 18.15,13 22,20 0,20" style="fill:var(--logo-band)"/></svg></span>vo</span><small aria-hidden="true">Mont-Blanc</small></p>
+        <p>Le point neige et avalanche du jour pour le massif du Mont-Blanc, en langage simple. Mis à jour chaque jour vers 17 h 30.</p>
+      </div>
+      <nav class="nv-footer-col" aria-label="Rubriques">
+        <h3>Rubriques</h3>
+        <button type="button" data-go="jour">Aujourd'hui</button>
+        <button type="button" data-go="apprendre">Apprendre</button>
+        <button type="button" data-go="expert">Expert</button>
+        <button type="button" data-go="apropos">À propos</button>
+      </nav>
+      <div class="nv-footer-col">
+        <h3>Bulletins officiels</h3>
+        <a href="https://meteofrance.com/meteo-montagne" target="_blank" rel="noopener">BERA · Météo-France ↗</a>
+        <a href="https://www.slf.ch/fr/" target="_blank" rel="noopener">SLF · Suisse ↗</a>
+        <a href="https://www.data-avalanche.org" target="_blank" rel="noopener">data-avalanche.org ↗</a>
+      </div>
+      <div class="nv-footer-col">
+        <h3>Urgence</h3>
+        <a href="tel:112"><b>112</b>France et Suisse</a>
+        <a href="tel:1414"><b>1414</b>Rega (Suisse)</a>
+      </div>
+    </div>
+    <div class="nv-footer-bot">
+      <span>Les couleurs sont une estimation automatique (IA), pas un bulletin officiel. La décision se prend sur le terrain : DVA, pelle, sonde, et jamais seul.</span>
+      <span>Nivo · version de test</span>
+    </div>
+  </footer>
 </div>
 
 <script>window.NV_MAP_BG = 'img/carte.webp'; window.NV_HERO = 'img/hero.webp';</script>
@@ -1121,7 +1345,7 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
       b.appendChild(h);
       var f = z.simple ? 'simple' : 'avoid';
       var d = document.createElement('p'); d.className = 'nv-zs-d'; d.setAttribute('data-source', 'zones'); d.setAttribute('data-where', w); d.setAttribute('data-field', f);
-      d.textContent = z[f] || '—'; b.appendChild(d);
+      rich(d, z[f]); b.appendChild(d);
       li.appendChild(b);
       li.addEventListener('click', function(){ selectZone(z.id); });
       li.addEventListener('keydown', function(ev){ if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); selectZone(z.id); } });
@@ -1407,6 +1631,7 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
     document.getElementById('nv-stitle').dataset.field = hasS('simple_title') || !s0 ? 'simple_title' : 'label';
     var r0 = fillRow('status');
     var sp = document.getElementById('nv-pill'); sp.dataset.level = r0 ? r0.level : 'off'; sp.textContent = r0 ? (DOT[r0.level] || '') + ' ' + (SIMPLE[r0.level] || '') : '—';
+    document.getElementById('nv-glance').dataset.level = r0 ? r0.level : 'off'; document.getElementById('nv-gl-lvl').textContent = r0 ? (SIMPLE[r0.level] || '—') : '—';
     var td = document.getElementById('nv-todo'), tc = document.getElementById('card-todo'); td.replaceChildren();
     var todo = [];
     if (r0 && r0.simple_todo){
@@ -1422,8 +1647,8 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
       if (zm){ t = t.slice(zm[0].length); var zr = zRow(zm[1]); zt = 'Zone ' + zm[1] + (zr && (zr.short || zr.zone) ? ' · ' + (zr.short || zr.zone) : ''); }
       var m = t.match(/^([^:.\u2014\u2013]{3,48}?)\s*[:\u2014\u2013]\s*(.+)$/), li = document.createElement('li');
       if (zt){ var zc = document.createElement('span'); zc.className = 'nv-tz'; zc.textContent = zt; li.appendChild(zc); }
-      if (m){ var b = document.createElement('b'); b.textContent = m[1]; var sp2 = document.createElement('span'); sp2.textContent = m[2]; var w = document.createElement('div'); w.style.cssText = 'display:flex;flex-direction:column;gap:.2rem'; w.appendChild(b); w.appendChild(sp2); li.appendChild(w); }
-      else { var sp3 = document.createElement('span'); sp3.style.color = 'var(--color-fg)'; sp3.textContent = t; li.appendChild(sp3); }
+      if (m){ var b = document.createElement('b'); b.textContent = m[1]; var sp2 = document.createElement('span'); rich(sp2, m[2]); var w = document.createElement('div'); w.style.cssText = 'display:flex;flex-direction:column;gap:.2rem'; w.appendChild(b); w.appendChild(sp2); li.appendChild(w); }
+      else { var sp3 = document.createElement('span'); sp3.style.color = 'var(--color-fg)'; rich(sp3, t); li.appendChild(sp3); }
       td.appendChild(li);
     });
     var hero = document.getElementById('nv-top'); if (window.NV_HERO && !hero.dataset.bg){ hero.style.backgroundImage = 'url(' + window.NV_HERO + ')'; hero.dataset.bg = '1'; }
@@ -1505,9 +1730,13 @@ body{margin:0;background:var(--page-bg);color:var(--color-fg);font-family:var(--
       document.getElementById('p-' + t.dataset.tab).hidden = !on;
       if (on){ if (focus) t.focus(); if (t.scrollIntoView) t.scrollIntoView({block: 'nearest', inline: 'nearest'}); }
     });
-    var bar = document.querySelector('.nv-bar'); if (bar && bar.getBoundingClientRect().top < 0) bar.scrollIntoView({block: 'start'});
+    if (window.scrollY > 0) window.scrollTo({top: 0, behavior: 'instant'});
     drawAll();
   }
+  // hauteur de l'en-tête collant, pour placer la sous-navigation expert et les ancres juste dessous
+  var bar = document.querySelector('.nv-bar');
+  function setHdr(){ document.documentElement.style.setProperty('--hdr', bar.offsetHeight + 'px'); }
+  setHdr(); window.addEventListener('resize', setHdr);
   tabs.forEach(function(t, i){
     t.addEventListener('click', function(){ showTab(t.dataset.tab); });
     t.addEventListener('keydown', function(e){
