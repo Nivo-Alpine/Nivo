@@ -1,22 +1,22 @@
 [
- {
-  "date_label": "bilan du 27/10/2026",
-  "level": "warn",
-  "label": "Hors saison · Alerté en haute montagne",
-  "summary": "Midi, Argentière et Le Tour : Alerté au-dessus de 3000 m. Les plaques du 25/10 vieillissent mais s'humidifient jusqu'à 4000 m. Sous 3000 m, neige mince et mouillée : méfiant, coulées l'après-midi.",
-  "avoid": "SE, E, NE et S au-dessus de 3000 m l'après-midi ; NE-E-SE sous les crêtes au-dessus de 2400 m",
-  "overload_age_d": 2,
-  "terrain": "Carnet de Louis vide ; data-avalanche.org illisible ce jour (accès refusé au robot).",
-  "bera": "Aucun bulletin publié (page chamonix.com « indisponible », PDF BRA2610271600 introuvable).",
-  "slf": "Aucun bulletin pour 4111 Emosson (hors saison ; reprise prévue en novembre-décembre).",
-  "watch": "Redoux persistant jusqu'au week-end (17 °C en vallée vendredi) : coulées de neige mouillée et ponts de neige qui cèdent sur les glaciers, surtout l'après-midi.",
-  "limits": "Bulletin Météo-France non actualisé (grève) : prévision rédigée lundi pour lundi et mardi ; mercredi seulement en températures. Ni BERA, ni SLF, ni data-avalanche.org, ni observation de terrain : confiance faible.",
-  "simple_title": "Hors saison : prudence en haute montagne",
-  "simple_summary": "Il y a encore peu de neige, et la chaleur la rend mouillée. Au-dessus de 3000 m, de la neige soufflée par le vent il y a deux jours peut encore partir. Le risque de coulées augmente au fil de la journée.",
-  "simple_todo": [
-   "Pars tôt et redescends avant midi : la chaleur rend la neige instable l'après-midi.",
-   "Au-dessus de 3000 m, évite les pentes raides tournées vers l'est et le sud, surtout juste sous les crêtes.",
-   "Sur glacier, encorde-toi : les crevasses sont mal recouvertes."
-  ]
- }
+  {
+    "date_label": "bilan du 27/10/2026",
+    "level": "warn",
+    "label": "Hors saison · Alerté en haute montagne",
+    "summary": "Midi, Argentière et Le Tour : Alerté au-dessus de 3000 m. Les plaques du 25/10 vieillissent mais s'humidifient jusqu'à 4000 m. Sous 3000 m, neige mince et mouillée : méfiant, coulées l'après-midi.",
+    "avoid": "SE, E, NE et S au-dessus de 3000 m l'après-midi ; NE-E-SE sous les crêtes au-dessus de 2400 m",
+    "overload_age_d": 2,
+    "terrain": "Carnet de Louis vide ; data-avalanche.org illisible ce jour (accès refusé au robot).",
+    "bera": "Aucun bulletin publié (page chamonix.com « indisponible », PDF BRA2610271600 introuvable).",
+    "slf": "Aucun bulletin pour 4111 Emosson (hors saison ; reprise prévue en novembre-décembre).",
+    "watch": "Redoux persistant jusqu'au week-end (17 °C en vallée vendredi) : coulées de neige mouillée et ponts de neige qui cèdent sur les glaciers, surtout l'après-midi.",
+    "limits": "Bulletin Météo-France non actualisé (grève) : prévision rédigée lundi pour lundi et mardi ; mercredi seulement en températures. Ni BERA, ni SLF, ni data-avalanche.org, ni observation de terrain : confiance faible.",
+    "simple_title": "Hors saison : prudence en haute montagne",
+    "simple_summary": "Il y a encore peu de neige, et la chaleur la rend mouillée. Au-dessus de 3000 m, de la neige soufflée par le vent il y a deux jours peut encore partir. Le risque de coulées augmente au fil de la journée.",
+    "simple_todo": [
+      "Pars tôt et redescends avant midi : la chaleur rend la neige instable l'après-midi.",
+      "Au-dessus de 3000 m, évite les pentes raides tournées vers l'est et le sud, surtout juste sous les crêtes.",
+      "Sur glacier, encorde-toi : les crevasses sont mal recouvertes."
+    ]
+  }
 ]

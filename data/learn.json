@@ -1,13 +1,13 @@
 [
- {
-  "date_label": "27/10/2026",
-  "notion": "Les couches fragiles de base : ce que prépare la neige d'automne",
-  "texte": "La neige tombée en octobre ne disparaît pas partout : sur les faces N au-dessus de 2500-3000 m, une partie survit au redoux actuel. Si un long beau temps froid suit, cette couche mince se transforme en grains à faces planes puis en gobelets, peu cohésifs. Recouverte par les chutes de l'hiver, elle devient une couche fragile persistante, capable de produire des plaques épaisses pendant des semaines (Duclos : jusqu'à 84 cm sur gobelets). C'est pourquoi on note dès maintenant, dans le journal, où il reste de la neige et quel temps suit.",
-  "quiz": "Fin octobre, il reste 20-30 cm de neige sur les faces N vers 3000 m, puis viennent deux semaines de beau temps froid et sec. Que devient probablement cette neige ?",
-  "choix_a": "Elle se transforme en grains à faces planes ou gobelets, peu liés : une future couche fragile.",
-  "choix_b": "Elle se tasse en une couche dense et solide, qui ancrera bien les chutes de l'hiver.",
-  "choix_c": "Elle fond entièrement, même à l'ombre, faute de nouvelles chutes pour l'entretenir.",
-  "answer": "a",
-  "explication": "A : un manteau mince sous un ciel clair et froid subit un fort gradient de température, qui fabrique faces planes et gobelets sans cohésion. B décrit ce qui arrive à un manteau épais et doux (tassement), pas à une couche mince au froid. C est faux à l'ombre en altitude : sans soleil ni air doux, la neige persiste et se transforme au lieu de fondre."
- }
+  {
+    "date_label": "27/10/2026",
+    "notion": "Les couches fragiles de base : ce que prépare la neige d'automne",
+    "texte": "La neige tombée en octobre ne disparaît pas partout : sur les faces N au-dessus de 2500-3000 m, une partie survit au redoux actuel. Si un long beau temps froid suit, cette couche mince se transforme en grains à faces planes puis en gobelets, peu cohésifs. Recouverte par les chutes de l'hiver, elle devient une couche fragile persistante, capable de produire des plaques épaisses pendant des semaines (Duclos : jusqu'à 84 cm sur gobelets). C'est pourquoi on note dès maintenant, dans le journal, où il reste de la neige et quel temps suit.",
+    "quiz": "Fin octobre, il reste 20-30 cm de neige sur les faces N vers 3000 m, puis viennent deux semaines de beau temps froid et sec. Que devient probablement cette neige ?",
+    "choix_a": "Elle se transforme en grains à faces planes ou gobelets, peu liés : une future couche fragile.",
+    "choix_b": "Elle se tasse en une couche dense et solide, qui ancrera bien les chutes de l'hiver.",
+    "choix_c": "Elle fond entièrement, même à l'ombre, faute de nouvelles chutes pour l'entretenir.",
+    "answer": "a",
+    "explication": "A : un manteau mince sous un ciel clair et froid subit un fort gradient de température, qui fabrique faces planes et gobelets sans cohésion. B décrit ce qui arrive à un manteau épais et doux (tassement), pas à une couche mince au froid. C est faux à l'ombre en altitude : sans soleil ni air doux, la neige persiste et se transforme au lieu de fondre."
+  }
 ]
