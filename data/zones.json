@@ -14,10 +14,10 @@
     "bulletin": "SLF 4111 Emosson",
     "level": "warn",
     "mode": "Méfiant",
-    "band": "2000–3000 m",
-    "reason": "Neige mince et vieillissante sur faces N, regel faible vers 2000-2500 m",
-    "avoid": "Pentes raides N-NE-E > 2400 m (plaques anciennes du 23/10), traversées au-dessus des lacs ; chute sur neige dure le matin",
-    "simple": "Peu de neige, surtout sur les pentes tournées vers le nord au-dessus de 2400 m. Évite les pentes raides là-haut : neige dure le matin, risque de glissade."
+    "band": "2400–2800 m",
+    "reason": "Neige mince et rare, en transformation sur les faces nord",
+    "avoid": "Plaques résiduelles et neige dure sur pentes > 30° N-NE au-dessus de 2400 m ; chute sur névés gelés le matin",
+    "simple": "Très peu de neige, surtout tournée vers le nord au-dessus de 2400 m. Elle est dure le matin : attention aux glissades sur les pentes raides."
   },
   {
     "id": "Z2",
@@ -34,10 +34,10 @@
     "bulletin": "BERA Mont-Blanc",
     "level": "warn",
     "mode": "Méfiant",
-    "band": "2000–3000 m",
-    "reason": "Neige résiduelle sur versant Bérard/Lac Blanc N-NE, versant S sec",
-    "avoid": "Pentes raides N-NE-E > 2400 m côté Bérard / Lac Blanc, sous les crêtes ; versant S-SE sans neige skiable",
-    "simple": "Il reste un peu de neige côté nord (Lac Blanc, Bérard). Évite les pentes raides juste sous les crêtes ; côté Chamonix, presque plus de neige."
+    "band": "2400–2965 m",
+    "reason": "Neige mince côté Bérard, nuits douces, regel faible à 2400 m",
+    "avoid": "Pentes > 30° N-NE côté Bérard / Lac Blanc au-dessus de 2400 m ; versant S-SE : quasi plus de neige",
+    "simple": "Il ne reste de la neige que côté nord, au-dessus de 2400 m, en couche mince. Côté Chamonix, presque plus rien : rien à skier."
   },
   {
     "id": "Z3",
@@ -55,9 +55,9 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts de vent du 23-25/10 qui vieillissent, regel retrouvé en altitude",
-    "avoid": "Pentes raides NE-E-SE sous les crêtes > 3000 m, Vallée Noire ; S-SE l'après-midi ; crevasses mal pontées, arête de sortie",
-    "simple": "Neige soufflée par le vent il y a quelques jours au-dessus de 3000 m. Évite les pentes raides sous les crêtes, côté est ; encorde-toi sur le glacier."
+    "reason": "Dépôts du 25/10 vieillissants sous les crêtes, ponts de neige minces",
+    "avoid": "Pentes > 30° NE-E-SE sous les crêtes > 3000 m ; Vallée Noire ; glacier non encordé ; arête de sortie (chute)",
+    "simple": "Au-dessus de 3000 m, de la neige soufflée par le vent reste sous les crêtes côté est. Évite les pentes raides là ; encorde-toi sur le glacier."
   },
   {
     "id": "Z4",
@@ -68,16 +68,16 @@
     "alt_max": 3900,
     "lat": 45.9432,
     "lon": 7.0047,
-    "rx_km": 3.0,
+    "rx_km": 3,
     "ry_km": 2.4,
     "rot": -20,
     "bulletin": "BERA Mont-Blanc",
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts de vent anciens sous les cols, manteau mince et irrégulier",
-    "avoid": "Couloirs raides vers les cols NE-E-SE > 3000 m ; crevasses ; S-SE l'après-midi",
-    "simple": "Neige soufflée par le vent sous les cols, au-dessus de 3000 m. Évite les couloirs raides côté est ; encorde-toi sur le glacier."
+    "reason": "Dépôts anciens de 4 jours sous les cols, crevasses mal bouchées",
+    "avoid": "Couloirs > 30° NE-E-SE vers les cols > 3000 m ; glacier non encordé ; neige dure (chute) le matin",
+    "simple": "Au-dessus de 3000 m, évite les couloirs raides côté est vers les cols. Sur le glacier, encorde-toi : les crevasses sont mal recouvertes."
   },
   {
     "id": "Z5",
@@ -95,8 +95,8 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts de vent anciens près de la frontière, crevasses mal recouvertes",
-    "avoid": "Pentes raides NE-E-SE sous les crêtes > 3000 m ; glacier du Tour non encordé ; versant Trient : croiser SLF",
-    "simple": "Neige soufflée par le vent au-dessus de 3000 m. Évite les pentes raides sous les crêtes côté est ; encorde-toi sur le glacier du Tour."
+    "reason": "Dépôts sous les crêtes frontalières, vent de nord-est vendredi",
+    "avoid": "Pentes > 30° NE-E-SE et SO sous les crêtes > 3000 m ; glacier non encordé ; < 2000 m pas de neige",
+    "simple": "Peu de neige en bas. Plus haut, évite les pentes raides juste sous les crêtes. Sur le glacier du Tour, encorde-toi."
   }
 ]

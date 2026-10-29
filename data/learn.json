@@ -1,13 +1,13 @@
 [
   {
-    "date_label": "28/10/2026",
-    "notion": "L'inversion de température",
-    "texte": "Par nuit claire et calme, l'air froid, plus lourd, coule et s'accumule au fond des vallées : il peut faire 0 °C à Chamonix et +4 °C à 2000 m, comme cette nuit. C'est une inversion de température. Conséquence pour toi : un bon gel en vallée ne prouve pas que la neige a regelé en altitude ; à mi-hauteur, la croûte peut rester mince. Juge le regel là où tu skies (stations d'altitude, bâton dans la neige au départ), pas sur le pare-brise de ta voiture.",
-    "quiz": "Nuit claire et calme d'automne : à l'aube, il fait 0 °C à Chamonix (1000 m). Vers 2000 m, à quoi t'attendre ?",
-    "choix_a": "Plus froid, vers −6 °C, car la température baisse toujours avec l'altitude.",
-    "choix_b": "La même température qu'en bas, car l'air se mélange bien pendant la nuit.",
-    "choix_c": "Souvent plus doux qu'en bas : l'air froid stagne au fond, le regel y est faible.",
-    "answer": "c",
-    "explication": "Par nuit claire et sans vent, l'air froid et lourd s'écoule et s'accumule en fond de vallée : c'est l'inversion, et 2000 m peut être plus doux que 1000 m (ce matin +4 °C à 2000 m pour 0 °C en bas). A applique la décroissance moyenne (≈ 0,6 °C par 100 m) qui ne vaut pas par nuit calme ; B est faux, car c'est justement l'absence de vent qui empêche le mélange."
+    "date_label": "29/10/2026",
+    "notion": "Le givre de surface",
+    "texte": "Par nuit claire, calme et un peu humide, la vapeur d'eau se dépose sur la neige froide en grandes plumes brillantes : c'est le givre de surface, la « rosée gelée » de la neige. Il se forme surtout à l'ombre, dans les creux et les fonds de vallon où l'air froid stagne. Tant qu'il est en surface, le vent ou le soleil le détruisent facilement ; mais s'il est recouvert par une chute de neige calme, il devient une couche fragile enfouie qui peut rester active des semaines. Avec les nuits claires de cette fin octobre, note où tu en vois : ce sont des pièges possibles pour l'hiver.",
+    "quiz": "Après plusieurs nuits claires et calmes, tu vois à l'aube de grandes plumes brillantes sur un replat à l'ombre vers 2500 m. S'il tombe 30 cm de neige sans vent dessus, que retenir ?",
+    "choix_a": "Ces cristaux fondent sous la neige fraîche et disparaissent en quelques heures.",
+    "choix_b": "Ils peuvent former une couche fragile enfouie, active pendant des semaines.",
+    "choix_c": "Ils accrochent bien la neige fraîche et renforcent la liaison entre couches.",
+    "answer": "b",
+    "explication": "Le givre de surface enfoui est une couche fragile persistante : ses grandes plumes s'effondrent facilement sous le poids d'une plaque, parfois des semaines après. Il ne fond pas sous une neige froide (A faux), et ses cristaux fins et cassants ne lient pas les couches, ils font l'inverse (C faux)."
   }
 ]

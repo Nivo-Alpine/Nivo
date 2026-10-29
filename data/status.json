@@ -1,23 +1,23 @@
 [
   {
-    "date_label": "bilan du 28/10/2026",
+    "date_label": "bilan du 29/10/2026",
     "level": "warn",
-    "label": "Hors saison · méfiance en haute montagne",
-    "summary": "Z3, Z4, Z5 en mode Méfiant au-dessus de 3000 m : dépôts de vent du 23-25/10 qui vieillissent. Z1 et Z2 Méfiant sur neige mince N-NE au-dessus de 2400 m. Beau temps durable : regel en altitude, manteau mince qui se transforme.",
+    "label": "Hors saison · prudence en haute montagne",
+    "summary": "Z3, Z4, Z5 > 3000 m en mode Méfiant : dépôts du 25/10 vieillissants sous les crêtes NE-E-SE. Beau temps sec, regel net en altitude, neige mince en transformation. Z1, Z2 : neige rare au-dessus de 2400 m, méfiant N-NE.",
     "simple_title": "Hors saison : prudence en haute montagne",
-    "simple_summary": "Il fait beau et doux, sans neige fraîche depuis trois jours. Au-dessus de 3000 m, il reste de la neige soufflée par le vent sous les crêtes. Plus bas, la neige est rare et dure le matin.",
+    "simple_summary": "Il fait beau et sec, il reste peu de neige. Au-dessus de 3000 m, de la neige soufflée par le vent reste sous les crêtes. Sur les glaciers, les crevasses sont mal recouvertes.",
     "simple_todo": [
       "Évite les pentes raides sous les crêtes : surtout côté est et sud-est, au-dessus de 3000 m.",
-      "Encorde-toi sur le glacier : les crevasses sont cachées par une neige trop fine.",
-      "Pars tôt et redescends tôt : la neige ramollit l'après-midi sur les pentes au soleil.",
-      "Méfie-toi de la neige dure : le matin, une glissade sur pente raide peut être grave."
+      "Encorde-toi sur le glacier : les crevasses sont cachées par une neige mince.",
+      "Méfie-toi de la neige dure : le matin, une glissade sur pente raide peut mal finir.",
+      "Note les zones encore enneigées : côté nord, cette neige peut fragiliser l'hiver."
     ],
-    "avoid": "NE-E-SE > 3000 m sous les crêtes ; N-NE > 2400 m en Z1/Z2 ; S-SE l'après-midi",
-    "overload_age_d": 3,
-    "terrain": "Aucune observation dans les carnets de Louis et des testeurs ; data-avalanche.org/now illisible (accès refusé au robot).",
-    "bera": "Aucun bulletin publié (hors saison ; page « indisponible », PDF BRA2610281600 introuvable, grève Météo-France).",
-    "slf": "Aucun bulletin pour 4111 Emosson : en automne, le SLF n'en publie qu'après de fortes chutes ; reprise régulière en novembre-décembre.",
-    "watch": "Beau temps durable jusqu'au 4/11 : regel la nuit > 3000 m, inversion en vallée ; vent de N 40-50 km/h à 4000 m possible sur S-SE sous les crêtes ; transformation de la neige mince en faces planes sur N.",
-    "limits": "BERA, SLF et data-avalanche.org non lus ; Météo-France non actualisé (grève), Meteoblue sans vent par altitude. Météo-France et Meteoblue concordent sur le beau temps sec et les températures ; divergence sur le vent à 4000 m (40-50 km/h contre 15 km/h, rafales 39) : retenu 30-35 km/h, cohérent avec la rafale de 38 km/h mesurée à l'Aiguille du Midi. Confiance moyenne."
+    "avoid": "NE, E, SE > 3000 m sous les crêtes et cols ; N-NE 2400-3000 m (Z1, Z2) ; glaciers non encordés",
+    "overload_age_d": 4,
+    "terrain": "Carnets de Louis et des testeurs : aucune observation ; data-avalanche.org/now illisible (accès refusé au robot).",
+    "bera": "Aucun bulletin publié (page « indisponible », PDF BRA2610291600 introuvable ; hors saison et grève Météo-France).",
+    "slf": "Aucun bulletin SLF 4111 Emosson (automne : publication seulement après fortes chutes).",
+    "watch": "Vent de NE 40-50 km/h à 4000 m vendredi : petit transport possible vers SO-S sous les crêtes ; nuits claires : givre de surface et faces planes sur faces N.",
+    "limits": "BERA, SLF et data-avalanche.org non lus ; Météo-France non actualisé (grève). Météo : Météo-France et Meteoblue concordent sur les températures et le temps sec ; divergence sur le vent à 4000 m (35 contre ≈ 15 km/h) : retenu 25 km/h jeudi (Midi : rafales 19 km/h). Confiance faible à moyenne."
   }
 ]

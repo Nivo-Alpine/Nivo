@@ -3,48 +3,48 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Peu de charge (foehn faible du 22/10) ; neige froide qui se transforme à l'ombre."
+    "why": "Neige mince à l'ombre ; charge faible par foehn de S en octobre."
   },
   {
     "face": "NE",
     "deg": 45,
     "level": 2,
-    "why": "Vents de SO puis O forts les 22-23/10, au-dessus de 2200 m."
+    "why": "Vents de SO/O des 22-23/10 : dépôts sous les crêtes en haute altitude."
   },
   {
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": "Vents de SO/O des 22-23/10 et charge croisée."
+    "why": "Vents d'O (23/10) puis NO (24-25/10) : dépôts sous les crêtes et cols."
   },
   {
     "face": "SE",
     "deg": 135,
     "level": 2,
-    "why": "Vent de NO fort les 24-25/10 (100-110 km/h à 4000 m)."
+    "why": "NO fort 24-26/10 (jusqu'à 110 km/h à 4000 m) : dépôts sous les crêtes."
   },
   {
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": "Vent de N 40-50 km/h à 4000 m ce 28/10 : petits dépôts possibles sous les crêtes."
+    "why": "Vent de N du 28-29/10 (25-35 km/h) : petit transport possible sous les crêtes."
   },
   {
     "face": "SO",
     "deg": 225,
-    "level": 0,
-    "why": "Face exposée aux vents de SO/O : érodée."
+    "level": 1,
+    "why": "Vent de NE 40-50 km/h vendredi 30 à 4000 m : petit transport possible."
   },
   {
     "face": "O",
     "deg": 270,
     "level": 0,
-    "why": "Face exposée aux vents d'O/NO : érodée."
+    "why": "Face exposée aux vents d'ouest : érodée."
   },
   {
     "face": "NO",
     "deg": 315,
     "level": 0,
-    "why": "Face exposée au vent de NO : érodée."
+    "why": "Face exposée au NO des 24-26/10 : érodée."
   }
 ]
