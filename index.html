@@ -503,8 +503,8 @@ body{padding:0;-webkit-font-smoothing:antialiased}
 .nv-go-a{margin-top:auto;font-weight:600;font-size:.92rem;display:inline-flex;gap:.4rem;transition:gap .2s}
 .nv-go:hover .nv-go-a{gap:.8rem}
 .nv-go:focus-visible{outline:2px solid var(--color-fg);outline-offset:3px}
-:root[data-theme="dark"] .nv-go:nth-child(2){color:#0a1018}:root[data-theme="dark"] .nv-go:nth-child(2) .nv-eye{color:rgba(10,16,24,.7)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nv-go:nth-child(2){color:#0a1018}:root:not([data-theme="light"]) .nv-go:nth-child(2) .nv-eye{color:rgba(10,16,24,.7)}}
+:root[data-theme="dark"] .nv-go:nth-child(2){color:#0a1018}:root[data-theme="dark"] .nv-go:nth-child(2) .nv-eye{color:rgba(10,16,24,.85)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nv-go:nth-child(2){color:#0a1018}:root:not([data-theme="light"]) .nv-go:nth-child(2) .nv-eye{color:rgba(10,16,24,.85)}}
 
 /* En-têtes des rubriques Apprendre / Expert / À propos */
 .nv-ph{gap:.9rem;padding:clamp(2.5rem,6vw,4.5rem) var(--gut);background:var(--color-panel);border-bottom:1px solid var(--color-border-line)}
@@ -758,7 +758,7 @@ body{padding:0;-webkit-font-smoothing:antialiased}
     </div>
     <section class="nv-card" id="card-journal">
       <h2>Journal de saison</h2>
-      <div class="nv-wrap">
+      <div class="nv-wrap" tabindex="0" role="region" aria-label="Journal de saison (défilement horizontal)">
         <table id="tb-journal" data-source="history" data-row-key="jour">
           <thead><tr><th data-field="jour">Jour</th><th data-field="neige_fraiche">Neige fraîche</th><th data-field="vent">Vent</th><th data-field="faces">Faces chargées</th><th data-field="problemes">Problèmes</th><th data-field="observations">Observations</th></tr></thead>
           <tbody></tbody>
@@ -913,7 +913,7 @@ body{padding:0;-webkit-font-smoothing:antialiased}
   <footer class="nv-footer">
     <div class="nv-footer-in">
       <div>
-        <p class="nv-brand" aria-label="Nivo Mont-Blanc"><svg class="nv-logo" viewBox="0 0 120 104" aria-hidden="true"><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-band)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.2 41.6 L38 20 L51.2 39.2" fill="none" style="stroke:var(--logo-cap)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-fil)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nv-word" aria-hidden="true">n<span class="nv-i">ı<svg viewBox="0 0 22 20" aria-hidden="true"><polygon points="11,0 6.6,8 15.4,8" style="fill:var(--logo-cap)"/><polygon points="5.78,9.5 16.23,9.5 17.33,11.5 4.68,11.5" style="fill:var(--logo-fil)"/><polygon points="3.85,13 18.15,13 22,20 0,20" style="fill:var(--logo-band)"/></svg></span>vo</span><small aria-hidden="true">Mont-Blanc</small></p>
+        <p class="nv-brand" role="img" aria-label="Nivo Mont-Blanc"><svg class="nv-logo" viewBox="0 0 120 104" aria-hidden="true"><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-band)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.2 41.6 L38 20 L51.2 39.2" fill="none" style="stroke:var(--logo-cap)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 92 L38 20 L82 84 L108 12" fill="none" style="stroke:var(--logo-fil)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nv-word" aria-hidden="true">n<span class="nv-i">ı<svg viewBox="0 0 22 20" aria-hidden="true"><polygon points="11,0 6.6,8 15.4,8" style="fill:var(--logo-cap)"/><polygon points="5.78,9.5 16.23,9.5 17.33,11.5 4.68,11.5" style="fill:var(--logo-fil)"/><polygon points="3.85,13 18.15,13 22,20 0,20" style="fill:var(--logo-band)"/></svg></span>vo</span><small aria-hidden="true">Mont-Blanc</small></p>
         <p>Le point neige et avalanche du jour pour le massif du Mont-Blanc, en langage simple. Mis à jour chaque jour vers 17 h 30.</p>
       </div>
       <nav class="nv-footer-col" aria-label="Rubriques">
