@@ -69,7 +69,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince restante, grains peu liés en formation au-dessus de 2400 m."
+    "why": "Neige mince à l'ombre au-dessus de 2400 m : grains peu liés en formation."
   },
   {
     "zone": "Z1",
@@ -77,7 +77,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Neige mince restante, petits dépôts anciens sous les crêtes."
+    "why": "Neige mince, petits dépôts anciens sous les crêtes."
   },
   {
     "zone": "Z1",
@@ -197,7 +197,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince restante, grains peu liés en formation au-dessus de 2400 m."
+    "why": "Neige mince à l'ombre au-dessus de 2400 m : grains peu liés en formation."
   },
   {
     "zone": "Z2",
@@ -205,7 +205,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Neige mince restante, petits dépôts anciens sous les crêtes."
+    "why": "Neige mince, petits dépôts anciens sous les crêtes."
   },
   {
     "zone": "Z2",
@@ -389,7 +389,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince à l'ombre : grains peu liés en formation."
+    "why": "Neige mince à l'ombre : faces planes probables, surtout en zones minces."
   },
   {
     "zone": "Z3",
@@ -397,7 +397,7 @@
     "face": "NE",
     "deg": 45,
     "level": 2,
-    "why": "Dépôts des vents de SO/O (22-23/10), âge ≥ 6 j, encore possibles sous les crêtes."
+    "why": "Dépôts des vents de SO/O (22-23/10), âge 7 j, encore possibles sous les crêtes."
   },
   {
     "zone": "Z3",
@@ -405,7 +405,7 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": "Dépôts des vents d'O puis NO (23-25/10), surtout sous les crêtes et cols."
+    "why": "Dépôts des vents d'O puis NO (23-25/10), sous les crêtes et cols."
   },
   {
     "zone": "Z3",
@@ -413,7 +413,7 @@
     "face": "SE",
     "deg": 135,
     "level": 2,
-    "why": "Dépôts du NO fort du 25/10 (âge 4 j) sous les crêtes."
+    "why": "Dépôts du NO fort du 25/10 (âge 5 j) sous les crêtes."
   },
   {
     "zone": "Z3",
@@ -421,7 +421,7 @@
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": null
+    "why": "Bise de NE samedi (35-45 km/h) : petits dépôts possibles sous les crêtes."
   },
   {
     "zone": "Z3",
@@ -429,7 +429,7 @@
     "face": "SO",
     "deg": 225,
     "level": 1,
-    "why": "Petit transport possible par le vent de NE de vendredi (40-50 km/h à 4000 m)."
+    "why": "Bise de NE vendredi-samedi : petits dépôts possibles sous les crêtes, stock de neige faible."
   },
   {
     "zone": "Z3",
@@ -581,7 +581,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince à l'ombre : grains peu liés en formation."
+    "why": "Neige mince à l'ombre : faces planes probables, surtout en zones minces."
   },
   {
     "zone": "Z4",
@@ -589,7 +589,7 @@
     "face": "NE",
     "deg": 45,
     "level": 2,
-    "why": "Dépôts des vents de SO/O (22-23/10), âge ≥ 6 j, encore possibles sous les crêtes."
+    "why": "Dépôts des vents de SO/O (22-23/10), âge 7 j, encore possibles sous les crêtes."
   },
   {
     "zone": "Z4",
@@ -597,7 +597,7 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": "Dépôts des vents d'O puis NO (23-25/10), surtout sous les crêtes et cols."
+    "why": "Dépôts des vents d'O puis NO (23-25/10), sous les crêtes et cols."
   },
   {
     "zone": "Z4",
@@ -605,7 +605,7 @@
     "face": "SE",
     "deg": 135,
     "level": 2,
-    "why": "Dépôts du NO fort du 25/10 (âge 4 j) sous les crêtes."
+    "why": "Dépôts du NO fort du 25/10 (âge 5 j) sous les crêtes."
   },
   {
     "zone": "Z4",
@@ -613,7 +613,7 @@
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": null
+    "why": "Bise de NE samedi (35-45 km/h) : petits dépôts possibles sous les crêtes."
   },
   {
     "zone": "Z4",
@@ -621,7 +621,7 @@
     "face": "SO",
     "deg": 225,
     "level": 1,
-    "why": "Petit transport possible par le vent de NE de vendredi (40-50 km/h à 4000 m)."
+    "why": "Bise de NE vendredi-samedi : petits dépôts possibles sous les crêtes, stock de neige faible."
   },
   {
     "zone": "Z4",
@@ -773,7 +773,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince à l'ombre : grains peu liés en formation."
+    "why": "Neige mince à l'ombre : faces planes probables, surtout en zones minces."
   },
   {
     "zone": "Z5",
@@ -781,7 +781,7 @@
     "face": "NE",
     "deg": 45,
     "level": 2,
-    "why": "Dépôts des vents de SO/O (22-23/10), âge ≥ 6 j, encore possibles sous les crêtes."
+    "why": "Dépôts des vents de SO/O (22-23/10), âge 7 j, encore possibles sous les crêtes."
   },
   {
     "zone": "Z5",
@@ -789,7 +789,7 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": "Dépôts des vents d'O puis NO (23-25/10), surtout sous les crêtes et cols."
+    "why": "Dépôts des vents d'O puis NO (23-25/10), sous les crêtes et cols."
   },
   {
     "zone": "Z5",
@@ -797,7 +797,7 @@
     "face": "SE",
     "deg": 135,
     "level": 2,
-    "why": "Dépôts du NO fort du 25/10 (âge 4 j) sous les crêtes."
+    "why": "Dépôts du NO fort du 25/10 (âge 5 j) sous les crêtes."
   },
   {
     "zone": "Z5",
@@ -805,7 +805,7 @@
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": null
+    "why": "Bise de NE samedi (35-45 km/h) : petits dépôts possibles sous les crêtes."
   },
   {
     "zone": "Z5",
@@ -813,15 +813,15 @@
     "face": "SO",
     "deg": 225,
     "level": 1,
-    "why": "Petit transport possible par le vent de NE de vendredi (40-50 km/h à 4000 m)."
+    "why": "Bise de NE vendredi-samedi : petits dépôts possibles sous les crêtes, stock de neige faible."
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "O",
     "deg": 270,
-    "level": 0,
-    "why": null
+    "level": 1,
+    "why": "Bise sur la crête frontière : charge croisée possible."
   },
   {
     "zone": "Z5",

@@ -1,23 +1,23 @@
 [
   {
-    "date_label": "bilan du 29/10/2026",
+    "date_label": "bilan du 30/10/2026",
     "level": "warn",
     "label": "Hors saison · prudence en haute montagne",
-    "summary": "Z3, Z4, Z5 > 3000 m en mode Méfiant : dépôts du 25/10 vieillissants sous les crêtes NE-E-SE. Beau temps sec, regel net en altitude, neige mince en transformation. Z1, Z2 : neige rare au-dessus de 2400 m, méfiant N-NE.",
+    "summary": "Z3, Z4, Z5 > 3000 m en mode Méfiant : dépôts du 25/10 vieillissants sous les crêtes NE-E-SE. Bise de NE 35-45 km/h samedi : petits dépôts possibles en SO-S. Z1, Z2 : neige rare et mince au-dessus de 2400 m, méfiant N-NE.",
     "simple_title": "Hors saison : prudence en haute montagne",
-    "simple_summary": "Il fait beau et sec, il reste peu de neige. Au-dessus de 3000 m, de la neige soufflée par le vent reste sous les crêtes. Sur les glaciers, les crevasses sont mal recouvertes.",
+    "simple_summary": "Il fait beau et sec, il reste peu de neige. Au-dessus de 3000 m, de la neige soufflée par le vent reste sous les crêtes. Samedi, un vent du nord-est peut en déposer un peu côté sud.",
     "simple_todo": [
-      "Évite les pentes raides sous les crêtes : surtout côté est et sud-est, au-dessus de 3000 m.",
+      "Évite les pentes raides sous les crêtes : surtout côté est et sud-est, et côté sud samedi, au-dessus de 3000 m.",
       "Encorde-toi sur le glacier : les crevasses sont cachées par une neige mince.",
       "Méfie-toi de la neige dure : le matin, une glissade sur pente raide peut mal finir.",
-      "Note les zones encore enneigées : côté nord, cette neige peut fragiliser l'hiver."
+      "Couvre-toi pour le vent : samedi, il souffle fort et froid en altitude, vers −9 °C."
     ],
-    "avoid": "NE, E, SE > 3000 m sous les crêtes et cols ; N-NE 2400-3000 m (Z1, Z2) ; glaciers non encordés",
-    "overload_age_d": 4,
-    "terrain": "Carnets de Louis et des testeurs : aucune observation ; data-avalanche.org/now illisible (accès refusé au robot).",
-    "bera": "Aucun bulletin publié (page « indisponible », PDF BRA2610291600 introuvable ; hors saison et grève Météo-France).",
-    "slf": "Aucun bulletin SLF 4111 Emosson (automne : publication seulement après fortes chutes).",
-    "watch": "Vent de NE 40-50 km/h à 4000 m vendredi : petit transport possible vers SO-S sous les crêtes ; nuits claires : givre de surface et faces planes sur faces N.",
-    "limits": "BERA, SLF et data-avalanche.org non lus ; Météo-France non actualisé (grève). Météo : Météo-France et Meteoblue concordent sur les températures et le temps sec ; divergence sur le vent à 4000 m (35 contre ≈ 15 km/h) : retenu 25 km/h jeudi (Midi : rafales 19 km/h). Confiance faible à moyenne."
+    "avoid": "NE, E, SE > 3000 m sous les crêtes et cols ; SO, S > 3000 m sous les crêtes samedi (bise) ; N-NE 2400-3000 m (Z1, Z2) ; glaciers non encordés",
+    "overload_age_d": 5,
+    "terrain": "Carnets de Louis et des testeurs : aucune observation ; data-avalanche.org/now : aucune avalanche sur 10 jours, aucune alerte en cours.",
+    "bera": "Aucun bulletin publié (page « indisponible » ; hors saison et grève Météo-France).",
+    "slf": "Aucun bulletin SLF publié (whiterisk.ch : dernier bulletin le 24/10) ; AvaBlog : pas de billet depuis le 26/10.",
+    "watch": "Plaque à vent · NE-E-SE > 3000 m sous les crêtes · peu probable à possible · taille 1-2 · confiance faible. Bise de NE samedi : petits dépôts SO-S > 3000 m · possible · taille 1 · confiance faible. Nuits claires : faces planes sur N.",
+    "limits": "BERA et SLF absents ; Météo-France non actualisé (grève). Météo : Météo-France (Chamonix) et Meteoblue (Aiguille du Midi 3842 m) concordent sur le temps sec et le vent de NE ; divergence sur la force à 4000 m (35-60 contre 10-15 km/h, rafales 35-60) : retenu 30-45 km/h (Midi : rafales 31 km/h) ; températures 4000 m retenues −7 à −9 °C. Meteoblue Chamonix et Finhaut, MétéoSuisse : non lisibles (cache périmé). Confiance faible à moyenne."
   }
 ]

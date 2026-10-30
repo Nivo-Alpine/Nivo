@@ -1,13 +1,13 @@
 [
   {
-    "date_label": "29/10/2026",
-    "notion": "Le givre de surface",
-    "texte": "Par nuit claire, calme et un peu humide, la vapeur d'eau se dépose sur la neige froide en grandes plumes brillantes : c'est le givre de surface, la « rosée gelée » de la neige. Il se forme surtout à l'ombre, dans les creux et les fonds de vallon où l'air froid stagne. Tant qu'il est en surface, le vent ou le soleil le détruisent facilement ; mais s'il est recouvert par une chute de neige calme, il devient une couche fragile enfouie qui peut rester active des semaines. Avec les nuits claires de cette fin octobre, note où tu en vois : ce sont des pièges possibles pour l'hiver.",
-    "quiz": "Après plusieurs nuits claires et calmes, tu vois à l'aube de grandes plumes brillantes sur un replat à l'ombre vers 2500 m. S'il tombe 30 cm de neige sans vent dessus, que retenir ?",
-    "choix_a": "Ces cristaux fondent sous la neige fraîche et disparaissent en quelques heures.",
-    "choix_b": "Ils peuvent former une couche fragile enfouie, active pendant des semaines.",
-    "choix_c": "Ils accrochent bien la neige fraîche et renforcent la liaison entre couches.",
-    "answer": "b",
-    "explication": "Le givre de surface enfoui est une couche fragile persistante : ses grandes plumes s'effondrent facilement sous le poids d'une plaque, parfois des semaines après. Il ne fond pas sous une neige froide (A faux), et ses cristaux fins et cassants ne lient pas les couches, ils font l'inverse (C faux)."
+    "date_label": "30/10/2026",
+    "notion": "Le stock de neige transportable : le vent ne fait pas toujours des plaques",
+    "texte": "Le vent ne fabrique des plaques que s'il trouve de la neige à déplacer : de la neige sèche et sans cohésion, fraîche ou restée poudreuse à l'ombre. Sur une croûte de regel ou une neige mouillée, il ne transporte presque rien, et chaque épisode de vent vide un peu ce « stock ». Cette semaine, la bise de NE souffle à 35-45 km/h en altitude, mais sur une neige ancienne surtout croûtée : les dépôts possibles sont petits, sous les crêtes côté SO-S, là où il restait de la neige froide. La bise charge ainsi des faces que l'on croit souvent sans danger, parce que d'habitude le vent dominant vient de l'ouest.",
+    "quiz": "Samedi, bise de NE à 45 km/h vers 3500 m, sans neige fraîche. La neige est croûtée au soleil mais encore poudreuse à l'ombre. Où des petites plaques sont-elles le plus probables ?",
+    "choix_a": "Sur les faces NE exposées au vent, là où la neige reste poudreuse à l'ombre.",
+    "choix_b": "Nulle part : sans neige fraîche, le vent ne peut transporter aucune neige au sol.",
+    "choix_c": "Sous les crêtes côté SO-S, où le vent dépose la neige poudreuse prise à l'ombre.",
+    "answer": "c",
+    "explication": "Le vent prend la neige sèche restée poudreuse (ici à l'ombre, côté NE) et la dépose sous le vent, juste derrière les crêtes : avec une bise de NE, ce sont les faces SO à S. A est faux : la face au vent est érodée, pas chargée. B est faux : le vent reprend aussi la neige ancienne tant qu'elle n'est ni croûtée ni mouillée ; il manque seulement de neige à transporter là où elle est dure."
   }
 ]

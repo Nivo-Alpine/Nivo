@@ -15,9 +15,9 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "2400–2800 m",
-    "reason": "Neige mince et rare, en transformation sur les faces nord",
-    "avoid": "Plaques résiduelles et neige dure sur pentes > 30° N-NE au-dessus de 2400 m ; chute sur névés gelés le matin",
-    "simple": "Très peu de neige, surtout tournée vers le nord au-dessus de 2400 m. Elle est dure le matin : attention aux glissades sur les pentes raides."
+    "reason": "Neige rare et ancienne à l'ombre, peut-être fragile en profondeur",
+    "avoid": "N, NE, NO 2400-2800 m : pentes > 30° sous les crêtes et zones minces ; neige dure le matin",
+    "simple": "Il reste un peu de neige à l'ombre au-dessus de 2400 m. Évite les pentes raides tournées vers le nord ; attention aux glissades sur neige dure."
   },
   {
     "id": "Z2",
@@ -35,9 +35,9 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "2400–2965 m",
-    "reason": "Neige mince côté Bérard, nuits douces, regel faible à 2400 m",
-    "avoid": "Pentes > 30° N-NE côté Bérard / Lac Blanc au-dessus de 2400 m ; versant S-SE : quasi plus de neige",
-    "simple": "Il ne reste de la neige que côté nord, au-dessus de 2400 m, en couche mince. Côté Chamonix, presque plus rien : rien à skier."
+    "reason": "Neige rare côté Bérard–Lac Blanc, grains peu liés à l'ombre",
+    "avoid": "N, NE 2400-2965 m (versant Bérard / Lac Blanc) : pentes > 30° et zones minces ; S-SE versant Chamonix sans neige",
+    "simple": "Peu de neige, surtout côté nord vers le Lac Blanc. Évite les pentes raides tournées vers le nord ; côté Chamonix, presque plus de neige."
   },
   {
     "id": "Z3",
@@ -55,9 +55,9 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts du 25/10 vieillissants sous les crêtes, ponts de neige minces",
-    "avoid": "Pentes > 30° NE-E-SE sous les crêtes > 3000 m ; Vallée Noire ; glacier non encordé ; arête de sortie (chute)",
-    "simple": "Au-dessus de 3000 m, de la neige soufflée par le vent reste sous les crêtes côté est. Évite les pentes raides là ; encorde-toi sur le glacier."
+    "reason": "Dépôts du 25/10 vieillissants ; vent de NE samedi ; crevasses",
+    "avoid": "NE, E, SE > 3000 m sous les crêtes et cols ; SO-S sous les crêtes si dépôts frais de NE ; glacier non encordé ; arête (chute)",
+    "simple": "Au-dessus de 3000 m, de la neige soufflée reste sous les crêtes. Évite les pentes raides sous les crêtes ; encorde-toi sur le glacier."
   },
   {
     "id": "Z4",
@@ -75,9 +75,9 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts anciens de 4 jours sous les cols, crevasses mal bouchées",
-    "avoid": "Couloirs > 30° NE-E-SE vers les cols > 3000 m ; glacier non encordé ; neige dure (chute) le matin",
-    "simple": "Au-dessus de 3000 m, évite les couloirs raides côté est vers les cols. Sur le glacier, encorde-toi : les crevasses sont mal recouvertes."
+    "reason": "Dépôts anciens sous les cols ; vent de NE samedi ; crevasses",
+    "avoid": "NE, E, SE > 3000 m (couloirs et cols) ; SO-S sous les crêtes si dépôts frais ; glacier non encordé",
+    "simple": "Au-dessus de 3000 m, de la neige soufflée reste dans les couloirs et sous les cols. Évite les pentes raides ; encorde-toi sur le glacier."
   },
   {
     "id": "Z5",
@@ -95,8 +95,8 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts sous les crêtes frontalières, vent de nord-est vendredi",
-    "avoid": "Pentes > 30° NE-E-SE et SO sous les crêtes > 3000 m ; glacier non encordé ; < 2000 m pas de neige",
-    "simple": "Peu de neige en bas. Plus haut, évite les pentes raides juste sous les crêtes. Sur le glacier du Tour, encorde-toi."
+    "reason": "Dépôts anciens sous les crêtes ; bise samedi sur la frontière",
+    "avoid": "NE, E, SE > 3000 m sous les crêtes ; SO-S sous la crête frontière si dépôts de NE ; glacier non encordé",
+    "simple": "Au-dessus de 3000 m, un peu de neige soufflée sous les crêtes. Évite les pentes raides sous les crêtes ; encorde-toi sur le glacier."
   }
 ]

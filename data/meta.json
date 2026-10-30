@@ -3,47 +3,47 @@
     "zones": {
       "title": "Zones de référence",
       "description": "Couleur, mode de vigilance CRISTAL, tranche d'altitude, raison, faces à éviter et consigne en langage simple pour les zones suivies, évalués par Claude chaque jour (hypothèse, pas un bulletin officiel).",
-      "updated": "2026-10-29T16:40:48Z"
+      "updated": "2026-10-30T17:00:05Z"
     },
     "cristal": {
       "title": "Critères CRISTAL",
       "description": "Les 6 critères de la démarche CRISTAL (Duclos, data-avalanche.org) évalués par Claude pour le secteur : ok, préoccupant, critique ou inconnu, avec la raison.",
-      "updated": "2026-10-29T16:40:48Z"
+      "updated": "2026-10-30T17:00:05Z"
     },
     "rose": {
       "title": "Rose des pentes par altitude",
       "description": "Niveau de suspicion (0 à 3) par orientation et tranche d'altitude, déduit par Claude de la neige et du vent récents. Hypothèse à vérifier sur le terrain.",
-      "updated": "2026-10-29T16:40:48Z"
+      "updated": "2026-10-30T17:00:05Z"
     },
     "faces": {
       "title": "Faces chargées (hypothèse)",
       "description": "Orientations probablement chargées par le vent, déduites par Claude des directions de vent prévues (section 6 du dossier). Niveau 0 à 2 = nombre d'épisodes de vent compatibles. Hypothèse à confirmer sur le terrain.",
-      "updated": "2026-10-29T16:40:48Z"
+      "updated": "2026-10-30T17:00:05Z"
     },
     "forecast": {
       "title": "Prévision Météo-France",
-      "description": "Prévision par période pour Chamonix (mar. 27 détaillé ; mer. 28 en températures à 1000 m seulement) : température, vent et neige fraîche à 1000, 2000 et 4000 m. Source : bulletin Météo-France sur chamonix.com, non actualisé (grève).",
-      "updated": "2026-10-29T16:40:48Z"
+      "description": "Prévision par période pour Chamonix (ven. 30 et sam. 31) : température, vent et neige fraîche à 1000, 2000 et 4000 m. Valeurs retenues après recoupement Météo-France (chamonix.com, non actualisé, grève) et Meteoblue (Aiguille du Midi 3842 m).",
+      "updated": "2026-10-30T17:00:05Z"
     },
     "trend": {
       "title": "Tendance à 6 jours",
-      "description": "Températures mini et maxi prévues en vallée du 28 oct. au 2 nov. et indice de confiance (sur 5) quand la source le donne. Source : bulletin Météo-France sur chamonix.com.",
-      "updated": "2026-10-29T16:40:48Z"
+      "description": "Températures mini et maxi prévues en vallée du 1er au 6 nov. et indice de confiance (sur 5 : Météo-France quand il le donne, sinon estimation de Claude d'après l'accord avec Meteoblue).",
+      "updated": "2026-10-30T17:00:05Z"
     },
     "history": {
       "title": "Journal de saison",
       "description": "Une ligne par bilan quotidien : extrêmes de la prévision du jour, vent, faces chargées et problèmes. Rédigé par Claude à partir de Météo-France, du BERA et du SLF, comme le journal du dossier de référence.",
-      "updated": "2026-10-29T16:40:48Z"
+      "updated": "2026-10-30T17:00:05Z"
     },
     "learn": {
       "title": "Point du jour et quiz",
       "description": "La notion expliquée du jour, le quiz, sa bonne réponse (révélée quand Louis valide) et son explication, rédigés par Claude pour la formation de Louis.",
-      "updated": "2026-10-29T16:40:48Z"
+      "updated": "2026-10-30T17:00:05Z"
     },
     "status": {
       "title": "Synthèse du jour",
       "description": "Indicateur, résumé technique et version simple (titre, résumé, conseils), état des bulletins BERA et SLF, vigilance et limites du bilan quotidien rédigé par Claude.",
-      "updated": "2026-10-29T16:40:48Z"
+      "updated": "2026-10-30T17:00:05Z"
     }
   }
 }
