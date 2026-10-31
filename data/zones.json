@@ -15,8 +15,8 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "2400–2800 m",
-    "reason": "Neige rare et ancienne à l'ombre, peut-être fragile en profondeur",
-    "avoid": "N, NE, NO 2400-2800 m : pentes > 30° sous les crêtes et zones minces ; neige dure le matin",
+    "reason": "Neige rare et ancienne à l'ombre, bise de NE sur les crêtes",
+    "avoid": "N, NE, NO 2400-2800 m : pentes > 30° et zones minces ; SO-S sous les crêtes (bise) ; neige dure le matin (chute)",
     "simple": "Il reste un peu de neige à l'ombre au-dessus de 2400 m. Évite les pentes raides tournées vers le nord ; attention aux glissades sur neige dure."
   },
   {
@@ -55,8 +55,8 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts du 25/10 vieillissants ; vent de NE samedi ; crevasses",
-    "avoid": "NE, E, SE > 3000 m sous les crêtes et cols ; SO-S sous les crêtes si dépôts frais de NE ; glacier non encordé ; arête (chute)",
+    "reason": "Dépôts du 25/10 vieillissants, bise de NE ; crevasses, neige dure",
+    "avoid": "NE, E, SE > 3000 m sous les crêtes et cols ; SO-S sous les crêtes (bise 31/10) ; glacier non encordé ; arête et pentes dures (chute)",
     "simple": "Au-dessus de 3000 m, de la neige soufflée reste sous les crêtes. Évite les pentes raides sous les crêtes ; encorde-toi sur le glacier."
   },
   {
@@ -75,8 +75,8 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts anciens sous les cols ; vent de NE samedi ; crevasses",
-    "avoid": "NE, E, SE > 3000 m (couloirs et cols) ; SO-S sous les crêtes si dépôts frais ; glacier non encordé",
+    "reason": "Dépôts anciens sous les cols, bise de NE ; crevasses",
+    "avoid": "NE, E, SE > 3000 m (couloirs et cols) ; SO-S sous les crêtes (bise 31/10) ; glacier non encordé ; couloirs durs (chute)",
     "simple": "Au-dessus de 3000 m, de la neige soufflée reste dans les couloirs et sous les cols. Évite les pentes raides ; encorde-toi sur le glacier."
   },
   {
@@ -95,8 +95,8 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Dépôts anciens sous les crêtes ; bise samedi sur la frontière",
-    "avoid": "NE, E, SE > 3000 m sous les crêtes ; SO-S sous la crête frontière si dépôts de NE ; glacier non encordé",
+    "reason": "Dépôts anciens sous les crêtes ; bise marquée sur la frontière",
+    "avoid": "NE, E, SE > 3000 m sous les crêtes ; SO-S sous la crête frontière (bise 31/10) ; glacier non encordé",
     "simple": "Au-dessus de 3000 m, un peu de neige soufflée sous les crêtes. Évite les pentes raides sous les crêtes ; encorde-toi sur le glacier."
   }
 ]

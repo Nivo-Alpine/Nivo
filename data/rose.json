@@ -5,7 +5,7 @@
     "face": "N",
     "deg": 0,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable sous 2000 m."
   },
   {
     "zone": "Z1",
@@ -69,7 +69,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince à l'ombre au-dessus de 2400 m : grains peu liés en formation."
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z1",
@@ -77,7 +77,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Neige mince, petits dépôts anciens sous les crêtes."
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z1",
@@ -125,7 +125,7 @@
     "face": "NO",
     "deg": 315,
     "level": 1,
-    "why": null
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z2",
@@ -133,7 +133,7 @@
     "face": "N",
     "deg": 0,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable sous 2000 m."
   },
   {
     "zone": "Z2",
@@ -197,7 +197,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince à l'ombre au-dessus de 2400 m : grains peu liés en formation."
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z2",
@@ -205,7 +205,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Neige mince, petits dépôts anciens sous les crêtes."
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z2",
@@ -252,7 +252,7 @@
     "band": "2000–3000 m",
     "face": "NO",
     "deg": 315,
-    "level": 1,
+    "level": 0,
     "why": null
   },
   {
@@ -261,7 +261,7 @@
     "face": "N",
     "deg": 0,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable sous 2000 m."
   },
   {
     "zone": "Z3",
@@ -325,7 +325,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z3",
@@ -333,7 +333,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Dépôts anciens minces vers 2800-3000 m."
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z3",
@@ -341,15 +341,15 @@
     "face": "E",
     "deg": 90,
     "level": 1,
-    "why": null
+    "why": "Restes de dépôts anciens, neige rare."
   },
   {
     "zone": "Z3",
     "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 0,
-    "why": null
+    "level": 1,
+    "why": "Restes de dépôts anciens, neige rare."
   },
   {
     "zone": "Z3",
@@ -389,7 +389,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince à l'ombre : faces planes probables, surtout en zones minces."
+    "why": "Neige mince et froide à l'ombre : faces planes possibles, peu de dépôts récents."
   },
   {
     "zone": "Z3",
@@ -397,7 +397,7 @@
     "face": "NE",
     "deg": 45,
     "level": 2,
-    "why": "Dépôts des vents de SO/O (22-23/10), âge 7 j, encore possibles sous les crêtes."
+    "why": "Dépôts des vents de SO-O du 22-23/10, vieillissants (8 j), encore possibles sous les crêtes."
   },
   {
     "zone": "Z3",
@@ -405,7 +405,7 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": "Dépôts des vents d'O puis NO (23-25/10), sous les crêtes et cols."
+    "why": "Dépôts des vents d'O du 23/10 et charge croisée, vieillissants."
   },
   {
     "zone": "Z3",
@@ -413,7 +413,7 @@
     "face": "SE",
     "deg": 135,
     "level": 2,
-    "why": "Dépôts du NO fort du 25/10 (âge 5 j) sous les crêtes."
+    "why": "Dépôts du vent de NO du 24-26/10 (≈ 25 cm vers 4000 m le 25/10), âge 6 j."
   },
   {
     "zone": "Z3",
@@ -421,7 +421,7 @@
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": "Bise de NE samedi (35-45 km/h) : petits dépôts possibles sous les crêtes."
+    "why": "Petits dépôts possibles sous les crêtes par la bise de NE du 30-31/10, peu de neige transportable."
   },
   {
     "zone": "Z3",
@@ -429,7 +429,7 @@
     "face": "SO",
     "deg": 225,
     "level": 1,
-    "why": "Bise de NE vendredi-samedi : petits dépôts possibles sous les crêtes, stock de neige faible."
+    "why": "Petits dépôts possibles sous les crêtes par la bise de NE du 30-31/10."
   },
   {
     "zone": "Z3",
@@ -453,7 +453,7 @@
     "face": "N",
     "deg": 0,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable sous 2000 m."
   },
   {
     "zone": "Z4",
@@ -517,7 +517,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z4",
@@ -525,7 +525,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Dépôts anciens minces vers 2800-3000 m."
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z4",
@@ -533,15 +533,15 @@
     "face": "E",
     "deg": 90,
     "level": 1,
-    "why": null
+    "why": "Restes de dépôts anciens, neige rare."
   },
   {
     "zone": "Z4",
     "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 0,
-    "why": null
+    "level": 1,
+    "why": "Restes de dépôts anciens, neige rare."
   },
   {
     "zone": "Z4",
@@ -581,7 +581,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince à l'ombre : faces planes probables, surtout en zones minces."
+    "why": "Neige mince et froide à l'ombre : faces planes possibles, peu de dépôts récents."
   },
   {
     "zone": "Z4",
@@ -589,7 +589,7 @@
     "face": "NE",
     "deg": 45,
     "level": 2,
-    "why": "Dépôts des vents de SO/O (22-23/10), âge 7 j, encore possibles sous les crêtes."
+    "why": "Dépôts des vents de SO-O du 22-23/10, vieillissants (8 j), encore possibles sous les crêtes."
   },
   {
     "zone": "Z4",
@@ -597,7 +597,7 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": "Dépôts des vents d'O puis NO (23-25/10), sous les crêtes et cols."
+    "why": "Dépôts des vents d'O du 23/10 et charge croisée, vieillissants."
   },
   {
     "zone": "Z4",
@@ -605,7 +605,7 @@
     "face": "SE",
     "deg": 135,
     "level": 2,
-    "why": "Dépôts du NO fort du 25/10 (âge 5 j) sous les crêtes."
+    "why": "Dépôts du vent de NO du 24-26/10 (≈ 25 cm vers 4000 m le 25/10), âge 6 j."
   },
   {
     "zone": "Z4",
@@ -613,7 +613,7 @@
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": "Bise de NE samedi (35-45 km/h) : petits dépôts possibles sous les crêtes."
+    "why": "Petits dépôts possibles sous les crêtes par la bise de NE du 30-31/10, peu de neige transportable."
   },
   {
     "zone": "Z4",
@@ -621,7 +621,7 @@
     "face": "SO",
     "deg": 225,
     "level": 1,
-    "why": "Bise de NE vendredi-samedi : petits dépôts possibles sous les crêtes, stock de neige faible."
+    "why": "Petits dépôts possibles sous les crêtes par la bise de NE du 30-31/10."
   },
   {
     "zone": "Z4",
@@ -645,7 +645,7 @@
     "face": "N",
     "deg": 0,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable sous 2000 m."
   },
   {
     "zone": "Z5",
@@ -709,7 +709,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": null
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z5",
@@ -717,7 +717,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Dépôts anciens minces vers 2800-3000 m."
+    "why": "Neige rare et ancienne à l'ombre, zones minces."
   },
   {
     "zone": "Z5",
@@ -725,15 +725,15 @@
     "face": "E",
     "deg": 90,
     "level": 1,
-    "why": null
+    "why": "Restes de dépôts anciens, neige rare."
   },
   {
     "zone": "Z5",
     "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 0,
-    "why": null
+    "level": 1,
+    "why": "Restes de dépôts anciens, neige rare."
   },
   {
     "zone": "Z5",
@@ -773,7 +773,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Neige mince à l'ombre : faces planes probables, surtout en zones minces."
+    "why": "Neige mince et froide à l'ombre : faces planes possibles, peu de dépôts récents."
   },
   {
     "zone": "Z5",
@@ -781,7 +781,7 @@
     "face": "NE",
     "deg": 45,
     "level": 2,
-    "why": "Dépôts des vents de SO/O (22-23/10), âge 7 j, encore possibles sous les crêtes."
+    "why": "Dépôts des vents de SO-O du 22-23/10, vieillissants (8 j), encore possibles sous les crêtes."
   },
   {
     "zone": "Z5",
@@ -789,7 +789,7 @@
     "face": "E",
     "deg": 90,
     "level": 2,
-    "why": "Dépôts des vents d'O puis NO (23-25/10), sous les crêtes et cols."
+    "why": "Dépôts des vents d'O du 23/10 et charge croisée, vieillissants."
   },
   {
     "zone": "Z5",
@@ -797,7 +797,7 @@
     "face": "SE",
     "deg": 135,
     "level": 2,
-    "why": "Dépôts du NO fort du 25/10 (âge 5 j) sous les crêtes."
+    "why": "Dépôts du vent de NO du 24-26/10 (≈ 25 cm vers 4000 m le 25/10), âge 6 j."
   },
   {
     "zone": "Z5",
@@ -805,7 +805,7 @@
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": "Bise de NE samedi (35-45 km/h) : petits dépôts possibles sous les crêtes."
+    "why": "Petits dépôts possibles sous les crêtes par la bise de NE du 30-31/10, peu de neige transportable."
   },
   {
     "zone": "Z5",
@@ -813,15 +813,15 @@
     "face": "SO",
     "deg": 225,
     "level": 1,
-    "why": "Bise de NE vendredi-samedi : petits dépôts possibles sous les crêtes, stock de neige faible."
+    "why": "Petits dépôts possibles sous les crêtes par la bise de NE du 30-31/10."
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "O",
     "deg": 270,
-    "level": 1,
-    "why": "Bise sur la crête frontière : charge croisée possible."
+    "level": 0,
+    "why": null
   },
   {
     "zone": "Z5",
