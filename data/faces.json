@@ -3,48 +3,48 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Vent de S faible (foehn du 20-22/10) ; surtout de la neige froide à l'ombre."
+    "why": "Vent de S du 20-21/10 et charge croisée ; faible en haute altitude."
   },
   {
     "face": "NE",
     "deg": 45,
-    "level": 2,
-    "why": "Vents de SO puis O forts les 22-23/10 (90-100 km/h à 4000 m)."
+    "level": 1,
+    "why": "Dépôts de SO/O des 22-23/10, en partie érodés par la bise du 30/10 au 1/11."
   },
   {
     "face": "E",
     "deg": 90,
-    "level": 2,
-    "why": "Vent d'O du 23/10 et charge croisée du NO du 24-26/10."
+    "level": 1,
+    "why": "Dépôts de SO/O des 22-23/10 ; charge croisée faible par la bise."
   },
   {
     "face": "SE",
     "deg": 135,
     "level": 2,
-    "why": "Vent de NO 70-110 km/h du 24 au 26/10, avec ≈ 25 cm le 25/10."
+    "why": "Vent de NO fort du 24 au 26/10 (≈ 25 cm vers 4000 m), dépôts de 7 j et plus."
   },
   {
     "face": "S",
     "deg": 180,
-    "level": 1,
-    "why": "Bise de NE 35-45 km/h le 31/10, peu de neige transportable."
+    "level": 2,
+    "why": "Bise de NE du 30/10 au 1/11, forte le 1/11 : petits dépôts sous les crêtes."
   },
   {
     "face": "SO",
     "deg": 225,
-    "level": 1,
-    "why": "Bise de NE du 30-31/10, petits dépôts sous les crêtes."
+    "level": 2,
+    "why": "Bise de NE du 30/10 au 1/11, forte le 1/11 (60 km/h retenus) : dépôts frais sous les crêtes."
   },
   {
     "face": "O",
     "deg": 270,
-    "level": 0,
-    "why": "Face au vent des épisodes d'O et de SO : érodée."
+    "level": 1,
+    "why": "Charge croisée par la bise du 1/11 dans les flancs de couloirs."
   },
   {
     "face": "NO",
     "deg": 315,
     "level": 0,
-    "why": "Face au vent du NO du 24-26/10 : érodée."
+    "why": "Face érodée par les vents de NO puis de NE : aucune charge identifiée."
   }
 ]

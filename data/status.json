@@ -1,23 +1,23 @@
 [
   {
-    "date_label": "bilan du 31/10/2026",
+    "date_label": "bilan du 01/11/2026",
     "level": "warn",
-    "label": "Hors saison · prudence en haute montagne",
-    "summary": "Z3, Z4, Z5 > 3000 m en mode Méfiant : dépôts du 25/10 vieillissants sous les crêtes NE-E-SE. Bise de NE 35-45 km/h : petits dépôts possibles en SO-S. Z1, Z2 : neige rare et mince au-dessus de 2400 m, méfiant N-NE.",
-    "simple_title": "Hors saison : prudence en haute montagne",
-    "simple_summary": "Il fait beau et sec, il reste peu de neige. Au-dessus de 3000 m, la neige est souvent dure et il reste de la neige soufflée sous les crêtes. Dimanche, il fera plus froid là-haut.",
+    "label": "Hors saison · vent fort en haute montagne",
+    "summary": "Z3, Z4, Z5 > 3000 m en mode Méfiant : bise de NE forte, petits dépôts frais en SO-S sous les crêtes. Dépôts anciens NE-E-SE de 7 j et plus. Z1, Z2 : neige rare et mince au-dessus de 2400 m, méfiant N-NE.",
+    "simple_title": "Hors saison : vent fort et froid là-haut",
+    "simple_summary": "Il fait beau, sec et froid, mais le vent souffle fort au-dessus de 3000 m. Il reste peu de neige, souvent dure. Le vent pousse un peu de neige juste sous les crêtes côté sud.",
     "simple_todo": [
-      "Évite les pentes raides sous les crêtes : surtout côté est, sud-est et sud, au-dessus de 3000 m.",
-      "Prends crampons et piolet : la neige est dure le matin, une glissade sur pente raide ne s'arrête pas.",
-      "Encorde-toi sur le glacier : les crevasses sont cachées par une neige mince.",
-      "Ne te presse pas pour la dernière benne : fermeture annoncée de l'Aiguille du Midi après dimanche, ce n'est pas une raison d'y aller."
+      "Évite les pentes raides sous les crêtes : surtout côté sud et sud-ouest, au-dessus de 3000 m, à cause du vent.",
+      "Reste loin du bord des arêtes : la neige soufflée peut former un surplomb qui casse sous ton poids.",
+      "Prends crampons et piolet : la neige est dure et froide, une glissade sur pente raide ne s'arrête pas.",
+      "Encorde-toi sur le glacier : les crevasses sont cachées par une neige mince."
     ],
-    "avoid": "NE, E, SE > 3000 m sous les crêtes et cols ; SO, S > 3000 m sous les crêtes (bise) ; N-NE 2400-3000 m (Z1, Z2) ; glaciers non encordés ; pentes dures > 35° au-dessus de barres",
-    "overload_age_d": 6,
+    "avoid": "SO, S, O > 3000 m sous les crêtes et cols (bise du 1/11) ; NE, E, SE > 3000 m sous les crêtes (dépôts anciens) ; N-NE 2400-3000 m (Z1, Z2) ; bords d'arêtes (corniches) ; glaciers non encordés ; pentes dures > 35° au-dessus de barres",
+    "overload_age_d": 7,
     "terrain": "Carnets de Louis et des testeurs : aucune observation ; data-avalanche.org/now : aucune avalanche sur 10 jours, aucune alerte en cours.",
-    "bera": "Aucun bulletin publié (page « indisponible » ; hors saison et grève Météo-France).",
-    "slf": "Aucun bulletin SLF publié (whiterisk.ch : « Actuellement pas de bulletin avalanche publié », dernier le 24/10) ; AvaBlog : pas de billet depuis le 26/10.",
-    "watch": "Plaque à vent · NE-E-SE > 3000 m sous les crêtes · peu probable à possible · taille 1-2 · confiance faible. Petits dépôts de bise · SO-S > 3000 m sous les crêtes · possible · taille 1 · confiance faible. Chute sur neige dure > 3000 m : danger principal. Dimanche plus froid (−12 °C à 4000 m), vent de N faiblissant.",
-    "limits": "BERA et SLF absents ; Météo-France non actualisé (grève : prévision du 30-31/10, dimanche en températures seulement). Météo : Météo-France (Chamonix) et Meteoblue (Aiguille du Midi 3842 m, Chamonix, Finhaut 1288 m) concordent sur le temps sec jusqu'au 5/11 ; divergence sur le vent à 4000 m (NE 50-60 contre 7-12 km/h, rafales 57) : retenu NE 40-45 km/h (Midi : rafales 31 km/h à 17 h) ; dimanche N 40 → 20 km/h et −12 à −9 °C retenus surtout d'après Meteoblue. MétéoSuisse non lisible. Confiance faible à moyenne."
+    "bera": "Aucun bulletin publié (page « indisponible », PDF BRA2611011600 introuvable ; hors saison et grève Météo-France).",
+    "slf": "Aucun bulletin SLF publié (whiterisk.ch : dernier bulletin le 24/10 ; PDF 4111 = notice générale) ; AvaBlog : pas de billet depuis le 26/10.",
+    "watch": "Petits dépôts de bise · SO-S-O > 3000 m sous les crêtes et cols · possible · taille 1, localement 2 · confiance faible. Plaque à vent ancienne · NE-E-SE > 3000 m · peu probable · taille 1-2 · confiance faible. Corniches neuves côté SO. Chute sur neige dure : danger principal. Lundi : vent faiblissant, froid et sec ; pas de neige annoncée avant le 6-7/11 au plus tôt.",
+    "limits": "BERA et SLF absents. Météo-France non actualisé (grève) mais sa prévision couvre dimanche ; lundi en températures seulement. Meteoblue lu (Aiguille du Midi 3842 m, Chamonix 1035 m, Émosson 1800 m) ; MétéoSuisse non lisible. Concordance sur le temps sec et froid jusqu'au 5-6/11. Divergence sur le vent à 4000 m (Météo-France NE 90-100 km/h, Meteoblue 20-30 km/h, rafales 85) : retenu NE 60 km/h (Midi : rafales 53 km/h à 5 h ; vigilance jaune vent de Météo-France). Températures 4000 m : −13/−10 °C contre −11/−6 °C, retenu −12 à −8 °C. Confiance faible à moyenne."
   }
 ]

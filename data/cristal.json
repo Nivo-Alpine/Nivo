@@ -25,14 +25,14 @@
     "n": 4,
     "critere": "Réchauffement",
     "state": "ok",
-    "why": "Air froid en altitude, neige déjà transformée : pas de réchauffement notable vers 2400-2800 m."
+    "why": "Air froid (−2 à +4 °C vers 1800 m), neige déjà transformée : pas de réchauffement notable vers 2400-2800 m."
   },
   {
     "zone": "Z1",
     "n": 5,
     "critere": "Surcharge",
     "state": "warn",
-    "why": "Dernière surcharge le 25/10 (6 j) ; bise de NE le 31/10 sur les crêtes, petits dépôts possibles en SO-S."
+    "why": "Dernière chute le 25/10 (7 j) ; bise de NE le 1/11 sur les crêtes vers 2700 m, petits dépôts possibles en SO-S."
   },
   {
     "zone": "Z1",
@@ -46,7 +46,7 @@
     "n": 1,
     "critere": "Pentes > 30°",
     "state": "warn",
-    "why": "Pentes > 30° côté Bérard et Lac Blanc ; neige rare seulement sur les faces N-NE au-dessus de 2400 m."
+    "why": "Pentes > 30° côté Bérard et Lac Blanc ; neige rare, seulement sur les faces N-NE au-dessus de 2400 m."
   },
   {
     "zone": "Z2",
@@ -60,21 +60,21 @@
     "n": 3,
     "critere": "Couche fragile",
     "state": "warn",
-    "why": "Neige mince à l'ombre côté Lac Blanc–Bérard : grains peu liés et givre possibles."
+    "why": "Neige mince à l'ombre côté Lac Blanc–Bérard vers 2400-2965 m : grains peu liés et givre possibles."
   },
   {
     "zone": "Z2",
     "n": 4,
     "critere": "Réchauffement",
     "state": "ok",
-    "why": "Station Aiguilles Rouges 3 °C à 17 h, nuits claires : regel en surface, peu de neige à humidifier."
+    "why": "Station Aiguilles Rouges +4 °C à 5 h mais nuits claires et journée froide : peu de neige à humidifier."
   },
   {
     "zone": "Z2",
     "n": 5,
     "critere": "Surcharge",
-    "state": "ok",
-    "why": "Dernière surcharge le 25/10 (6 j), faible ici ; peu de neige transportable par la bise."
+    "state": "warn",
+    "why": "Dernière chute le 25/10 (7 j) ; bise de NE le 1/11 sur les crêtes vers 2900 m, très peu de neige à transporter."
   },
   {
     "zone": "Z2",
@@ -88,35 +88,35 @@
     "n": 1,
     "critere": "Pentes > 30°",
     "state": "warn",
-    "why": "Pentes > 30° sous les crêtes de la Vallée Blanche, Vallée Noire raide, arête de sortie exposée à la chute."
+    "why": "Pentes > 30° partout vers l'arête du Midi et la Vallée Blanche au-dessus de 3000 m, souvent au-dessus de crevasses ou de barres."
   },
   {
     "zone": "Z3",
     "n": 2,
     "critere": "Avalanches récentes",
     "state": "ok",
-    "why": "Aucune avalanche sur 10 jours (data-avalanche.org/now) ; La Chamoniarde (30/10) ne signale rien."
+    "why": "Aucune avalanche sur 10 jours (data-avalanche.org/now) ; aucune observation de terrain."
   },
   {
     "zone": "Z3",
     "n": 3,
     "critere": "Couche fragile",
     "state": "warn",
-    "why": "Neige d'octobre mince sur glacier, nuits claires et froides : faces planes possibles sur les faces N > 3000 m."
+    "why": "Manteau mince et ancien vers l'arête du Midi et la Vallée Blanche : faces planes probables sur les faces N au-dessus de 3000 m après les nuits claires."
   },
   {
     "zone": "Z3",
     "n": 4,
     "critere": "Réchauffement",
     "state": "ok",
-    "why": "Midi −5 °C à 17 h, −7 à −9 °C prévus vers 4000 m : regel net au-dessus de 3000 m."
+    "why": "Froid marqué (−12 à −8 °C vers 4000 m, Midi −8 °C à 5 h) : regel net, pas de réchauffement."
   },
   {
     "zone": "Z3",
     "n": 5,
     "critere": "Surcharge",
     "state": "warn",
-    "why": "Dépôts du 25/10 (6 j) sous les crêtes NE-E-SE > 3000 m ; bise de NE 35-45 km/h le 31/10 : petits dépôts SO-S."
+    "why": "Dernière chute le 25/10 (7 j) ; bise de NE forte le 1/11 (60 km/h retenus, rafales 85) : petits dépôts frais (0 j) SO-S sous les crêtes vers l'arête du Midi et la Vallée Blanche > 3000 m, stock de neige faible."
   },
   {
     "zone": "Z3",
@@ -130,7 +130,7 @@
     "n": 1,
     "critere": "Pentes > 30°",
     "state": "warn",
-    "why": "Couloirs raides vers les cols du bassin d'Argentière, pentes > 30° sous les crêtes au-dessus de 3000 m."
+    "why": "Pentes > 30° partout dans le bassin d'Argentière, sous les cols au-dessus de 3000 m, souvent au-dessus de crevasses ou de barres."
   },
   {
     "zone": "Z4",
@@ -144,21 +144,21 @@
     "n": 3,
     "critere": "Couche fragile",
     "state": "warn",
-    "why": "Manteau mince et ancien sur glacier et faces N au-dessus de 3000 m : faces planes possibles."
+    "why": "Manteau mince et ancien dans le bassin d'Argentière, sous les cols : faces planes probables sur les faces N au-dessus de 3000 m après les nuits claires."
   },
   {
     "zone": "Z4",
     "n": 4,
     "critere": "Réchauffement",
     "state": "ok",
-    "why": "Air froid au-dessus de 3000 m (−7 à −9 °C vers 4000 m) : regel net."
+    "why": "Froid marqué (−12 à −8 °C vers 4000 m, Midi −8 °C à 5 h) : regel net, pas de réchauffement."
   },
   {
     "zone": "Z4",
     "n": 5,
     "critere": "Surcharge",
     "state": "warn",
-    "why": "Dépôts du 25/10 (6 j) dans les couloirs NE-E-SE > 3000 m ; bise de NE le 31/10, petits dépôts SO-S sous les cols."
+    "why": "Dernière chute le 25/10 (7 j) ; bise de NE forte le 1/11 (60 km/h retenus, rafales 85) : petits dépôts frais (0 j) SO-S sous les crêtes dans le bassin d'Argentière, sous les cols > 3000 m, stock de neige faible."
   },
   {
     "zone": "Z4",
@@ -172,41 +172,41 @@
     "n": 1,
     "critere": "Pentes > 30°",
     "state": "warn",
-    "why": "Pentes > 30° sous la crête frontière et sur les flancs du glacier du Tour au-dessus de 3000 m."
+    "why": "Pentes > 30° partout sur la crête frontière du Tour au-dessus de 3000 m, souvent au-dessus de crevasses ou de barres."
   },
   {
     "zone": "Z5",
     "n": 2,
     "critere": "Avalanches récentes",
     "state": "ok",
-    "why": "Aucune avalanche sur 10 jours côté France (data-avalanche.org/now) ; côté Trient non vérifiable."
+    "why": "Aucune avalanche sur 10 jours (data-avalanche.org/now) ; aucune observation de terrain."
   },
   {
     "zone": "Z5",
     "n": 3,
     "critere": "Couche fragile",
     "state": "warn",
-    "why": "Neige mince et ancienne sur les faces N au-dessus de 3000 m : faces planes possibles."
+    "why": "Manteau mince et ancien sur la crête frontière du Tour : faces planes probables sur les faces N au-dessus de 3000 m après les nuits claires."
   },
   {
     "zone": "Z5",
     "n": 4,
     "critere": "Réchauffement",
     "state": "ok",
-    "why": "Air froid au-dessus de 3000 m, regel net ; Le Tour 4 °C à 17 h en bas, sans neige."
+    "why": "Froid marqué (−12 à −8 °C vers 4000 m, Midi −8 °C à 5 h) : regel net, pas de réchauffement."
   },
   {
     "zone": "Z5",
     "n": 5,
     "critere": "Surcharge",
     "state": "warn",
-    "why": "Dépôts du 25/10 (6 j) NE-E-SE > 3000 m ; bise marquée sur la frontière le 31/10 : petits dépôts SO-S."
+    "why": "Dernière chute le 25/10 (7 j) ; bise de NE forte le 1/11 (60 km/h retenus, rafales 85) : petits dépôts frais (0 j) SO-S sous les crêtes sur la crête frontière du Tour > 3000 m, stock de neige faible."
   },
   {
     "zone": "Z5",
     "n": 6,
     "critere": "Indice de risque",
     "state": "unknown",
-    "why": "BERA : aucun bulletin ; SLF (côté Trient) : aucun bulletin publié depuis le 24/10."
+    "why": "BERA : aucun bulletin ; SLF (côté Trient) : aucun bulletin publié, dernier le 24/10."
   }
 ]

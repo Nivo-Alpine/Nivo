@@ -1,13 +1,13 @@
 [
   {
-    "date_label": "31/10/2026",
-    "notion": "La neige dure : quand la chute devient le vrai danger",
-    "texte": "Après une semaine sèche et des nuits froides, la neige restante est dure et regelée, souvent glacée en haute montagne. Sur une pente raide de neige dure, une simple glissade ne s'arrête plus : on prend vite de la vitesse, et le danger vient de ce qu'il y a en dessous (barre rocheuse, crevasse, rochers). Au degré 1 ou 2, et hors saison, c'est souvent ce risque de chute qui domine, pas l'avalanche. Parades : crampons et piolet dès que ça glisse, attendre que la surface ramollisse un peu au soleil, ou renoncer à une pente qu'on ne pourrait pas arrêter.",
-    "quiz": "Matin froid, pente à 38° de neige dure et regelée vers 3300 m, au-dessus d'une barre rocheuse : quel est le danger principal ?",
-    "choix_a": "Une glissade impossible à arrêter : crampons et piolet, ou renoncer à la pente",
-    "choix_b": "Une plaque à vent : partir encore plus tôt pour profiter au mieux du regel",
-    "choix_c": "Aucun danger réel : une neige dure et regelée est stable, donc la pente aussi",
-    "answer": "a",
-    "explication": "Sur neige dure à 38°, une chute ne s'arrête pas et la barre rocheuse en dessous rend la glissade grave : c'est le danger principal, d'où crampons, piolet ou renoncement. B se trompe de problème et de parade : partir plus tôt rend la neige encore plus dure. C confond stabilité du manteau et sécurité : une neige stable peut être très dangereuse à cause de la chute."
+    "date_label": "01/11/2026",
+    "notion": "Les corniches : ce que la bise construit sur les crêtes",
+    "texte": "Une corniche est un surplomb de neige que le vent construit sur une crête, du côté abrité : la neige soufflée se dépose juste derrière l'arête et avance en porte-à-faux au-dessus du vide. Par bise de NE comme aujourd'hui, les corniches poussent donc vers le SO et le S, au-dessus des pentes qui reçoivent aussi les dépôts. Une corniche peut casser beaucoup plus loin en arrière qu'on ne le croit, surtout quand il fait doux ou qu'elle vient d'être chargée, et sa chute peut déclencher une plaque dans la pente en dessous. Sur une arête, on reste donc bien en retrait du bord, côté au vent, et on évite de stationner sous une corniche.",
+    "quiz": "Bise de NE forte sur une crête orientée NO-SE vers 3500 m : de quel côté de l'arête la corniche se forme-t-elle ?",
+    "choix_a": "Côté NE, face au vent, là où la neige est arrachée et durcie",
+    "choix_b": "Côté SO, sous le vent, où la neige soufflée se dépose et surplombe",
+    "choix_c": "Des deux côtés à la fois, car le vent tourbillonne au sommet",
+    "answer": "b",
+    "explication": "La corniche se forme du côté abrité (sous le vent) : avec une bise de NE, c'est le côté SO. Le côté NE, face au vent, est érodé et durci (A faux). Les tourbillons existent mais ne construisent pas de surplomb symétrique : la corniche suit le vent dominant de l'épisode (C faux)."
   }
 ]
