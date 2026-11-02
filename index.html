@@ -1152,7 +1152,7 @@ body{padding:0;-webkit-font-smoothing:antialiased}
       if (ok) svg.append('text').attr('text-anchor', 'middle').attr('x', cxp).attr('y', y(r.tmin) + 14).text(r.tmin + '°');
       var t = svg.append('text').attr('text-anchor', 'middle');
       t.append('tspan').attr('x', cxp).attr('y', H - m.b + 16).text(r.day.replace(' ', ' '));
-      t.append('tspan').attr('x', cxp).attr('y', H - m.b + 30).text(r.conf != null ? 'conf. ' + r.conf + '/5' : '');
+      t.append('tspan').attr('x', cxp).attr('y', H - m.b + 30).text(r.conf != null ? (x.step() < 64 ? '' : 'conf. ') + r.conf + '/5' : '');
     });
     addTip(box, svg, R.map(function(r, i){
       return {x: x(i) - 4, y: m.t, w: x.bandwidth() + 8, h: H - m.t - m.b, title: r.day, lines: [[C(0), r.tmin != null && r.tmax != null ? r.tmin + '° à ' + r.tmax + '°' : 'Températures non disponibles'], [null, r.conf != null ? 'Confiance ' + r.conf + '/5' : 'Confiance non indiquée']]};
@@ -1531,17 +1531,17 @@ body{padding:0;-webkit-font-smoothing:antialiased}
       var rr = roseRowsFor(R, z.id); if (!rr.perZone) any = true;
       var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'nv-rz' + (z.id === fz ? ' on' : '');
       var size = 84, ro = 34, ri = 10;
-      var svg = d3.select(btn).append('svg').attr('width', size).attr('height', size).attr('viewBox', '0 0 ' + size + ' ' + size);
+      var svg = d3.select(btn).append('svg').attr('aria-hidden', 'true').attr('width', size).attr('height', size).attr('viewBox', '0 0 ' + size + ' ' + size);
       var g = svg.append('g').attr('transform', 'translate(' + size / 2 + ',' + size / 2 + ')');
       FACES.forEach(function(f){
         var lv = 0; rr.rows.forEach(function(r){ if (r.face === f[0]) lv = Math.max(lv, +r.level || 0); });
         petal(g, {deg: f[1], face: f[0]}, ri, ro, RL[Math.max(0, Math.min(3, lv))], false);
       });
       g.append('text').attr('class', 'nv-strong').attr('text-anchor', 'middle').attr('dy', '.35em').text(z.id);
-      var sp = document.createElement('span'); var b = document.createElement('b'); b.textContent = zShort(z); sp.appendChild(b);
-      var a = zAlt(z.id); if (a){ sp.appendChild(document.createElement('br')); sp.appendChild(document.createTextNode(nf.format(a[0]) + '–' + nf.format(a[1]) + ' m')); }
+      var sp = document.createElement('span'); var b = document.createElement('b'); b.textContent = zShort(z); sp.appendChild(document.createTextNode(' ')); sp.appendChild(b);
+      var a = zAlt(z.id); if (a){ sp.appendChild(document.createTextNode(' ')); sp.appendChild(document.createElement('br')); sp.appendChild(document.createTextNode(nf.format(a[0]) + '–' + nf.format(a[1]) + ' m')); }
       btn.appendChild(sp);
-      btn.setAttribute('aria-label', 'Rose de la zone ' + z.id);
+      btn.setAttribute('aria-label', 'Rose de la zone ' + z.id + ' ' + zShort(z) + (a ? ' ' + nf.format(a[0]) + '–' + nf.format(a[1]) + ' m' : ''));
       btn.addEventListener('click', function(){ selectZone(z.id, true); });
       box.appendChild(btn);
     });
