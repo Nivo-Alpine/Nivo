@@ -1144,16 +1144,17 @@ body{padding:0;-webkit-font-smoothing:antialiased}
     svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0)).attr('stroke', 'var(--cds-chart-reference)').attr('stroke-dasharray', '4 4');
     var bw = Math.min(x.bandwidth(), 26);
     R.forEach(function(r, i){
-      var cxp = x(i) + x.bandwidth() / 2;
-      svg.append('rect').attr('x', cxp - bw / 2).attr('y', y(r.tmax)).attr('width', bw).attr('height', Math.max(y(r.tmin) - y(r.tmax), 3)).attr('rx', 5).attr('fill', C(0));
-      svg.append('text').attr('class', 'nv-strong').attr('text-anchor', 'middle').attr('x', cxp).attr('y', y(r.tmax) - 5).text(r.tmax + '°');
-      svg.append('text').attr('text-anchor', 'middle').attr('x', cxp).attr('y', y(r.tmin) + 14).text(r.tmin + '°');
+      var cxp = x(i) + x.bandwidth() / 2, ok = r.tmin != null && r.tmax != null;
+      if (!ok) svg.append('text').attr('text-anchor', 'middle').attr('x', cxp).attr('y', y(0) - 6).text('n.d.');
+      if (ok) svg.append('rect').attr('x', cxp - bw / 2).attr('y', y(r.tmax)).attr('width', bw).attr('height', Math.max(y(r.tmin) - y(r.tmax), 3)).attr('rx', 5).attr('fill', C(0));
+      if (ok) svg.append('text').attr('class', 'nv-strong').attr('text-anchor', 'middle').attr('x', cxp).attr('y', y(r.tmax) - 5).text(r.tmax + '°');
+      if (ok) svg.append('text').attr('text-anchor', 'middle').attr('x', cxp).attr('y', y(r.tmin) + 14).text(r.tmin + '°');
       var t = svg.append('text').attr('text-anchor', 'middle');
       t.append('tspan').attr('x', cxp).attr('y', H - m.b + 16).text(r.day.replace(' ', ' '));
       t.append('tspan').attr('x', cxp).attr('y', H - m.b + 30).text(r.conf != null ? 'conf. ' + r.conf + '/5' : '');
     });
     addTip(box, svg, R.map(function(r, i){
-      return {x: x(i) - 4, y: m.t, w: x.bandwidth() + 8, h: H - m.t - m.b, title: r.day, lines: [[C(0), r.tmin + '° à ' + r.tmax + '°'], [null, r.conf != null ? 'Confiance ' + r.conf + '/5' : 'Confiance non indiquée']]};
+      return {x: x(i) - 4, y: m.t, w: x.bandwidth() + 8, h: H - m.t - m.b, title: r.day, lines: [[C(0), r.tmin != null && r.tmax != null ? r.tmin + '° à ' + r.tmax + '°' : 'Températures non disponibles'], [null, r.conf != null ? 'Confiance ' + r.conf + '/5' : 'Confiance non indiquée']]};
     }));
   }
 
