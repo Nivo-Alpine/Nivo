@@ -154,5 +154,17 @@
     "faces": "SO, S fortement au-dessus de 3000 m (bise 30/10-1/11) et O par charge croisée ; SE (NO 24-26/10) et NE-E (SO/O 22-23/10) anciens, en partie érodés ; N faible ; NO érodée",
     "problemes": "Hors saison, ni BERA ni SLF (dernier SLF le 24/10). Surcharge préoccupante > 3000 m : dernière chute 25/10 (7 j) + dépôts frais de bise SO-S (0 j, stock faible) ; réchauffement ok (froid, regel net) ; couche fragile préoccupante (manteau mince, faces planes sur N) ; avalanches récentes : aucune connue (Z1 : inconnu) ; indice aucun. Problèmes : petits dépôts de bise SO-S-O > 3000 m · possible · taille 1-2 · confiance faible ; plaques anciennes NE-E-SE · peu probable · taille 1-2 ; corniches neuves côté SO ; chute sur neige dure = danger principal. Modes : Méfiant > 3000 m (Z3, Z4, Z5) SO-S-O sous les crêtes et NE-E-SE ; Méfiant 2400-3000 m N-NE (Z1, Z2) ; < 2000 m pas de neige",
     "observations": "Carnets de Louis et des testeurs : aucune observation. data-avalanche.org/now : aucune avalanche sur 10 jours, aucune alerte en cours"
+  },
+  {
+    "jour": "02/11",
+    "date": "2026-11-02",
+    "snow_limit_min_m": null,
+    "wind4000_max_kmh": 35,
+    "fresh_4000_cm": 0,
+    "neige_fraiche": "0 (beau temps sec ; Météo-France non actualisé, grève : prévision dim. 1 et lun. 2 ; BERA pour mardi : iso 0 °C 2300 m ; Meteoblue Midi 3842 m / Chamonix / Émosson 1900 m : sec jusqu'au 5/11, faibles précipitations (neige en altitude) possibles le 6-8/11, signal de neige vers le 10-12/11, faible confiance). BERA : enneigement continu dès 2100 m N / 2400 m S, ≈ 20 cm vers 2500 m N, ≈ 10 cm vers 2500 m S ; 0 précipitation sur 6 j. Stations (« 19 h 10 », probablement de la veille) : Couvercle 14 cm ; Midi −14 °C, Couvercle −7 °C, Aiguilles Rouges −4 °C",
+    "vent": "4000 m : Météo-France NE 40 matin, NE 25 ap.-midi, NE 20 nuit ; Meteoblue vent faible ; retenu NE 35 → 15 km/h. Mardi (BERA) : 15-20 km/h à 4000 m, 10 km/h à 2000 m. Rafales stations (veille au soir) : Aiguilles Rouges 54, Midi 46, Le Tour 44 km/h. 2000 m : NE 15-20",
+    "faces": "SO, S fortement et O par charge croisée au-dessus de 3500 m (bise 30/10-1/11) ; BERA : plaques rares toutes faces > 3500 m ; SE (NO 24-26/10) et NE-E (SO/O 22-23/10) anciens ; NE et NO érodées",
+    "problemes": "Premier BERA de la saison (02/11, valable 03/11) : indice 1 (faible), rares petites plaques dures > 3500 m toutes faces (vent de NE dimanche), manteau trop faible, glissade, glaciers très crevassés. SLF : aucun bulletin. Surcharge préoccupante > 3500 m, âge 1 j (bise du 1/11) ; dernière chute 25/10 (8 j) ; réchauffement ok (froid, iso 2300 m) ; couche fragile préoccupante (manteau mince, faces planes possibles à l'ombre) ; avalanches récentes : aucune (Z1 : inconnu). Problèmes : plaque à vent > 3500 m sous les crêtes, surtout SO-S-O · peu probable à possible · taille 1, localement 2 · confiance moyenne ; chute sur neige dure = danger principal. Modes : Méfiant > 3500 m (Z3, Z4), > 3200 m (Z5) ; Z1, Z2 : pas de neige skiable (névés durs N > 2400 m) ; < 2000 m pas de neige",
+    "observations": "Carnets de Louis et des testeurs : aucune observation. data-avalanche.org/now : aucune avalanche sur 10 jours, aucune alerte en cours"
   }
 ]

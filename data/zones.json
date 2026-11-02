@@ -12,12 +12,12 @@
     "ry_km": 2.8,
     "rot": 0,
     "bulletin": "SLF 4111 Emosson",
-    "level": "warn",
-    "mode": "Méfiant",
-    "band": "2400–2800 m",
-    "reason": "Neige rare et ancienne à l'ombre ; bise sur les crêtes",
-    "avoid": "N, NE, NO 2400-2800 m : pentes > 30° et zones minces ; SO-S sous les crêtes (bise) ; neige dure le matin (chute)",
-    "simple": "Il reste un peu de neige à l'ombre au-dessus de 2400 m. Évite les pentes raides tournées vers le nord ; attention aux glissades sur neige dure."
+    "level": "off",
+    "mode": "Pas de neige skiable",
+    "band": "2000–3000 m",
+    "reason": "Neige mince et dure au-dessus de 2400 m côté nord, pas skiable",
+    "avoid": "Plaques de neige dure N-NE > 2400 m (glissade) ; pas de ski",
+    "simple": "Presque pas de neige : quelques plaques dures côté nord au-dessus de 2400 m. Pas de ski ; attention aux glissades à pied."
   },
   {
     "id": "Z2",
@@ -32,12 +32,12 @@
     "ry_km": 2.6,
     "rot": -45,
     "bulletin": "BERA Mont-Blanc",
-    "level": "warn",
-    "mode": "Méfiant",
-    "band": "2400–2965 m",
-    "reason": "Neige rare côté Bérard–Lac Blanc, grains peu liés à l'ombre",
-    "avoid": "N, NE 2400-2965 m (versant Bérard / Lac Blanc) : pentes > 30° et zones minces ; SO-S sous les crêtes (bise) ; versant Chamonix S-SE sans neige",
-    "simple": "Peu de neige, surtout côté nord vers le Lac Blanc. Évite les pentes raides tournées vers le nord ; côté Chamonix, presque plus de neige."
+    "level": "off",
+    "mode": "Pas de neige skiable",
+    "band": "2000–3000 m",
+    "reason": "Enneigement trop faible : ≈ 20 cm croûtés vers 2500 m au nord",
+    "avoid": "Névés durs N-NE > 2400 m (glissade) ; pas de ski",
+    "simple": "Trop peu de neige pour skier : environ 20 cm de neige dure côté nord vers 2500 m. Attention aux glissades."
   },
   {
     "id": "Z3",
@@ -55,9 +55,9 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Bise forte : petits dépôts frais SO-S ; crevasses, neige dure",
-    "avoid": "SO, S, O > 3000 m sous les crêtes (bise du 1/11) ; NE, E, SE > 3000 m sous les cols (dépôts anciens) ; glacier non encordé ; arête et pentes dures (chute)",
-    "simple": "Vent fort du nord-est là-haut. Évite les pentes raides juste sous les crêtes côté sud ; encorde-toi sur le glacier."
+    "reason": "Rares petites plaques dures > 3500 m après la bise de dimanche",
+    "avoid": "Pentes > 30° toutes faces > 3500 m sous les crêtes, surtout SO-S-O ; arête de sortie (chute) ; glacier non encordé",
+    "simple": "Un peu de neige soufflée dure au-dessus de 3500 m. Évite les pentes raides sous les crêtes ; encorde-toi sur le glacier, très crevassé."
   },
   {
     "id": "Z4",
@@ -75,9 +75,9 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Bise forte sous les cols ; dépôts anciens, crevasses",
-    "avoid": "SO, S, O > 3000 m sous les cols et crêtes (bise du 1/11) ; NE, E, SE > 3000 m dans les couloirs (dépôts anciens) ; glacier non encordé ; couloirs durs (chute)",
-    "simple": "Vent fort là-haut : neige soufflée sous les cols côté sud. Évite les couloirs raides ; encorde-toi sur le glacier."
+    "reason": "Rares petites plaques dures > 3500 m, cols et couloirs sous crêtes",
+    "avoid": "Couloirs et pentes > 30° vers les cols > 3500 m, surtout SO-S-O ; glacier non encordé ; pentes dures > 35° au-dessus de barres",
+    "simple": "Neige soufflée dure par endroits au-dessus de 3500 m. Évite les couloirs raides sous les cols ; encorde-toi, les crevasses sont mal bouchées."
   },
   {
     "id": "Z5",
@@ -95,8 +95,8 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3000 m",
-    "reason": "Bise marquée sur la frontière : petits dépôts SO-S frais",
-    "avoid": "SO, S, O > 3000 m sous la crête frontière (bise du 1/11) ; NE, E, SE > 3000 m sous les crêtes (dépôts anciens) ; glacier non encordé",
-    "simple": "Vent fort sur la crête frontière : un peu de neige soufflée côté sud. Évite les pentes raides sous les crêtes ; encorde-toi sur le glacier."
+    "reason": "Bise forte dimanche : petits dépôts durs sous les crêtes frontières",
+    "avoid": "Pentes > 30° SO-S-O sous les crêtes > 3200 m ; bords d'arêtes (corniches) ; glacier non encordé",
+    "simple": "Le vent de dimanche a laissé un peu de neige dure sous les crêtes. Évite les pentes raides côté sud et ouest en haut ; encorde-toi."
   }
 ]

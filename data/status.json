@@ -1,23 +1,23 @@
 [
   {
-    "date_label": "bilan du 01/11/2026",
+    "date_label": "bilan du 02/11/2026",
     "level": "warn",
-    "label": "Hors saison · vent fort en haute montagne",
-    "summary": "Z3, Z4, Z5 > 3000 m en mode Méfiant : bise de NE forte, petits dépôts frais en SO-S sous les crêtes. Dépôts anciens NE-E-SE de 7 j et plus. Z1, Z2 : neige rare et mince au-dessus de 2400 m, méfiant N-NE.",
-    "simple_title": "Hors saison : vent fort et froid là-haut",
-    "simple_summary": "Il fait beau, sec et froid, mais le vent souffle fort au-dessus de 3000 m. Il reste peu de neige, souvent dure. Le vent pousse un peu de neige juste sous les crêtes côté sud.",
+    "label": "Indice 1 · plaques rares > 3500 m",
+    "summary": "Z3, Z4, Z5 > 3500 m en mode Méfiant : rares petites plaques dures de la bise du 1/11. Premier BERA : indice 1, enneigement trop faible. Z1, Z2 : pas de neige skiable.",
+    "simple_title": "Peu de neige : prudence en haute montagne",
+    "simple_summary": "Le premier bulletin de la saison annonce un danger faible. Il y a très peu de neige, souvent dure, même en haut. Au-dessus de 3500 m, le vent de dimanche a laissé un peu de neige soufflée sous les crêtes.",
     "simple_todo": [
-      "Évite les pentes raides sous les crêtes : surtout côté sud et sud-ouest, au-dessus de 3000 m, à cause du vent.",
-      "Reste loin du bord des arêtes : la neige soufflée peut former un surplomb qui casse sous ton poids.",
-      "Prends crampons et piolet : la neige est dure et froide, une glissade sur pente raide ne s'arrête pas.",
-      "Encorde-toi sur le glacier : les crevasses sont cachées par une neige mince."
+      "Évite les pentes raides sous les crêtes : au-dessus de 3500 m, surtout côté sud et ouest, à cause du vent de dimanche.",
+      "Prends crampons et piolet : la neige est dure, une glissade sur pente raide ne s'arrête pas.",
+      "Encorde-toi sur le glacier : il est très crevassé et les ponts de neige sont fragiles.",
+      "Ne te fie pas au mot « faible » : danger faible ne veut pas dire sans danger, regarde ce qu'il y a sous la pente."
     ],
-    "avoid": "SO, S, O > 3000 m sous les crêtes et cols (bise du 1/11) ; NE, E, SE > 3000 m sous les crêtes (dépôts anciens) ; N-NE 2400-3000 m (Z1, Z2) ; bords d'arêtes (corniches) ; glaciers non encordés ; pentes dures > 35° au-dessus de barres",
-    "overload_age_d": 7,
+    "avoid": "Pentes > 30° toutes faces > 3500 m sous les crêtes et cols, surtout SO, S, O ; pentes dures > 35° au-dessus de barres ou crevasses ; glaciers non encordés ; bords d'arêtes (corniches)",
+    "overload_age_d": 1,
     "terrain": "Carnets de Louis et des testeurs : aucune observation ; data-avalanche.org/now : aucune avalanche sur 10 jours, aucune alerte en cours.",
-    "bera": "Aucun bulletin publié (page « indisponible », PDF BRA2611011600 introuvable ; hors saison et grève Météo-France).",
+    "bera": "BERA Mont-Blanc du 02/11 à 16 h (premier de la saison), valable jusqu'au 03/11 à 18 h : indice 1 (faible) à toutes altitudes. Pas de départ spontané. Rares petites plaques dures > 3500 m, toutes orientations (vent de NE fort dimanche). Enneigement continu dès 2100 m au N, 2400 m au S ; ≈ 20 cm vers 2500 m au N. Glissade sur neige dure, glaciers très crevassés. Tendance mercredi : indice 1.",
     "slf": "Aucun bulletin SLF publié (whiterisk.ch : dernier bulletin le 24/10 ; PDF 4111 = notice générale) ; AvaBlog : pas de billet depuis le 26/10.",
-    "watch": "Petits dépôts de bise · SO-S-O > 3000 m sous les crêtes et cols · possible · taille 1, localement 2 · confiance faible. Plaque à vent ancienne · NE-E-SE > 3000 m · peu probable · taille 1-2 · confiance faible. Corniches neuves côté SO. Chute sur neige dure : danger principal. Lundi : vent faiblissant, froid et sec ; pas de neige annoncée avant le 6-7/11 au plus tôt.",
-    "limits": "BERA et SLF absents. Météo-France non actualisé (grève) mais sa prévision couvre dimanche ; lundi en températures seulement. Meteoblue lu (Aiguille du Midi 3842 m, Chamonix 1035 m, Émosson 1800 m) ; MétéoSuisse non lisible. Concordance sur le temps sec et froid jusqu'au 5-6/11. Divergence sur le vent à 4000 m (Météo-France NE 90-100 km/h, Meteoblue 20-30 km/h, rafales 85) : retenu NE 60 km/h (Midi : rafales 53 km/h à 5 h ; vigilance jaune vent de Météo-France). Températures 4000 m : −13/−10 °C contre −11/−6 °C, retenu −12 à −8 °C. Confiance faible à moyenne."
+    "watch": "Plaque à vent · toutes faces > 3500 m sous les crêtes, surtout SO-S-O · peu probable à possible · taille 1, localement 2 · confiance moyenne (BERA). Chute sur neige dure > 35° : danger principal. Crevasses. Mardi-jeudi : beau, sec, iso 0 °C vers 2300 m, vent faible ; faibles précipitations possibles le 6/11, faible confiance.",
+    "limits": "BERA lu (texte et PDF ; rose des pentes en image non lue). SLF : aucun bulletin. Météo-France Chamonix non actualisé (grève), sa prévision couvre lundi ; mardi pris dans l'aperçu météo du BERA. Meteoblue lu (Aiguille du Midi 3842 m, Chamonix, Émosson 1900 m) ; MétéoSuisse non lisible. Météo-France et Meteoblue concordent sur le temps sec, le froid en altitude (−12 à −8 °C vers 4000 m) et le vent faible mardi. Divergence sur la vallée lundi après-midi (10 °C contre 3 °C) : retenu 6 °C. Stations affichées « 19 h 10 », probablement de la veille. Confiance moyenne."
   }
 ]

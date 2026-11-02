@@ -1,13 +1,13 @@
 [
   {
-    "date_label": "01/11/2026",
-    "notion": "Les corniches : ce que la bise construit sur les crêtes",
-    "texte": "Une corniche est un surplomb de neige que le vent construit sur une crête, du côté abrité : la neige soufflée se dépose juste derrière l'arête et avance en porte-à-faux au-dessus du vide. Par bise de NE comme aujourd'hui, les corniches poussent donc vers le SO et le S, au-dessus des pentes qui reçoivent aussi les dépôts. Une corniche peut casser beaucoup plus loin en arrière qu'on ne le croit, surtout quand il fait doux ou qu'elle vient d'être chargée, et sa chute peut déclencher une plaque dans la pente en dessous. Sur une arête, on reste donc bien en retrait du bord, côté au vent, et on évite de stationner sous une corniche.",
-    "quiz": "Bise de NE forte sur une crête orientée NO-SE vers 3500 m : de quel côté de l'arête la corniche se forme-t-elle ?",
-    "choix_a": "Côté NE, face au vent, là où la neige est arrachée et durcie",
-    "choix_b": "Côté SO, sous le vent, où la neige soufflée se dépose et surplombe",
-    "choix_c": "Des deux côtés à la fois, car le vent tourbillonne au sommet",
-    "answer": "b",
-    "explication": "La corniche se forme du côté abrité (sous le vent) : avec une bise de NE, c'est le côté SO. Le côté NE, face au vent, est érodé et durci (A faux). Les tourbillons existent mais ne construisent pas de surplomb symétrique : la corniche suit le vent dominant de l'épisode (C faux)."
+    "date_label": "02/11/2026",
+    "notion": "Le degré de danger compte les pièges, pas leur taille",
+    "texte": "Le premier BERA de la saison est à 1 (faible). Ce chiffre dit surtout combien de pentes sont piégées, pas la taille de l'avalanche si l'une d'elles part : autour de Davos, sur 21 hivers, environ 70 % des avalanches sont de taille 2 (assez pour ensevelir une personne) à tous les degrés ; seule leur fréquence change, d'environ 2 par jour d'activité au degré 1 à 64 au degré 4 (Schweizer et al., 2020). Au degré 1, les pièges sont rares, mais une petite plaque qui part au-dessus d'une barre ou d'une crevasse reste grave. Devant une pente, la bonne question n'est donc pas « quel degré ? » mais « si ça part ici, où est-ce que je finis ? ».",
+    "quiz": "Premier bulletin de la saison : indice 1 (faible), rares plaques à vent au-dessus de 3500 m. Si l'une d'elles part sous tes skis, à quoi t'attendre ?",
+    "choix_a": "Une coulée sans gravité : à l'indice 1, les avalanches restent toujours petites.",
+    "choix_b": "Rien de spécial : à l'indice 1, une plaque ne peut pas partir sous un skieur.",
+    "choix_c": "Une taille 2 reste possible : le degré dit le nombre de pièges, pas leur taille.",
+    "answer": "c",
+    "explication": "C : à tous les degrés, la taille 2 domine (≈ 70 % des avalanches) ; au degré 1 elles sont plus rares, pas plus petites, et une taille 2 peut ensevelir une personne. A confond rareté et petite taille. B est faux : le BERA du jour signale justement de rares plaques déclenchables par un skieur."
   }
 ]
