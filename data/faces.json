@@ -2,49 +2,49 @@
   {
     "face": "N",
     "deg": 0,
-    "level": 1,
-    "why": "Charge croisée possible par la bise du 1/11 en haute altitude ; BERA : plaques rares toutes faces > 3500 m."
+    "level": 0,
+    "why": "Peu de charge récente ; faible vent de SE prévu mardi-mercredi, stock transportable réduit."
   },
   {
     "face": "NE",
     "deg": 45,
     "level": 0,
-    "why": "Face au vent pendant la bise de NE (30/10-1/11) : érodée, neige dure."
+    "why": "Face au vent de la bise (30/10-1/11) : érodée, neige dure."
   },
   {
     "face": "E",
     "deg": 90,
     "level": 1,
-    "why": "Dépôts anciens des vents de SO/O des 22-23/10 (10 j), en partie repris par la bise."
+    "why": "Anciens dépôts du flux SO/O des 22-23/10, en partie érodés."
   },
   {
     "face": "SE",
     "deg": 135,
     "level": 1,
-    "why": "Dépôts du vent de NO des 24-26/10 (7-9 j), vieillis."
+    "why": "Anciens dépôts du vent de NO des 24-26/10."
   },
   {
     "face": "S",
     "deg": 180,
     "level": 2,
-    "why": "Plusieurs jours de bise de NE (30/10-1/11) : petits dépôts durs sous les crêtes > 3500 m."
+    "why": "Sous le vent de la bise de NE des 30/10-1/11 (jusqu'à 60-100 km/h)."
   },
   {
     "face": "SO",
     "deg": 225,
     "level": 2,
-    "why": "Face sous le vent de la bise de NE (30/10-1/11, jusqu'à 100 km/h le 1/11) : dépôts et corniches neuves."
+    "why": "Sous le vent de la bise de NE des 30/10-1/11 : dépôts sous les crêtes."
   },
   {
     "face": "O",
     "deg": 270,
     "level": 1,
-    "why": "Charge croisée de la bise du 1/11 dans les flancs de couloirs."
+    "why": "Charge croisée par la bise de NE du 1/11."
   },
   {
     "face": "NO",
     "deg": 315,
     "level": 0,
-    "why": "Érodée par le NO des 24-26/10 ; pas de charge identifiée depuis."
+    "why": "Érodée par le vent de NO des 24-26/10, peu rechargée depuis."
   }
 ]

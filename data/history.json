@@ -166,5 +166,17 @@
     "faces": "SO, S fortement et O par charge croisée au-dessus de 3500 m (bise 30/10-1/11) ; BERA : plaques rares toutes faces > 3500 m ; SE (NO 24-26/10) et NE-E (SO/O 22-23/10) anciens ; NE et NO érodées",
     "problemes": "Premier BERA de la saison (02/11, valable 03/11) : indice 1 (faible), rares petites plaques dures > 3500 m toutes faces (vent de NE dimanche), manteau trop faible, glissade, glaciers très crevassés. SLF : aucun bulletin. Surcharge préoccupante > 3500 m, âge 1 j (bise du 1/11) ; dernière chute 25/10 (8 j) ; réchauffement ok (froid, iso 2300 m) ; couche fragile préoccupante (manteau mince, faces planes possibles à l'ombre) ; avalanches récentes : aucune (Z1 : inconnu). Problèmes : plaque à vent > 3500 m sous les crêtes, surtout SO-S-O · peu probable à possible · taille 1, localement 2 · confiance moyenne ; chute sur neige dure = danger principal. Modes : Méfiant > 3500 m (Z3, Z4), > 3200 m (Z5) ; Z1, Z2 : pas de neige skiable (névés durs N > 2400 m) ; < 2000 m pas de neige",
     "observations": "Carnets de Louis et des testeurs : aucune observation. data-avalanche.org/now : aucune avalanche sur 10 jours, aucune alerte en cours"
+  },
+  {
+    "jour": "03/11",
+    "date": "2026-11-03",
+    "snow_limit_min_m": 2300,
+    "wind4000_max_kmh": 25,
+    "fresh_4000_cm": 1,
+    "neige_fraiche": "0 (beau temps sec ; Météo-France non actualisé, grève : prévision lun. 2 et mar. 3 ; BERA : iso 0 °C 2300 m mardi, aucune précipitation jusqu'au 4/11 ; Meteoblue Midi 3842 m : 0-2 cm possibles mer. 4, 2-5 cm ven. 6, 5-10 cm lun. 9, 20-30 cm mar. 10 ; Émosson 1900 m : 2,5-5 mm ven. 6, pluie > 20 mm mar. 10 ; faible confiance au-delà de jeudi). Stations 5 h 10 : Couvercle 13 cm, Chamonix 1 cm ; Midi −10 °C, Couvercle −4 °C, Aiguilles Rouges −1 °C, Le Tour −4 °C",
+    "vent": "4000 m : Météo-France SE 25 mardi (30 la nuit) ; BERA 15-20 ; Meteoblue (3842 m) ≈ 16 km/h SSO → SE → concordance : retenu SE 20-25 km/h ; mer. ≈ 20 km/h (Meteoblue). 2000 m : SO 10. Page 2 du BERA : vent 4000 m ≈ 50 km/h fin octobre, 20 km/h les 1-2/11 ; aucune neige fraîche sur 7 j",
+    "faces": "SO, S fortement et O par charge croisée au-dessus de 3500 m (bise 30/10-1/11) ; BERA : rares plaques dures toutes faces > 3500 m ; SE et E anciens ; NE, NO érodées ; vent de SE faible mardi-mercredi (peu de stock : N à peine)",
+    "problemes": "Hors saison. BERA du 02/11 (valable jusqu'au 03/11 18 h) : indice 1, neige ventée, rares petites plaques dures > 3500 m, glissade, glaciers très crevassés ; tendance mercredi indice 1. BERA du 03/11 non lisible. SLF : aucun bulletin (dernier le 24/10). Surcharge préoccupante > 3500 m, âge 2 j (bise du 1/11) ; dernière chute 25/10 (9 j) ; réchauffement ok (froid, iso 2300 m, regel net) ; couche fragile préoccupante (manteau mince, faces planes à l'ombre) ; avalanches récentes : aucune (Z1 : inconnu) ; indice 1. Problèmes : plaque à vent dure > 3500 m sous les crêtes, surtout SO-S-O · peu probable · taille 1, localement 2 · confiance moyenne ; chute sur neige dure = danger principal. Modes : Méfiant > 3500 m (Z3, Z4), > 3200 m (Z5) ; Z1, Z2 : pas de neige skiable ; < 2000 m pas de neige. À suivre : premières chutes possibles 6/11 puis 9-10/11 sur neige ancienne à faces planes",
+    "observations": "Carnets de Louis et des testeurs : aucune observation. data-avalanche.org/now : aucune avalanche sur 10 jours, aucune alerte en cours"
   }
 ]
