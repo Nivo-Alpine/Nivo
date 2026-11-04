@@ -69,7 +69,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
+    "why": "Névés minces et anciens : faces planes probables, neige dure."
   },
   {
     "zone": "Z1",
@@ -77,27 +77,27 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
+    "why": null
   },
   {
     "zone": "Z1",
     "band": "2000–3000 m",
     "face": "E",
     "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "SE",
-    "deg": 135,
     "level": 0,
     "why": null
   },
   {
     "zone": "Z1",
     "band": "2000–3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
     "face": "S",
     "deg": 180,
     "level": 0,
@@ -124,7 +124,7 @@
     "band": "2000–3000 m",
     "face": "NO",
     "deg": 315,
-    "level": 0,
+    "level": 1,
     "why": null
   },
   {
@@ -197,7 +197,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
+    "why": "Névés minces et anciens : faces planes probables, neige dure."
   },
   {
     "zone": "Z2",
@@ -205,7 +205,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
+    "why": null
   },
   {
     "zone": "Z2",
@@ -252,7 +252,7 @@
     "band": "2000–3000 m",
     "face": "NO",
     "deg": 315,
-    "level": 0,
+    "level": 1,
     "why": null
   },
   {
@@ -325,7 +325,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
+    "why": "Névés minces et anciens : faces planes probables, neige dure."
   },
   {
     "zone": "Z3",
@@ -333,7 +333,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
+    "why": null
   },
   {
     "zone": "Z3",
@@ -380,7 +380,7 @@
     "band": "2000–3000 m",
     "face": "NO",
     "deg": 315,
-    "level": 0,
+    "level": 1,
     "why": null
   },
   {
@@ -388,8 +388,8 @@
     "band": "> 3000 m",
     "face": "N",
     "deg": 0,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
+    "level": 3,
+    "why": "Foehn de S-SE depuis mercredi : dépôts sous les crêtes, sur neige ancienne à faces planes."
   },
   {
     "zone": "Z3",
@@ -397,7 +397,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
+    "why": null
   },
   {
     "zone": "Z3",
@@ -405,7 +405,7 @@
     "face": "E",
     "deg": 90,
     "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
+    "why": null
   },
   {
     "zone": "Z3",
@@ -413,231 +413,231 @@
     "face": "SE",
     "deg": 135,
     "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
+    "why": "Face au vent : érodée, zones vitrifiées près des crêtes."
   },
   {
     "zone": "Z3",
     "band": "> 3000 m",
     "face": "S",
     "deg": 180,
-    "level": 2,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
+    "level": 1,
+    "why": "Anciens dépôts de bise du 1/11 (4 j)."
   },
   {
     "zone": "Z3",
     "band": "> 3000 m",
     "face": "SO",
     "deg": 225,
-    "level": 2,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
+    "level": 1,
+    "why": "Anciens dépôts de bise du 1/11 (4 j)."
   },
   {
     "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 2,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
-  },
-  {
-    "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z4",
-    "band": "< 2000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "< 2000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "< 2000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "< 2000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "< 2000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "< 2000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "< 2000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "< 2000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 2,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 2,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
-  },
-  {
-    "zone": "Z4",
     "band": "> 3000 m",
     "face": "O",
     "deg": 270,
     "level": 2,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
+    "why": "Charge croisée du foehn et dépôts de bise du 1/11."
+  },
+  {
+    "zone": "Z3",
+    "band": "> 3000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 3,
+    "why": "Face sous le vent du foehn de SE : petites plaques neuves sous l'arête et les crêtes."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 1,
+    "why": "Névés minces et anciens : faces planes probables, neige dure."
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 3,
+    "why": "Couloirs N sous les cols : dépôts de foehn sur neige ancienne mince."
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 1,
+    "why": "Anciens dépôts de bise du 1/11."
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 1,
+    "why": "Anciens dépôts de bise du 1/11."
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 2,
+    "why": "Charge croisée du foehn le long des crêtes."
   },
   {
     "zone": "Z4",
     "band": "> 3000 m",
     "face": "NO",
     "deg": 315,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
+    "level": 3,
+    "why": "Sous le vent du foehn de SE : petites plaques neuves dans les couloirs."
   },
   {
     "zone": "Z5",
@@ -709,7 +709,7 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
+    "why": "Névés minces et anciens : faces planes probables, neige dure."
   },
   {
     "zone": "Z5",
@@ -717,7 +717,7 @@
     "face": "NE",
     "deg": 45,
     "level": 1,
-    "why": "Névés minces et durs à l'ombre : glissade, future couche fragile."
+    "why": null
   },
   {
     "zone": "Z5",
@@ -764,7 +764,7 @@
     "band": "2000–3000 m",
     "face": "NO",
     "deg": 315,
-    "level": 0,
+    "level": 1,
     "why": null
   },
   {
@@ -772,48 +772,48 @@
     "band": "> 3000 m",
     "face": "N",
     "deg": 0,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z5",
-    "band": "> 3000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z5",
-    "band": "> 3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z5",
-    "band": "> 3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
-  },
-  {
-    "zone": "Z5",
-    "band": "> 3000 m",
-    "face": "S",
-    "deg": 180,
     "level": 2,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
+    "why": "Sous les crêtes frontalières : petits dépôts de foehn."
+  },
+  {
+    "zone": "Z5",
+    "band": "> 3000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z5",
+    "band": "> 3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z5",
+    "band": "> 3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z5",
+    "band": "> 3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 1,
+    "why": "Anciens dépôts de bise du 1/11."
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "SO",
     "deg": 225,
-    "level": 2,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
+    "level": 1,
+    "why": null
   },
   {
     "zone": "Z5",
@@ -821,14 +821,14 @@
     "face": "O",
     "deg": 270,
     "level": 1,
-    "why": "Dépôts de bise du 1/11 sous les crêtes, plaques dures possibles (BERA)."
+    "why": null
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "NO",
     "deg": 315,
-    "level": 1,
-    "why": "BERA : rares petites plaques dures > 3500 m toutes orientations."
+    "level": 2,
+    "why": "Sous le vent du foehn de SE, près des cols."
   }
 ]

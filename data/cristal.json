@@ -11,28 +11,28 @@
     "n": 2,
     "critere": "Avalanches récentes",
     "state": "unknown",
-    "why": "Aucune donnée pour le Valais (White Risk non lisible depuis le cloud, data-avalanche.org couvre la Haute-Savoie)."
+    "why": "Aucune donnée côté Valais (data-avalanche.org couvre la Haute-Savoie, White Risk non lisible depuis le cloud)."
   },
   {
     "zone": "Z1",
     "n": 3,
     "critere": "Couche fragile",
     "state": "warn",
-    "why": "Névés minces au nord vers 2400-2800 m : faces planes probables, future couche fragile si la neige les recouvre."
+    "why": "Névés minces au nord vers 2400-2800 m : faces planes probables, future couche fragile."
   },
   {
     "zone": "Z1",
     "n": 4,
     "critere": "Réchauffement",
-    "state": "ok",
-    "why": "Regel net la nuit vers 2000-2500 m (Émosson −2 °C au matin), soleil faible de novembre."
+    "state": "warn",
+    "why": "Iso 0 °C vers 2600-2800 m jeudi, nuit de jeudi nuageuse à +4 °C vers 2000 m : regel faible sur les névés."
   },
   {
     "zone": "Z1",
     "n": 5,
     "critere": "Surcharge",
     "state": "ok",
-    "why": "Pas de neige depuis le 25/10 (9 j) ; bise du 1/11 sans stock à déplacer à ces altitudes."
+    "why": "Pas de neige depuis le 25/10 (10 j) ; foehn surtout au-dessus de 3000 m, peu de stock à 2000-2800 m."
   },
   {
     "zone": "Z1",
@@ -53,77 +53,77 @@
     "n": 2,
     "critere": "Avalanches récentes",
     "state": "ok",
-    "why": "Aucune avalanche signalée sur 10 jours (data-avalanche.org)."
+    "why": "Aucune avalanche signalée sur 10 jours (data-avalanche.org, BERA : rien à signaler)."
   },
   {
     "zone": "Z2",
     "n": 3,
     "critere": "Couche fragile",
     "state": "warn",
-    "why": "Neige mince et ancienne côté Lac Blanc / Bérard (N-NE) vers 2400-2900 m : faces planes probables."
+    "why": "Neige mince et ancienne côté Lac Blanc / Bérard (N-NE) vers 2400-2965 m : faces planes probables."
   },
   {
     "zone": "Z2",
     "n": 4,
     "critere": "Réchauffement",
-    "state": "ok",
-    "why": "Regel aux Aiguilles Rouges (−1 °C à 5 h) ; versant S-SE à peine ramolli l'après-midi."
+    "state": "warn",
+    "why": "Iso 0 °C 2600-2800 m jeudi, nuit nuageuse : regel faible sous 2800 m, S-SE ramolli l'après-midi."
   },
   {
     "zone": "Z2",
     "n": 5,
     "critere": "Surcharge",
     "state": "ok",
-    "why": "Dernière chute le 25/10 (9 j) ; peu de transport sous 3000 m depuis."
+    "why": "Dernière chute le 25/10 (10 j) ; foehn de SE peu chargé sous 3000 m."
   },
   {
     "zone": "Z2",
     "n": 6,
     "critere": "Indice de risque",
     "state": "ok",
-    "why": "BERA Mont-Blanc indice 1 (faible) jusqu'au 03/11 18 h ; tendance mercredi : faible."
+    "why": "BERA Mont-Blanc indice 1 (faible) pour jeudi 5/11."
   },
   {
     "zone": "Z3",
     "n": 1,
     "critere": "Pentes > 30°",
     "state": "warn",
-    "why": "Pentes > 30° sous l'arête et dans la Vallée Noire, plus raide et plus exposée."
+    "why": "Pentes > 30° sous l'arête, sous les crêtes de la Vallée Blanche et dans la Vallée Noire."
   },
   {
     "zone": "Z3",
     "n": 2,
     "critere": "Avalanches récentes",
     "state": "ok",
-    "why": "Aucune avalanche signalée sur 10 jours (data-avalanche.org, BERA : rien à signaler)."
+    "why": "Aucune avalanche signalée sur 10 jours (data-avalanche.org ; BERA : départs spontanés RAS)."
   },
   {
     "zone": "Z3",
     "n": 3,
     "critere": "Couche fragile",
-    "state": "warn",
-    "why": "Manteau mince et ancien : faces planes possibles à l'ombre vers 3000-3800 m."
+    "state": "bad",
+    "why": "Neige ancienne mince à faces planes à l'ombre (N-NO) vers 3000-3842 m, recouverte par les dépôts de foehn depuis mercredi."
   },
   {
     "zone": "Z3",
     "n": 4,
     "critere": "Réchauffement",
     "state": "ok",
-    "why": "Froid en altitude (Midi −10 °C au matin, iso 0 °C 2300 m) : neige sèche, pas d'humidification."
+    "why": "Froid au-dessus de 3000 m (Midi −12 °C, −6 à −13 °C prévus à 4000 m) : neige sèche."
   },
   {
     "zone": "Z3",
     "n": 5,
     "critere": "Surcharge",
     "state": "warn",
-    "why": "Dépôts de bise du 1/11 (âge 2 j) sous les crêtes > 3500 m, surtout SO-S-O ; dernière chute 25/10 (9 j)."
+    "why": "Foehn SE 50-80 km/h à 4000 m depuis mercredi + fine neige fraîche côté frontière italienne : âge 0 j, stock limité."
   },
   {
     "zone": "Z3",
     "n": 6,
     "critere": "Indice de risque",
     "state": "ok",
-    "why": "BERA indice 1 (faible) : rares petites plaques dures > 3500 m toutes orientations."
+    "why": "BERA indice 1 (faible) jeudi : nouvelles petites plaques dures > 3500 m, plus épaisses vers l'Italie."
   },
   {
     "zone": "Z4",
@@ -143,29 +143,29 @@
     "zone": "Z4",
     "n": 3,
     "critere": "Couche fragile",
-    "state": "warn",
-    "why": "Manteau mince et ancien sur les rives N du glacier vers 3000-3900 m : faces planes possibles."
+    "state": "bad",
+    "why": "Neige ancienne mince sur les rives N du glacier et dans les couloirs N vers 3000-3900 m, recouverte par les dépôts de foehn."
   },
   {
     "zone": "Z4",
     "n": 4,
     "critere": "Réchauffement",
     "state": "ok",
-    "why": "Froid en altitude, iso 0 °C 2300 m : pas d'humidification au-dessus de 3000 m."
+    "why": "Froid au-dessus de 3000 m : pas d'humidification (iso 0 °C 2600-2800 m)."
   },
   {
     "zone": "Z4",
     "n": 5,
     "critere": "Surcharge",
     "state": "warn",
-    "why": "Dépôts de bise du 1/11 (âge 2 j) dans les couloirs et sous les cols > 3500 m, surtout SO-S-O."
+    "why": "Dépôts de foehn de SE (âge 0 j) dans les couloirs et sous les cols N-NO-O > 3500 m ; peu de neige fraîche."
   },
   {
     "zone": "Z4",
     "n": 6,
     "critere": "Indice de risque",
     "state": "ok",
-    "why": "BERA indice 1 (faible) : rares petites plaques dures > 3500 m."
+    "why": "BERA indice 1 (faible) : rares petites plaques dures > 3500 m, tous versants."
   },
   {
     "zone": "Z5",
@@ -186,21 +186,21 @@
     "n": 3,
     "critere": "Couche fragile",
     "state": "warn",
-    "why": "Manteau mince et ancien sur le glacier du Tour vers 2800-3500 m : faces planes possibles à l'ombre."
+    "why": "Manteau mince et ancien sur le glacier du Tour vers 2800-3540 m : faces planes possibles à l'ombre."
   },
   {
     "zone": "Z5",
     "n": 4,
     "critere": "Réchauffement",
     "state": "ok",
-    "why": "Froid au-dessus de 3000 m, regel net ; versants S à peine ramollis l'après-midi."
+    "why": "Froid au-dessus de 3000 m ; sous 2800 m, regel faible jeudi soir (nuit nuageuse)."
   },
   {
     "zone": "Z5",
     "n": 5,
     "critere": "Surcharge",
     "state": "warn",
-    "why": "Petits dépôts de bise du 1/11 (âge 2 j) sous les crêtes > 3200 m, surtout SO-S."
+    "why": "Petits dépôts de foehn (âge 0 j) sous les crêtes frontalières N-NO > 3200 m."
   },
   {
     "zone": "Z5",

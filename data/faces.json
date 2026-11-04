@@ -2,49 +2,49 @@
   {
     "face": "N",
     "deg": 0,
-    "level": 0,
-    "why": "Peu de charge récente ; faible vent de SE prévu mardi-mercredi, stock transportable réduit."
+    "level": 2,
+    "why": "Foehn de S-SE 50-80 km/h depuis mercredi en altitude : dépôts sous les crêtes, plus marqués côté frontière."
   },
   {
     "face": "NE",
     "deg": 45,
-    "level": 0,
-    "why": "Face au vent de la bise (30/10-1/11) : érodée, neige dure."
+    "level": 1,
+    "why": "Anciens dépôts de SO/O (22-23/10), en partie érodés par la bise du 1/11."
   },
   {
     "face": "E",
     "deg": 90,
     "level": 1,
-    "why": "Anciens dépôts du flux SO/O des 22-23/10, en partie érodés."
+    "why": "Anciens dépôts de SO/O (22-23/10)."
   },
   {
     "face": "SE",
     "deg": 135,
     "level": 1,
-    "why": "Anciens dépôts du vent de NO des 24-26/10."
+    "why": "Anciens dépôts de NO (24-26/10) ; face au vent du foehn actuel, érodée."
   },
   {
     "face": "S",
     "deg": 180,
-    "level": 2,
-    "why": "Sous le vent de la bise de NE des 30/10-1/11 (jusqu'à 60-100 km/h)."
+    "level": 1,
+    "why": "Dépôts de bise du 30/10-1/11 (4 j)."
   },
   {
     "face": "SO",
     "deg": 225,
-    "level": 2,
-    "why": "Sous le vent de la bise de NE des 30/10-1/11 : dépôts sous les crêtes."
+    "level": 1,
+    "why": "Dépôts de bise du 30/10-1/11 (4 j)."
   },
   {
     "face": "O",
     "deg": 270,
     "level": 1,
-    "why": "Charge croisée par la bise de NE du 1/11."
+    "why": "Charge croisée : bise du 1/11 et foehn actuel le long des crêtes."
   },
   {
     "face": "NO",
     "deg": 315,
-    "level": 0,
-    "why": "Érodée par le vent de NO des 24-26/10, peu rechargée depuis."
+    "level": 2,
+    "why": "Sous le vent du foehn de SE (depuis mercredi) et charge croisée de la bise."
   }
 ]

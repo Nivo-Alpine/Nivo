@@ -1,13 +1,13 @@
 [
   {
-    "date_label": "03/11/2026",
-    "notion": "La plaque dure (neige « cartonnée »)",
-    "texte": "Le BERA parle de « petites plaques dures » au-dessus de 3500 m : c'est de la neige soufflée et tassée par le vent, cartonnée, qui sonne creux et où les skis enfoncent à peine. Sa rigidité répartit ton poids : elle part plus rarement qu'une neige tendre, mais quand elle casse, souvent là où elle est plus mince (bords, rochers affleurants), la fissure file loin, parfois au-dessus de toi, et la plaque part en gros blocs. Pour Alain Duclos, ce n'est pas la dureté qui compte mais l'âge de la neige qui la compose et la couche fragile dessous : dure ou tendre, une plaque récente posée sur une couche fragile peut partir.",
-    "quiz": "Vers 3600 m, près d'une crête, tu traverses une neige cartonnée qui sonne creux ; tes skis n'enfoncent presque pas. Qu'en conclure ?",
-    "choix_a": "Rien de rassurant : une plaque dure peut casser loin de toi, parfois au-dessus.",
-    "choix_b": "Qu'elle est stable : si tes skis n'enfoncent pas, ton poids ne l'atteint pas.",
-    "choix_c": "Qu'elle ne pourra partir que l'après-midi, une fois ramollie par le soleil.",
-    "answer": "a",
-    "explication": "A : une neige cartonnée qui sonne creux est le signe typique d'une plaque dure ; elle part plus rarement, mais la fissure peut se propager loin et s'ouvrir au-dessus du skieur, surtout si elle est déclenchée dans une zone mince. B est faux : la rupture se fait dans la couche fragile sous la plaque, et le peu d'enfoncement ne dit rien d'elle. C est faux : à −10 °C vers 3600 m, cette plaque sèche ne dépend pas du soleil, elle peut partir à toute heure."
+    "date_label": "04/11/2026",
+    "notion": "Le foehn : le vent du sud qui charge les faces nord",
+    "texte": "Le foehn est un vent du sud : l'air humide monte côté italien, y lâche sa neige, puis redescend sec et plus doux côté Chamonix. On peut donc avoir du soleil en vallée et un vent fort en altitude, avec une neige fraîche qui s'arrête presque à la frontière : c'est ce que dit le BERA de jeudi (plaques « un peu plus épaisses vers la frontière italienne »). Le foehn reprend la neige et la dépose sous les crêtes côté nord et nord-ouest, justement sur les faces à l'ombre où la neige ancienne, mince, a pu se transformer en faces planes. La neige nouvelle fait la plaque, la couche ancienne fragile casse dessous : par foehn, regarde d'abord les pentes nord sous les crêtes, surtout près de la frontière.",
+    "quiz": "Foehn de sud fort, il neige côté italien, ciel assez dégagé à Chamonix. Vers 3500 m côté français, où les plaques sont-elles les plus probables ?",
+    "choix_a": "Sur les faces sud, face au vent, là où le foehn pousse la neige contre la pente",
+    "choix_b": "Sur les faces nord sous les crêtes, où le foehn dépose la neige qu'il transporte",
+    "choix_c": "Nulle part côté français, puisqu'il n'y neige pas et que le foehn est un vent sec",
+    "answer": "b",
+    "explication": "Le vent arrache la neige sur la face exposée (ici le sud, souvent érodée ou vitrifiée) et la dépose juste derrière les crêtes, sous le vent : par foehn, ce sont les faces N et NO. A confond face au vent et face sous le vent. C oublie que le foehn transporte la neige déjà au sol et celle tombée côté italien, même sans chute côté français."
   }
 ]

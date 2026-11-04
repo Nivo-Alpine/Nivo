@@ -14,10 +14,10 @@
     "bulletin": "SLF 4111 Emosson",
     "level": "off",
     "mode": "Pas de neige skiable",
-    "band": "2000–2800 m",
-    "reason": "Neige rare et dure, névés au nord ; aucun bulletin SLF.",
-    "avoid": "Névés durs N-NE > 2400 m : risque de glissade ; pas de ski",
-    "simple": "Presque pas de neige. Les rares plaques de neige au nord sont dures et glissantes : pas de ski pour l'instant."
+    "band": "2000–3000 m",
+    "reason": "Névés durs et minces au nord, enneigement très déficitaire.",
+    "avoid": "Névés durs N > 2400 m (glissade) ; aucun bulletin SLF publié.",
+    "simple": "Presque pas de neige, seulement quelques plaques dures au nord vers 2400–2800 m. Attention à la glissade si tu les traverses."
   },
   {
     "id": "Z2",
@@ -34,10 +34,10 @@
     "bulletin": "BERA Mont-Blanc",
     "level": "off",
     "mode": "Pas de neige skiable",
-    "band": "2000–2965 m",
-    "reason": "Enneigement très déficitaire, neige dure ou croûtée.",
-    "avoid": "Névés durs N > 2400 m (glissade) ; versant S-SE sans neige",
-    "simple": "Pas assez de neige pour skier. Au nord, la neige restante est dure : attention aux glissades à pied."
+    "band": "2000–3000 m",
+    "reason": "Neige continue seulement dès 2100 m N, trop mince pour skier.",
+    "avoid": "Névés croûtés N-NE 2400-2965 m (glissade) ; S-SE dur, ramolli l'après-midi.",
+    "simple": "Trop peu de neige pour skier. Côté nord, la neige est dure et croûtée : risque de glisser sur les pentes raides."
   },
   {
     "id": "Z3",
@@ -53,11 +53,11 @@
     "rot": 0,
     "bulletin": "BERA Mont-Blanc",
     "level": "warn",
-    "mode": "Méfiant",
+    "mode": "Alerté",
     "band": "> 3500 m",
-    "reason": "Rares petites plaques dures sous les crêtes ; neige dure, crevasses.",
-    "avoid": "Pentes > 30° sous les crêtes > 3500 m, surtout SO-S-O ; neige dure (glissade) ; glacier non encordé",
-    "simple": "Un peu de neige soufflée dure au-dessus de 3500 m. Évite les pentes raides sous les crêtes et encorde-toi sur le glacier."
+    "reason": "Foehn en cours : petites plaques neuves sur faces à l'ombre fragiles.",
+    "avoid": "Pentes > 30° N-NO-O sous les crêtes > 3500 m, côté frontière ; zones minces ; crevasses.",
+    "simple": "Vent du sud fort : neige soufflée récente au-dessus de 3500 m. Évite les pentes raides tournées vers le nord sous les crêtes ; encorde-toi sur le glacier."
   },
   {
     "id": "Z4",
@@ -73,11 +73,11 @@
     "rot": -20,
     "bulletin": "BERA Mont-Blanc",
     "level": "warn",
-    "mode": "Méfiant",
+    "mode": "Alerté",
     "band": "> 3500 m",
-    "reason": "Rares plaques dures vers les cols ; glacier très crevassé.",
-    "avoid": "Couloirs et pentes > 30° sous les cols > 3500 m, surtout SO-S-O ; neige dure ; glacier non encordé",
-    "simple": "Neige soufflée dure près des cols au-dessus de 3500 m. Évite les couloirs raides et encorde-toi sur le glacier."
+    "reason": "Dépôts de foehn dans les couloirs nord, sur neige ancienne mince.",
+    "avoid": "Couloirs et pentes > 30° N-NO-O sous les cols > 3500 m ; zones minces, rochers affleurants ; crevasses.",
+    "simple": "Neige soufflée récente dans les couloirs au-dessus de 3500 m. Évite les pentes raides côté nord sous les cols ; encorde-toi sur le glacier."
   },
   {
     "id": "Z5",
@@ -95,8 +95,8 @@
     "level": "warn",
     "mode": "Méfiant",
     "band": "> 3200 m",
-    "reason": "Petits dépôts durs sous les crêtes frontalières ; crevasses.",
-    "avoid": "Pentes > 30° sous les crêtes > 3200 m, surtout SO-S ; neige dure ; glacier non encordé",
-    "simple": "Peu de neige, un peu soufflée et dure près des crêtes au-dessus de 3200 m. Reste loin des pentes raides et encorde-toi sur le glacier."
+    "reason": "Petits dépôts de foehn possibles sous les crêtes frontalières.",
+    "avoid": "Pentes > 30° N-NO sous les crêtes frontalières > 3200 m ; crevasses ; neige dure (glissade).",
+    "simple": "Un peu de neige soufflée possible juste sous les crêtes au-dessus de 3200 m. Évite les pentes raides côté nord et encorde-toi sur le glacier."
   }
 ]
