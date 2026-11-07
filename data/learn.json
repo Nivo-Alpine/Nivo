@@ -1,13 +1,13 @@
 [
   {
-    "date_label": "04/11/2026",
-    "notion": "Le foehn : le vent du sud qui charge les faces nord",
-    "texte": "Le foehn est un vent du sud : l'air humide monte côté italien, y lâche sa neige, puis redescend sec et plus doux côté Chamonix. On peut donc avoir du soleil en vallée et un vent fort en altitude, avec une neige fraîche qui s'arrête presque à la frontière : c'est ce que dit le BERA de jeudi (plaques « un peu plus épaisses vers la frontière italienne »). Le foehn reprend la neige et la dépose sous les crêtes côté nord et nord-ouest, justement sur les faces à l'ombre où la neige ancienne, mince, a pu se transformer en faces planes. La neige nouvelle fait la plaque, la couche ancienne fragile casse dessous : par foehn, regarde d'abord les pentes nord sous les crêtes, surtout près de la frontière.",
-    "quiz": "Foehn de sud fort, il neige côté italien, ciel assez dégagé à Chamonix. Vers 3500 m côté français, où les plaques sont-elles les plus probables ?",
-    "choix_a": "Sur les faces sud, face au vent, là où le foehn pousse la neige contre la pente",
-    "choix_b": "Sur les faces nord sous les crêtes, où le foehn dépose la neige qu'il transporte",
-    "choix_c": "Nulle part côté français, puisqu'il n'y neige pas et que le foehn est un vent sec",
+    "date_label": "07/11/2026",
+    "notion": "La pluie sur la neige : danger immédiat, piège pour plus tard",
+    "texte": "Quand il pleut sur la neige, l'eau l'alourdit et la mouille sans lui donner de cohésion : pendant l'épisode, coulées et avalanches de neige mouillée deviennent plus probables, surtout sur une neige restée sèche. Après la pluie, si le froid revient, la surface regèle en une croûte lisse et dure. La neige qui tombera ensuite reposera sur cette croûte, qui peut servir de surface de glissement pendant des semaines. Lundi et mardi, la pluie est annoncée jusque vers 2400 m : note où tu vois cette croûte, elle comptera pour la suite de l'hiver.",
+    "quiz": "Lundi-mardi, il pleut jusque vers 2400 m sur la neige fraîche, puis le froid revient et il reneige. Quel effet la pluie aura-t-elle sur la suite ?",
+    "choix_a": "Elle fait fondre toute la neige, ce qui efface tout souci pour l'hiver",
+    "choix_b": "Elle laisse une croûte de regel lisse sur laquelle la neige suivante glissera",
+    "choix_c": "Elle colle durablement la neige suivante au vieux manteau, qui devient stable",
     "answer": "b",
-    "explication": "Le vent arrache la neige sur la face exposée (ici le sud, souvent érodée ou vitrifiée) et la dépose juste derrière les crêtes, sous le vent : par foehn, ce sont les faces N et NO. A confond face au vent et face sous le vent. C oublie que le foehn transporte la neige déjà au sol et celle tombée côté italien, même sans chute côté français."
+    "explication": "La pluie humidifie la surface ; au retour du froid, elle regèle en croûte lisse et dure, une surface de glissement classique pour les chutes suivantes. A est faux : quelques millimètres de pluie ne font pas disparaître la neige en altitude. C est faux : une croûte lisse n'accroche pas la neige froide qui tombe dessus, et des faces planes peuvent même se former juste au-dessus."
   }
 ]

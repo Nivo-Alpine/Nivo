@@ -12,12 +12,12 @@
     "ry_km": 2.8,
     "rot": 0,
     "bulletin": "SLF 4111 Emosson",
-    "level": "off",
-    "mode": "Pas de neige skiable",
-    "band": "2000–3000 m",
-    "reason": "Névés durs et minces au nord, enneigement très déficitaire.",
-    "avoid": "Névés durs N > 2400 m (glissade) ; aucun bulletin SLF publié.",
-    "simple": "Presque pas de neige, seulement quelques plaques dures au nord vers 2400–2800 m. Attention à la glissade si tu les traverses."
+    "level": "warn",
+    "mode": "Méfiant",
+    "band": "> 2400 m",
+    "reason": "Neige fraîche mince sur neige regelée, petits dépôts de SO",
+    "avoid": "N-NE-E > 2400 m sous les crêtes et au-dessus des lacs ; névés durs (glissade) ; côté Trient : pas de bulletin SLF",
+    "simple": "Très peu de neige, souvent dure dessous. Évite les pentes raides côté nord et est au-dessus de 2400 m, juste sous les crêtes."
   },
   {
     "id": "Z2",
@@ -32,12 +32,12 @@
     "ry_km": 2.6,
     "rot": -45,
     "bulletin": "BERA Mont-Blanc",
-    "level": "off",
-    "mode": "Pas de neige skiable",
-    "band": "2000–3000 m",
-    "reason": "Neige continue seulement dès 2100 m N, trop mince pour skier.",
-    "avoid": "Névés croûtés N-NE 2400-2965 m (glissade) ; S-SE dur, ramolli l'après-midi.",
-    "simple": "Trop peu de neige pour skier. Côté nord, la neige est dure et croûtée : risque de glisser sur les pentes raides."
+    "level": "warn",
+    "mode": "Méfiant",
+    "band": "> 2400 m",
+    "reason": "Neige fraîche mince sur névés regelés, petits dépôts côté Bérard",
+    "avoid": "N-NE-E > 2400 m (Lac Blanc, Bérard) sous les crêtes ; versant S : pas de neige skiable ; névés durs",
+    "simple": "Neige fraîche très mince sur des cailloux et de la neige dure. Évite les pentes raides tournées vers le nord-est au-dessus de 2400 m."
   },
   {
     "id": "Z3",
@@ -54,10 +54,10 @@
     "bulletin": "BERA Mont-Blanc",
     "level": "warn",
     "mode": "Alerté",
-    "band": "> 3500 m",
-    "reason": "Foehn en cours : petites plaques neuves sur faces à l'ombre fragiles.",
-    "avoid": "Pentes > 30° N-NO-O sous les crêtes > 3500 m, côté frontière ; zones minces ; crevasses.",
-    "simple": "Vent du sud fort : neige soufflée récente au-dessus de 3500 m. Évite les pentes raides tournées vers le nord sous les crêtes ; encorde-toi sur le glacier."
+    "band": "> 3000 m",
+    "reason": "Vent d'ouest fort dimanche sur neige fraîche, neige ancienne fragile",
+    "avoid": "E-NE-SE sous les crêtes > 3000 m (vent d'O dimanche) ; N-NO (foehn) ; Vallée Noire, sortie d'arête ; crevasses masquées",
+    "simple": "Le vent déplace la neige fraîche au-dessus de 3000 m. Évite les pentes raides côté est et nord sous les crêtes ; encorde-toi sur le glacier."
   },
   {
     "id": "Z4",
@@ -74,10 +74,10 @@
     "bulletin": "BERA Mont-Blanc",
     "level": "warn",
     "mode": "Alerté",
-    "band": "> 3500 m",
-    "reason": "Dépôts de foehn dans les couloirs nord, sur neige ancienne mince.",
-    "avoid": "Couloirs et pentes > 30° N-NO-O sous les cols > 3500 m ; zones minces, rochers affleurants ; crevasses.",
-    "simple": "Neige soufflée récente dans les couloirs au-dessus de 3500 m. Évite les pentes raides côté nord sous les cols ; encorde-toi sur le glacier."
+    "band": "> 3000 m",
+    "reason": "Neige fraîche reprise par le vent d'ouest sous les cols",
+    "avoid": "Couloirs et pentes E-NE-N sous les cols > 3000 m ; SE par charge croisée ; glacier très crevassé",
+    "simple": "Neige soufflée sous les cols au-dessus de 3000 m. Évite les couloirs raides côté est et nord ; encorde-toi sur le glacier."
   },
   {
     "id": "Z5",
@@ -93,10 +93,10 @@
     "rot": 0,
     "bulletin": "BERA Mont-Blanc",
     "level": "warn",
-    "mode": "Méfiant",
-    "band": "> 3200 m",
-    "reason": "Petits dépôts de foehn possibles sous les crêtes frontalières.",
-    "avoid": "Pentes > 30° N-NO sous les crêtes frontalières > 3200 m ; crevasses ; neige dure (glissade).",
-    "simple": "Un peu de neige soufflée possible juste sous les crêtes au-dessus de 3200 m. Évite les pentes raides côté nord et encorde-toi sur le glacier."
+    "mode": "Alerté",
+    "band": "> 3000 m",
+    "reason": "Vent d'ouest sur neige fraîche près des crêtes frontières",
+    "avoid": "E-NE-N > 3000 m sous les crêtes frontières ; glacier du Tour (crevasses) ; côté Trient : pas de bulletin SLF",
+    "simple": "Neige soufflée près des crêtes au-dessus de 3000 m. Évite les pentes raides côté est sous les crêtes ; encorde-toi sur le glacier."
   }
 ]

@@ -3,48 +3,48 @@
     "face": "N",
     "deg": 0,
     "level": 2,
-    "why": "Foehn de S-SE 50-80 km/h depuis mercredi en altitude : dépôts sous les crêtes, plus marqués côté frontière."
+    "why": "Foehn de SE 4-5/11 puis vent de S pendant la chute du 6/11."
   },
   {
     "face": "NE",
     "deg": 45,
-    "level": 1,
-    "why": "Anciens dépôts de SO/O (22-23/10), en partie érodés par la bise du 1/11."
+    "level": 2,
+    "why": "Vent d'O 60-70 km/h dimanche à 4000 m sur la neige du 6/11 ; SO à 2000 m."
   },
   {
     "face": "E",
     "deg": 90,
-    "level": 1,
-    "why": "Anciens dépôts de SO/O (22-23/10)."
+    "level": 2,
+    "why": "Sous le vent d'O samedi soir et dimanche."
   },
   {
     "face": "SE",
     "deg": 135,
     "level": 1,
-    "why": "Anciens dépôts de NO (24-26/10) ; face au vent du foehn actuel, érodée."
+    "why": "Charge croisée par le vent d'O dimanche (et NO samedi matin)."
   },
   {
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": "Dépôts de bise du 30/10-1/11 (4 j)."
+    "why": "Vent de N la nuit du 6 au 7/11, peu de neige transportée."
   },
   {
     "face": "SO",
     "deg": 225,
-    "level": 1,
-    "why": "Dépôts de bise du 30/10-1/11 (4 j)."
+    "level": 0,
+    "why": "Face au vent d'O : érodée."
   },
   {
     "face": "O",
     "deg": 270,
-    "level": 1,
-    "why": "Charge croisée : bise du 1/11 et foehn actuel le long des crêtes."
+    "level": 0,
+    "why": "Face au vent d'O : érodée."
   },
   {
     "face": "NO",
     "deg": 315,
-    "level": 2,
-    "why": "Sous le vent du foehn de SE (depuis mercredi) et charge croisée de la bise."
+    "level": 1,
+    "why": "Dépôts de foehn de SE (4-5/11), plus nets vers l'Italie."
   }
 ]

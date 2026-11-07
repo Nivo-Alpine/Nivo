@@ -1,23 +1,23 @@
 [
   {
-    "date_label": "bilan du 04/11/2026",
+    "date_label": "bilan du 07/11/2026",
     "level": "warn",
-    "label": "Début de saison · vigilance en haute montagne",
-    "summary": "Z3 et Z4 en mode Alerté au-dessus de 3500 m, sur N-NO-O sous les crêtes. Le foehn de SE dépose de petites plaques dures sur une neige ancienne mince. BERA indice 1 ; Z1 et Z2 sans neige skiable.",
-    "simple_title": "Vent du sud : prudence au-dessus de 3500 m",
-    "simple_summary": "Un vent fort du sud souffle en haute montagne depuis ce matin. Il pousse la neige juste sous les crêtes, côté nord. Plus bas, il n'y a presque pas de neige pour skier.",
+    "label": "Vigilance en haute montagne",
+    "summary": "Z3, Z4, Z5 en mode Alerté au-dessus de 3000 m. Vent d'O 60-70 km/h dimanche sur la neige du 6/11 : dépôts E-NE-SE. Neige ancienne fragile sur N, glissade et crevasses partout.",
+    "simple_title": "Prudence au-dessus de 3000 m : vent fort",
+    "simple_summary": "Il a un peu neigé vendredi, surtout en haute montagne. Dimanche, un vent fort d'ouest déplace cette neige légère au-dessus de 3000 m. Plus bas, très peu de neige, souvent dure : le ski n'est pas encore vraiment possible.",
     "simple_todo": [
-      "Évite les pentes raides côté nord : au-dessus de 3500 m, juste sous les crêtes, surtout près de l'Italie.",
-      "Encorde-toi sur le glacier : les crevasses sont ouvertes et les ponts de neige fragiles.",
-      "Prends crampons et piolet : la neige est dure, parfois glacée, une glissade ne s'arrête pas.",
-      "Surveille vendredi : un peu de neige fraîche est annoncée, elle sera soufflée par le vent."
+      "Évite les pentes raides sous les crêtes : surtout côté est et nord-est, au-dessus de 3000 m, où le vent dépose la neige.",
+      "Méfie-toi de la neige dure : une glissade sur pente raide ne s'arrête pas, prends crampons et piolet.",
+      "Encorde-toi sur le glacier : les crevasses sont cachées sous une neige fine et fragile.",
+      "Profite de dimanche sans forcer : la pluie arrive lundi, ce n'est pas une raison de prendre plus de risques."
     ],
-    "avoid": "N, NO, O > 3500 m sous les crêtes (Z3, Z4) ; N-NO > 3200 m (Z5) ; névés durs N 2400-2965 m (Z1, Z2).",
+    "avoid": "E-NE-SE > 3000 m sous les crêtes (vent d'O dimanche) ; N-NO > 3000 m (foehn, neige ancienne fragile) ; N-NE > 2400 m (Z1, Z2) ; neige dure et glaciers partout",
     "overload_age_d": 0,
-    "terrain": "Aucune observation dans les carnets de Louis et des testeurs ; data-avalanche.org : aucune avalanche sur 10 jours, aucune alerte.",
-    "bera": "BERA rédigé le 04/11 à 16 h pour jeudi 5/11 : indice 1 (faible), neige ventée ; départs spontanés RAS ; nouvelles rares petites plaques dures > 3500 m tous versants (foehn depuis mercredi matin), un peu plus épaisses vers la frontière italienne ; glissade sur neige dure, glaciers très crevassés. Tendance vendredi : indice 1, 3-10 cm > 2000 m.",
-    "slf": "Aucun bulletin publié (whiterisk.ch : « Actuellement pas de bulletin avalanche publié », dernier le 24/10).",
-    "watch": "Plaque à vent dure · N-NO-O > 3500 m sous les crêtes, côté frontière · possible · taille 1, localement 2 · confiance faible. Vendredi : 3-10 cm (BERA) à 10-20 cm (Meteoblue) vers 3000-4000 m, limite pluie-neige 2000 → 1600 m, sur une neige ancienne à faces planes.",
-    "limits": "Météo-France chamonix.com non actualisé (grève) ; aperçu météo du BERA lu (frais). Meteoblue lu (Aiguille du Midi 3842 m, Chamonix, Émosson 1900 m). Divergence sur le vent à 4000 m : Météo-France et BERA 50-80 km/h, Meteoblue 27 km/h (rafales 48) → retenu SE 45-65 km/h, appuyé par les rafales du Couvercle (51 km/h). Températures concordantes. MétéoSuisse et AvaBlog non lus. Confiance moyenne sur le danger, faible sur les plaques locales."
+    "terrain": "Carnets de Louis et des testeurs : aucune observation. data-avalanche.org : aucune avalanche sur 10 jours, aucune alerte.",
+    "bera": "BERA du 06/11 (16 h, valable jusqu'au 07/11 à 18 h) : indice 1, aucun départ spontané, rares petites plaques à vent > 3200-3500 m tous versants, plus épaisses vers l'Italie ; 3-7 cm sur neige regelée sous 3000 m ; glissade, glaciers très crevassés ; enneigement déficitaire. Tendance dimanche : légère baisse. BERA du 07/11 (pour dimanche) non lisible.",
+    "slf": "Aucun bulletin publié (whiterisk.ch, dernier le 24/10) ; PDF 4111 = notice générale ; AvaBlog : pas de billet depuis le 26/10.",
+    "watch": "Dimanche : plaque à vent E-NE-SE > 3000 m sous les crêtes · possible · taille 1, localement 2 · confiance moyenne. Lundi-mardi : pluie jusque vers 2400 m, neige au-dessus (neige mouillée en dessous, nouvelles plaques au-dessus).",
+    "limits": "BERA du 07/11 (pour dimanche) non lu ; Météo-France non actualisé (grève) mais prévision affichée pour sam. et dim. ; Meteoblue lu pour l'Aiguille du Midi (10 jours) et Finhaut, pas pour le vent ni Chamonix (cache périmé) ; MétéoSuisse illisible. Températures concordantes (Midi −8 à −14 °C) ; vent : Météo-France seul (O 60-70 km/h dimanche à 4000 m), cohérent avec la rafale de 42 km/h au Midi. Redoux et précipitations lun.-ven. : les deux concordent. Confiance moyenne."
   }
 ]

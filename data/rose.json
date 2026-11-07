@@ -5,7 +5,7 @@
     "face": "N",
     "deg": 0,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
     "zone": "Z1",
@@ -13,7 +13,7 @@
     "face": "NE",
     "deg": 45,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
     "zone": "Z1",
@@ -21,7 +21,7 @@
     "face": "E",
     "deg": 90,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
     "zone": "Z1",
@@ -29,7 +29,7 @@
     "face": "SE",
     "deg": 135,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
     "zone": "Z1",
@@ -37,7 +37,7 @@
     "face": "S",
     "deg": 180,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
     "zone": "Z1",
@@ -45,7 +45,7 @@
     "face": "SO",
     "deg": 225,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
     "zone": "Z1",
@@ -53,7 +53,7 @@
     "face": "O",
     "deg": 270,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
     "zone": "Z1",
@@ -61,7 +61,7 @@
     "face": "NO",
     "deg": 315,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
     "zone": "Z1",
@@ -69,674 +69,290 @@
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Névés minces et anciens : faces planes probables, neige dure."
+    "why": "Neige fraîche mince sur névés regelés."
   },
   {
     "zone": "Z1",
     "band": "2000–3000 m",
     "face": "NE",
     "deg": 45,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z1",
-    "band": "2000–3000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "< 2000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "< 2000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "< 2000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "< 2000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "< 2000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "< 2000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "< 2000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "< 2000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 1,
-    "why": "Névés minces et anciens : faces planes probables, neige dure."
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z2",
-    "band": "2000–3000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "< 2000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "< 2000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "< 2000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "< 2000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "< 2000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "< 2000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "< 2000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "< 2000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "2000–3000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 1,
-    "why": "Névés minces et anciens : faces planes probables, neige dure."
-  },
-  {
-    "zone": "Z3",
-    "band": "2000–3000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "2000–3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "2000–3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "2000–3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "2000–3000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "2000–3000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "2000–3000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 3,
-    "why": "Foehn de S-SE depuis mercredi : dépôts sous les crêtes, sur neige ancienne à faces planes."
-  },
-  {
-    "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 1,
-    "why": "Face au vent : érodée, zones vitrifiées près des crêtes."
-  },
-  {
-    "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 1,
-    "why": "Anciens dépôts de bise du 1/11 (4 j)."
-  },
-  {
-    "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 1,
-    "why": "Anciens dépôts de bise du 1/11 (4 j)."
-  },
-  {
-    "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "O",
-    "deg": 270,
     "level": 2,
-    "why": "Charge croisée du foehn et dépôts de bise du 1/11."
+    "why": "Petits dépôts par vent de SO dimanche sous les crêtes."
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z1",
+    "band": "2000–3000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z2",
+    "band": "< 2000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z2",
+    "band": "< 2000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z2",
+    "band": "< 2000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z2",
+    "band": "< 2000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z2",
+    "band": "< 2000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z2",
+    "band": "< 2000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z2",
+    "band": "< 2000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z2",
+    "band": "< 2000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 1,
+    "why": "Neige fraîche mince sur névés regelés."
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 2,
+    "why": "Petits dépôts par vent de SO dimanche sous les crêtes."
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z2",
+    "band": "2000–3000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 0,
+    "why": null
   },
   {
     "zone": "Z3",
-    "band": "> 3000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 3,
-    "why": "Face sous le vent du foehn de SE : petites plaques neuves sous l'arête et les crêtes."
-  },
-  {
-    "zone": "Z4",
     "band": "< 2000 m",
     "face": "N",
     "deg": 0,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "< 2000 m",
     "face": "NE",
     "deg": 45,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "< 2000 m",
     "face": "E",
     "deg": 90,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "< 2000 m",
     "face": "SE",
     "deg": 135,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "< 2000 m",
     "face": "S",
     "deg": 180,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "< 2000 m",
     "face": "SO",
     "deg": 225,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "< 2000 m",
     "face": "O",
     "deg": 270,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "< 2000 m",
     "face": "NO",
     "deg": 315,
     "level": 0,
-    "why": null
+    "why": "Pas de neige skiable."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "2000–3000 m",
     "face": "N",
     "deg": 0,
     "level": 1,
-    "why": "Névés minces et anciens : faces planes probables, neige dure."
+    "why": "Neige fraîche mince sur neige ancienne regelée."
   },
   {
-    "zone": "Z4",
+    "zone": "Z3",
     "band": "2000–3000 m",
     "face": "NE",
     "deg": 45,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "2000–3000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 3,
-    "why": "Couloirs N sous les cols : dépôts de foehn sur neige ancienne mince."
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 1,
-    "why": null
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 1,
-    "why": "Anciens dépôts de bise du 1/11."
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 1,
-    "why": "Anciens dépôts de bise du 1/11."
-  },
-  {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "O",
-    "deg": 270,
     "level": 2,
-    "why": "Charge croisée du foehn le long des crêtes."
+    "why": "Petits dépôts par vent de SO dimanche sous les crêtes."
   },
   {
-    "zone": "Z4",
-    "band": "> 3000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 3,
-    "why": "Sous le vent du foehn de SE : petites plaques neuves dans les couloirs."
-  },
-  {
-    "zone": "Z5",
-    "band": "< 2000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
-    "band": "< 2000 m",
-    "face": "NE",
-    "deg": 45,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
-    "band": "< 2000 m",
+    "zone": "Z3",
+    "band": "2000–3000 m",
     "face": "E",
     "deg": 90,
-    "level": 0,
-    "why": null
+    "level": 2,
+    "why": "Petits dépôts par vent de SO-O dimanche."
   },
   {
-    "zone": "Z5",
-    "band": "< 2000 m",
+    "zone": "Z3",
+    "band": "2000–3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
-    "band": "< 2000 m",
-    "face": "S",
-    "deg": 180,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
-    "band": "< 2000 m",
-    "face": "SO",
-    "deg": 225,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
-    "band": "< 2000 m",
-    "face": "O",
-    "deg": 270,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
-    "band": "< 2000 m",
-    "face": "NO",
-    "deg": 315,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
-    "band": "2000–3000 m",
-    "face": "N",
-    "deg": 0,
-    "level": 1,
-    "why": "Névés minces et anciens : faces planes probables, neige dure."
-  },
-  {
-    "zone": "Z5",
-    "band": "2000–3000 m",
-    "face": "NE",
-    "deg": 45,
     "level": 1,
     "why": null
   },
   {
-    "zone": "Z5",
-    "band": "2000–3000 m",
-    "face": "E",
-    "deg": 90,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
-    "band": "2000–3000 m",
-    "face": "SE",
-    "deg": 135,
-    "level": 0,
-    "why": null
-  },
-  {
-    "zone": "Z5",
+    "zone": "Z3",
     "band": "2000–3000 m",
     "face": "S",
     "deg": 180,
@@ -744,7 +360,7 @@
     "why": null
   },
   {
-    "zone": "Z5",
+    "zone": "Z3",
     "band": "2000–3000 m",
     "face": "SO",
     "deg": 225,
@@ -752,7 +368,7 @@
     "why": null
   },
   {
-    "zone": "Z5",
+    "zone": "Z3",
     "band": "2000–3000 m",
     "face": "O",
     "deg": 270,
@@ -760,7 +376,7 @@
     "why": null
   },
   {
-    "zone": "Z5",
+    "zone": "Z3",
     "band": "2000–3000 m",
     "face": "NO",
     "deg": 315,
@@ -768,36 +384,420 @@
     "why": null
   },
   {
-    "zone": "Z5",
+    "zone": "Z3",
     "band": "> 3000 m",
     "face": "N",
     "deg": 0,
     "level": 2,
-    "why": "Sous les crêtes frontalières : petits dépôts de foehn."
+    "why": "Dépôts de foehn de SE (4-5/11) sur neige ancienne à faces planes."
   },
   {
-    "zone": "Z5",
+    "zone": "Z3",
     "band": "> 3000 m",
     "face": "NE",
     "deg": 45,
+    "level": 3,
+    "why": "Vent d'O 60-70 km/h dimanche sur la neige légère du 6/11 : dépôts sous les crêtes."
+  },
+  {
+    "zone": "Z3",
+    "band": "> 3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 3,
+    "why": "Face sous le vent d'O dimanche : dépôts frais sous les crêtes."
+  },
+  {
+    "zone": "Z3",
+    "band": "> 3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 2,
+    "why": "Charge croisée par le vent d'O dimanche, dans les combes et couloirs."
+  },
+  {
+    "zone": "Z3",
+    "band": "> 3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 1,
+    "why": "Peu de dépôts récents ; neige dure près des crêtes."
+  },
+  {
+    "zone": "Z3",
+    "band": "> 3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z3",
+    "band": "> 3000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z3",
+    "band": "> 3000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 2,
+    "why": "Dépôts de foehn de SE (4-5/11), un peu plus épais vers l'Italie."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z4",
+    "band": "< 2000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 1,
+    "why": "Neige fraîche mince sur neige ancienne regelée."
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 2,
+    "why": "Petits dépôts par vent de SO dimanche sous les crêtes."
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 2,
+    "why": "Petits dépôts par vent de SO-O dimanche."
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "2000–3000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 2,
+    "why": "Dépôts de foehn de SE (4-5/11) sur neige ancienne à faces planes."
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 3,
+    "why": "Vent d'O 60-70 km/h dimanche sur la neige légère du 6/11 : dépôts sous les crêtes."
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 3,
+    "why": "Face sous le vent d'O dimanche : dépôts frais sous les crêtes."
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 2,
+    "why": "Charge croisée par le vent d'O dimanche, dans les combes et couloirs."
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 1,
+    "why": "Peu de dépôts récents ; neige dure près des crêtes."
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z4",
+    "band": "> 3000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 2,
+    "why": "Dépôts de foehn de SE (4-5/11), un peu plus épais vers l'Italie."
+  },
+  {
+    "zone": "Z5",
+    "band": "< 2000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z5",
+    "band": "< 2000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z5",
+    "band": "< 2000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z5",
+    "band": "< 2000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z5",
+    "band": "< 2000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z5",
+    "band": "< 2000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z5",
+    "band": "< 2000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z5",
+    "band": "< 2000 m",
+    "face": "NO",
+    "deg": 315,
+    "level": 0,
+    "why": "Pas de neige skiable."
+  },
+  {
+    "zone": "Z5",
+    "band": "2000–3000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 1,
+    "why": "Neige fraîche mince sur neige ancienne regelée."
+  },
+  {
+    "zone": "Z5",
+    "band": "2000–3000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 2,
+    "why": "Petits dépôts par vent de SO dimanche sous les crêtes."
+  },
+  {
+    "zone": "Z5",
+    "band": "2000–3000 m",
+    "face": "E",
+    "deg": 90,
+    "level": 2,
+    "why": "Petits dépôts par vent de SO-O dimanche."
+  },
+  {
+    "zone": "Z5",
+    "band": "2000–3000 m",
+    "face": "SE",
+    "deg": 135,
+    "level": 1,
+    "why": null
+  },
+  {
+    "zone": "Z5",
+    "band": "2000–3000 m",
+    "face": "S",
+    "deg": 180,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z5",
+    "band": "2000–3000 m",
+    "face": "SO",
+    "deg": 225,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z5",
+    "band": "2000–3000 m",
+    "face": "O",
+    "deg": 270,
+    "level": 0,
+    "why": null
+  },
+  {
+    "zone": "Z5",
+    "band": "2000–3000 m",
+    "face": "NO",
+    "deg": 315,
     "level": 1,
     "why": null
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
+    "face": "N",
+    "deg": 0,
+    "level": 2,
+    "why": "Dépôts de foehn de SE (4-5/11) sur neige ancienne à faces planes."
+  },
+  {
+    "zone": "Z5",
+    "band": "> 3000 m",
+    "face": "NE",
+    "deg": 45,
+    "level": 3,
+    "why": "Vent d'O 60-70 km/h dimanche sur la neige légère du 6/11 : dépôts sous les crêtes."
+  },
+  {
+    "zone": "Z5",
+    "band": "> 3000 m",
     "face": "E",
     "deg": 90,
-    "level": 0,
-    "why": null
+    "level": 3,
+    "why": "Face sous le vent d'O dimanche : dépôts frais sous les crêtes."
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "SE",
     "deg": 135,
-    "level": 0,
-    "why": null
+    "level": 2,
+    "why": "Charge croisée par le vent d'O dimanche, dans les combes et couloirs."
   },
   {
     "zone": "Z5",
@@ -805,14 +805,14 @@
     "face": "S",
     "deg": 180,
     "level": 1,
-    "why": "Anciens dépôts de bise du 1/11."
+    "why": "Peu de dépôts récents ; neige dure près des crêtes."
   },
   {
     "zone": "Z5",
     "band": "> 3000 m",
     "face": "SO",
     "deg": 225,
-    "level": 1,
+    "level": 0,
     "why": null
   },
   {
@@ -820,7 +820,7 @@
     "band": "> 3000 m",
     "face": "O",
     "deg": 270,
-    "level": 1,
+    "level": 0,
     "why": null
   },
   {
@@ -829,6 +829,6 @@
     "face": "NO",
     "deg": 315,
     "level": 2,
-    "why": "Sous le vent du foehn de SE, près des cols."
+    "why": "Dépôts de foehn de SE (4-5/11), un peu plus épais vers l'Italie."
   }
 ]
